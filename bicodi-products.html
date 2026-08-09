@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="بطاريات ليثيوم فوسفات الحديد BICODI لتخزين الطاقة — المواصفات والمقارنة.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>منتجات BICODI | ابتكارات السماء</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-blue: #081526;
+            --space-blue-2: #0B1E33;
+            --space-blue-light: #14304f;
+            --celestial-gold: #C8A951;
+            --celestial-gold-light: #e2c877;
+            --celestial-gold-dark: #a88938;
+            --lunar-silver: #F6F8FC;
+            --aurora-teal: #00A896;
+            --aurora-teal-dark: #008f7a;
+            --text-dark: #16233a;
+            --text-gray: #64748b;
+            --shadow-sm: 0 4px 12px rgba(11,30,51,0.06);
+            --shadow-md: 0 12px 30px rgba(11,30,51,0.10);
+            --shadow-lg: 0 24px 50px rgba(11,30,51,0.16);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--lunar-silver);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            background: rgba(8, 21, 38, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.6rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200,169,81,0.18);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
+
+        .logo-mark {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            display: flex; align-items: center; justify-content: center;
+            color: var(--space-blue); font-size: 1.2rem;
+            box-shadow: 0 4px 14px rgba(200,169,81,0.35);
+        }
+
+        .sn-brand__name { color: #ffffff; font-size: 1.35rem; font-weight: 800; white-space: nowrap; }
+        .sn-brand__tag { color: var(--celestial-gold); font-size: 0.72rem; font-weight: 500; white-space: nowrap; letter-spacing: 1px; }
+
+        .lang-switch {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(200,169,81,0.35);
+            border-radius: 50px;
+            padding: 3px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: none; border: none;
+            color: var(--celestial-gold);
+            font-weight: 700; cursor: pointer;
+            padding: 6px 16px; border-radius: 50px;
+            font-family: inherit;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .lang-btn.active { background: var(--celestial-gold); color: var(--space-blue); }
+        .lang-btn:not(.active):hover { background: rgba(200,169,81,0.2); }
+
+        .nav-menu { display: flex; gap: 0.15rem; list-style: none; flex-wrap: wrap; align-items: center; }
+        .nav-menu > li > a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 0.55rem 0.9rem;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.93rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .nav-menu > li > a:hover, .nav-menu > li > a.active-link { color: var(--celestial-gold); background: rgba(200,169,81,0.1); }
+
+        .dropdown { position: relative; }
+        .dropdown > a::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.55rem;
+            margin: 0 6px;
+            opacity: 0.7;
+        }
+        .dropdown-content {
+            visibility: hidden; opacity: 0;
+            transform: translateY(8px);
+            position: absolute;
+            background: #0e2540;
+            min-width: 230px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(200,169,81,0.2);
+            border-radius: 12px;
+            padding: 0.5rem;
+            z-index: 10;
+            transition: var(--transition);
+        }
+        .dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+        .dropdown-content a {
+            display: block;
+            padding: 0.55rem 0.9rem;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .dropdown-content a:hover { background: rgba(200,169,81,0.12); color: var(--celestial-gold); padding-inline-start: 1.2rem; }
+
+        .menu-toggle {
+            display: none; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white; font-size: 1.2rem; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 10px;
+        }
+
+        /* ===== Page Hero ===== */
+        .page-hero {
+            background: radial-gradient(ellipse at 70% 20%, #1a3a63 0%, var(--space-blue-2) 45%, var(--space-blue) 100%);
+            color: #fff;
+            padding: 5rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero .star {
+            position: absolute; border-radius: 50%;
+            background: #fff; opacity: 0.5;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        @keyframes twinkle { 0%,100%{opacity:.15} 50%{opacity:.7} }
+
+        .page-hero .orbit {
+            position: absolute;
+            border: 1px dashed rgba(200,169,81,0.15);
+            border-radius: 50%;
+            width: 700px; height: 700px;
+            top: -300px; inset-inline-start: -200px;
+            animation: spin 60s linear infinite;
+        }
+        .page-hero .orbit.o2 { width: 450px; height: 450px; top: auto; bottom: -220px; inset-inline-start: auto; inset-inline-end: -120px; animation-duration: 40s; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .page-hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(200,169,81,0.12);
+            border: 1px solid rgba(200,169,81,0.4);
+            color: var(--celestial-gold-light);
+            padding: 6px 18px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff 30%, var(--celestial-gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeUp 0.8s 0.1s ease both;
+        }
+
+        .page-hero p { max-width: 620px; font-size: 1.05rem; color: rgba(255,255,255,0.8); animation: fadeUp 0.8s 0.2s ease both; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+        /* ===== Breadcrumb ===== */
+        .breadcrumb {
+            background: #fff;
+            padding: 0.9rem 5%;
+            border-bottom: 1px solid #eef1f6;
+        }
+        .breadcrumb-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.88rem; color: var(--text-gray);
+        }
+        .breadcrumb-inner a { color: var(--celestial-gold-dark); text-decoration: none; }
+        .breadcrumb-inner a:hover { text-decoration: underline; }
+        .breadcrumb-inner i { font-size: 0.65rem; color: #cbd5e1; }
+
+        /* ===== Filter Bar ===== */
+        .filter-bar {
+            background: #fff;
+            padding: 1.2rem 5%;
+            border-bottom: 1px solid #eef1f6;
+            position: sticky;
+            top: 65px;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+        .filter-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .filter-label { font-weight: 700; color: var(--space-blue-2); font-size: 0.9rem; margin-inline-end: 0.5rem; }
+        .filter-btn {
+            background: var(--lunar-silver);
+            border: 1.5px solid #e2e8f0;
+            color: var(--text-gray);
+            padding: 7px 18px; border-radius: 50px;
+            cursor: pointer; font-family: inherit;
+            font-size: 0.88rem; font-weight: 600;
+            transition: var(--transition);
+        }
+        .filter-btn:hover { border-color: var(--celestial-gold); color: var(--celestial-gold-dark); }
+        .filter-btn.active { background: var(--celestial-gold); border-color: var(--celestial-gold); color: var(--space-blue); }
+
+        /* ===== Section ===== */
+        .section { padding: 5rem 5%; }
+        .section-dark {
+            background: linear-gradient(160deg, var(--space-blue-2), var(--space-blue));
+            color: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-label {
+            display: inline-block;
+            color: var(--celestial-gold-dark);
+            background: rgba(200,169,81,0.12);
+            font-weight: 700; font-size: 0.85rem;
+            padding: 4px 16px; border-radius: 50px;
+            letter-spacing: 1px; margin-bottom: 0.8rem;
+        }
+        .section-dark .section-label { color: var(--celestial-gold-light); background: rgba(200,169,81,0.15); }
+
+        .section-title { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 900; margin-bottom: 0.6rem; }
+        .section-sub { color: var(--text-gray); margin-bottom: 3rem; max-width: 640px; }
+        .section-dark .section-sub { color: rgba(255,255,255,0.7); }
+
+        /* ===== Products Grid ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eef1f6;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(200,169,81,0.3); }
+
+        .product-badge {
+            position: absolute; top: 14px; inset-inline-start: 14px;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            font-size: 0.72rem; font-weight: 800;
+            padding: 4px 12px; border-radius: 50px;
+            z-index: 2;
+        }
+        .product-badge.new { background: linear-gradient(135deg, var(--aurora-teal), var(--aurora-teal-dark)); color: #fff; }
+        .product-badge.sale { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; }
+
+        .product-img-wrap {
+            position: relative;
+            background: linear-gradient(135deg, #f0f4fa, #e8edf5);
+            height: 220px;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .product-img-wrap::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(255,255,255,0.6), transparent);
+        }
+        .product-img-icon {
+            font-size: 5rem;
+            color: var(--space-blue-light);
+            opacity: 0.25;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img-icon { opacity: 0.4; transform: scale(1.1); }
+        .product-img-wrap img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img-wrap img { transform: scale(1.05); }
+
+        .product-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column; }
+
+        .product-category {
+            font-size: 0.78rem; font-weight: 700;
+            color: var(--aurora-teal);
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-name { font-size: 1.15rem; font-weight: 800; color: var(--space-blue-2); margin-bottom: 0.5rem; }
+        .product-desc { font-size: 0.92rem; color: var(--text-gray); margin-bottom: 1.2rem; flex: 1; }
+
+        .product-specs {
+            list-style: none;
+            margin-bottom: 1.4rem;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 1rem;
+        }
+        .product-specs li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.45rem 0;
+            border-bottom: 1px dashed #f1f5f9;
+            font-size: 0.88rem;
+        }
+        .product-specs li:last-child { border-bottom: none; }
+        .spec-key { color: var(--text-gray); font-weight: 500; display: flex; align-items: center; gap: 6px; }
+        .spec-key i { color: var(--celestial-gold-dark); font-size: 0.75rem; width: 14px; }
+        .spec-val { font-weight: 700; color: var(--space-blue-2); }
+
+        .product-footer {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+            gap: 0.75rem;
+        }
+        .product-price { font-size: 1.3rem; font-weight: 900; color: var(--space-blue-2); }
+        .product-price span { font-size: 0.8rem; color: var(--text-gray); font-weight: 500; display: block; }
+
+        .btn-product {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            border: none; cursor: pointer;
+            padding: 10px 20px; border-radius: 50px;
+            font-weight: 700; font-size: 0.88rem;
+            font-family: inherit;
+            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 6px;
+            text-decoration: none;
+        }
+        .btn-product:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(200,169,81,0.4); }
+
+        /* ===== Featured Product ===== */
+        .featured-product {
+            background: linear-gradient(135deg, var(--space-blue-2), var(--space-blue-light));
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(200,169,81,0.2);
+        }
+        .featured-product::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 50%, rgba(200,169,81,0.08), transparent 60%);
+        }
+        .featured-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(200,169,81,0.15);
+            border: 1px solid rgba(200,169,81,0.4);
+            color: var(--celestial-gold-light);
+            padding: 5px 14px; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .featured-product h3 { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 0.8rem; }
+        .featured-product p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.97rem; }
+        .featured-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.8rem; }
+        .feat-spec-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+        }
+        .feat-spec-item .label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+        .feat-spec-item .value { font-size: 1rem; font-weight: 800; color: var(--celestial-gold-light); }
+        .featured-img {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(200,169,81,0.15);
+            border-radius: var(--radius);
+            height: 300px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; z-index: 1;
+        }
+        .featured-img i { font-size: 7rem; color: var(--celestial-gold); opacity: 0.3; }
+
+        /* ===== Comparison Table ===== */
+        .compare-table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); }
+        .compare-table {
+            width: 100%; border-collapse: collapse;
+            background: #fff;
+            font-size: 0.92rem;
+        }
+        .compare-table th {
+            background: var(--space-blue-2);
+            color: #fff;
+            padding: 1rem 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .compare-table th:first-child { text-align: right; background: var(--space-blue); }
+        .compare-table td {
+            padding: 0.85rem 1.2rem;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        .compare-table td:first-child { text-align: right; font-weight: 600; color: var(--space-blue-2); background: #fafbfd; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:hover td { background: #fdfaf2; }
+        .compare-table tr:hover td:first-child { background: #faf7ee; }
+        .check { color: var(--aurora-teal); font-size: 1rem; }
+        .cross { color: #e74c3c; font-size: 1rem; }
+        .highlight-col { background: rgba(200,169,81,0.06) !important; }
+
+        /* ===== CTA Section ===== */
+        .final-cta {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 120%, rgba(200,169,81,0.18), transparent 60%);
+        }
+        .final-cta h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; position: relative; }
+        .final-cta p { margin: 1rem auto 2rem; max-width: 560px; color: rgba(255,255,255,0.75); position: relative; }
+
+        .btn {
+            padding: 14px 34px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            box-shadow: 0 8px 24px rgba(200,169,81,0.35);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(200,169,81,0.45); }
+        .btn-outline { border: 2px solid rgba(200,169,81,0.7); color: var(--celestial-gold-light); }
+        .btn-outline:hover { background: var(--celestial-gold); color: var(--space-blue); transform: translateY(-3px); }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--space-blue); color: #cbd5e1; padding: 4rem 5% 1.5rem; border-top: 1px solid rgba(200,169,81,0.15); }
+        .footer-grid {
+            max-width: 1200px; margin: 0 auto 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+        }
+        .footer-col h4 { color: var(--celestial-gold); margin-bottom: 1.2rem; font-size: 1.05rem; font-weight: 800; }
+        .footer-col a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.7rem; transition: var(--transition); font-size: 0.93rem; }
+        .footer-col a:hover { color: var(--celestial-gold-light); padding-inline-start: 5px; }
+        .footer-col a i { width: 20px; }
+        .copyright {
+            text-align: center; padding-top: 1.8rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.82rem; color: #64748b;
+            max-width: 1200px; margin: 0 auto;
+        }
+
+        /* ===== Floating CTA ===== */
+        .floating-cta {
+            position: fixed; bottom: 28px; inset-inline-start: 28px;
+            background: linear-gradient(135deg, var(--aurora-teal), var(--aurora-teal-dark));
+            color: white; padding: 13px 26px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,168,150,0.4);
+            z-index: 999; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .floating-cta:hover { transform: scale(1.06) translateY(-2px); }
+
+        /* ===== Reveal ===== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .nav-menu { order: 3; width: 100%; justify-content: center; }
+            .featured-product { grid-template-columns: 1fr; }
+            .featured-img { height: 200px; }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; flex-direction: column; padding: 1rem 0; align-items: stretch; }
+            .nav-menu.active { display: flex; }
+            .nav-menu > li > a { display: block; }
+            .dropdown-content { visibility: visible; opacity: 1; transform: none; position: static; background: rgba(255,255,255,0.05); margin: 0 1rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .featured-specs { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body dir="rtl">
+
+    <a href="contact-us.html" class="floating-cta"><i class="fas fa-comments"></i><span>طلب استشارة مجانية</span></a>
+
+    <!-- Navbar -->
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<nav class="sn-nav" aria-label="التنقل الرئيسي">
+  <div class="sn-nav__inner">
+    <a class="sn-brand" href="index.html">
+      <span class="sn-brand__mark" aria-hidden="true"><i class="fas fa-satellite"></i></span>
+      <span class="sn-brand__text">
+        <span class="sn-brand__name">ابتكارات السماء</span>
+        <span class="sn-brand__tag">SKY INNOVATIONS · 4IRT</span>
+      </span>
+    </a>
+    <button class="sn-toggle" type="button" aria-expanded="false" aria-controls="snMenu" aria-label="فتح القائمة">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="sn-menu" id="snMenu" data-open="false">
+      <li><a class="sn-link" href="index.html" data-en="Home">الرئيسية</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snServices">
+          <span data-en="Services">الخدمات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub sn-sub--wide" id="snServices" data-open="false">
+          <span class="sn-sub__head" data-en="SERVICES">خدماتنا</span>
+          <a href="services.html" data-en="Services Overview">نظرة عامة على الخدمات</a>
+          <a href="qibla-request.html" data-en="Qibla Determination">تحديد القبلة</a>
+          <a href="services.html" data-en="Satellite Imagery Analysis">تحليل الصور الفضائية</a>
+          <a href="services.html" data-en="Remote Sensing">الاستشعار عن بعد</a>
+          <a href="services.html" data-en="Network Surveys">المسوحات الشبكية</a>
+          <a href="services.html" data-en="Network Site Optimization">تحسين المواقع الشبكية</a>
+          <a href="services.html" data-en="Astronomical Observatory Control">التحكم بالمراصد الفلكية</a>
+          <a href="services.html" data-en="Space Mission Management">إدارة المهام الفضائية</a>
+          <a href="services.html" data-en="Data Analysis &amp; Extrapolation">تحليل واستقراء البيانات</a>
+          <a href="services.html" data-en="Big Data Processing">معالجة البيانات الضخمة</a>
+          <a href="services.html" data-en="Innovative Solutions">الحلول الابتكارية</a>
+          <a href="services.html" data-en="Research &amp; Development">البحث والتطوير</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snProducts">
+          <span data-en="Products">المنتجات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snProducts" data-open="false">
+          <a href="products.html" data-en="All Products">جميع المنتجات</a>
+          <a href="bicodi-products.html" data-en="BICODI Energy Batteries">بطاريات BICODI للطاقة</a>
+          <a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment">الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li><a class="sn-link" href="projects.html" data-en="Projects">المشاريع</a></li>
+      <li><a class="sn-link" href="majan-academy.html" data-en="Capacity Building">بناء القدرات</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snAbout">
+          <span data-en="Company">عن الشركة</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snAbout" data-open="false">
+          <a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a>
+          <a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a>
+          <a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a>
+          <a href="values.html" data-en="Our Values">قيم الشركة</a>
+        </div>
+      </li>
+      <li><a class="sn-link sn-nav__cta" href="contact-us.html" data-en="Contact Us">تواصل معنا</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+
+    <!-- Page Hero -->
+    <section class="page-hero" id="hero">
+        <div class="orbit"></div>
+        <div class="orbit o2"></div>
+        <div class="page-hero-content">
+            <span class="hero-badge"><i class="fas fa-battery-full"></i> منتجات BICODI لتخزين الطاقة</span>
+            <h1>حلول تخزين الطاقة المتقدمة</h1>
+            <p>أنظمة بطاريات ليثيوم عالية الأداء للاستخدام المنزلي والصناعي، مصممة بأحدث تقنيات الثورة الصناعية الرابعة لضمان كفاءة طاقة استثنائية.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="index.html">الرئيسية</a>
+            <i class="fas fa-chevron-left"></i>
+            <span>المنتجات</span>
+            <i class="fas fa-chevron-left"></i>
+            <span>منتجات BICODI</span>
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-inner">
+            <span class="filter-label"><i class="fas fa-filter"></i> تصفية:</span>
+            <button class="filter-btn active" onclick="filterProducts('all', this)">الكل</button>
+            <button class="filter-btn" onclick="filterProducts('home', this)">تخزين منزلي</button>
+            <button class="filter-btn" onclick="filterProducts('modular', this)">أنظمة معيارية</button>
+            <button class="filter-btn" onclick="filterProducts('battery', this)">بطاريات</button>
+            <button class="filter-btn" onclick="filterProducts('custom', this)">حزم مخصصة</button>
+        </div>
+    </div>
+
+    <!-- Featured Product -->
+    <section class="section" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="featured-product reveal">
+                <div style="position:relative;z-index:1;">
+                    <span class="featured-badge"><i class="fas fa-star"></i> المنتج المميز</span>
+                    <h3>BICODI BD048200P10</h3>
+                    <p>نظام تخزين الطاقة المنزلي الأكثر تطوراً، يوفر طاقة نظيفة وموثوقة على مدار الساعة مع إدارة ذكية عبر التطبيق.</p>
+                    <div class="featured-specs">
+                        <div class="feat-spec-item">
+                            <div class="label">سعة التخزين</div>
+                            <div class="value">10.24 kWh</div>
+                        </div>
+                        <div class="feat-spec-item">
+                            <div class="label">الجهد الاسمي</div>
+                            <div class="value">51.2V DC</div>
+                        </div>
+                        <div class="feat-spec-item">
+                            <div class="label">دورات الشحن</div>
+                            <div class="value">≥6000 دورة</div>
+                        </div>
+                        <div class="feat-spec-item">
+                            <div class="label">السعة المتاحة</div>
+                            <div class="value">10 kWh</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                        <a href="contact-us.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i><span>طلب الآن</span></a>
+                        <a href="contact-us.html" class="btn btn-outline"><i class="fas fa-file-pdf"></i><span>تحميل الكتالوج</span></a>
+                    </div>
+                </div>
+                <div class="featured-img">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="section" style="padding-top: 1rem;" id="products-section">
+        <div class="container">
+            <span class="section-label">منتجاتنا</span>
+            <h2 class="section-title">تشكيلة منتجات BICODI</h2>
+            <p class="section-sub">حلول تخزين طاقة متكاملة للاستخدامات المنزلية والتجارية والصناعية</p>
+
+            <div class="products-grid" id="productsGrid">
+
+                <!-- Product 1: BD048200P10 -->
+                <div class="product-card reveal" data-category="home">
+                    <span class="product-badge new">جديد</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/bd048200p10.png" alt="BD048200P10" style="width:90px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">تخزين منزلي</div>
+                        <div class="product-name">BD048200P10</div>
+                        <div class="product-desc">نظام تخزين طاقة منزلي مدمج وخفيف الوزن، مثالي للمنازل الصغيرة والمتوسطة مع واجهة تحكم ذكية.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>نـوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>سـعـة البطارية</span><span class="spec-val">200 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>وزن البطارية</span><span class="spec-val">93.5 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>البـعـد</span><span class="spec-val">860×500×138mm</span></li>
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>السعة (KWH)</span><span class="spec-val">10.24 kWh</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">51.2V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">≥6000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-wifi"></i>وضع الإتصال</span><span class="spec-val">CAN, RS485</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">10 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                على حسب الطلب
+                                <span>للاستفسار تواصل معنا</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-info-circle"></i>التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: BD048100P05 -->
+                <div class="product-card reveal" data-category="home">
+                    <span class="product-badge">الأكثر مبيعاً</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/bd048100p-05.png" alt="BD048100P05" style="width:110px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">تخزين منزلي</div>
+                        <div class="product-name">BD048100P05</div>
+                        <div class="product-desc">نظام تخزين طاقة منزلي متكامل بسعة 5.12 كيلوواط ساعة مع نظام إدارة بطارية BMS متطور وتطبيق ذكي.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>نـوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>سـعـة البطارية</span><span class="spec-val">100 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>وزن البطارية</span><span class="spec-val">50.9 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>البـعـد</span><span class="spec-val">603×443×153mm</span></li>
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>السعة (KWH)</span><span class="spec-val">5.12 kWh</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">51.2V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">≥6000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-wifi"></i>وضع الإتصال</span><span class="spec-val">CAN, RS485</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">10 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                على حسب الطلب
+                                <span>للاستفسار تواصل معنا</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-info-circle"></i>التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: BD048314W16 -->
+                <div class="product-card reveal" data-category="modular">
+                    <span class="product-badge">الأكثر مبيعاً</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/bd048314w-16.png" alt="BD048314W16" style="width:110px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">أنظمة معيارية</div>
+                        <div class="product-name">BD048314W16</div>
+                        <div class="product-desc">نظام تخزين معياري قابل للتوسعة يصل إلى 16.1 كيلوواط ساعة، مثالي للمشاريع التجارية والصناعية الصغيرة.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>نـوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>سـعـة البطارية</span><span class="spec-val">314 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>وزن البطارية</span><span class="spec-val">130 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>البـعـد</span><span class="spec-val">532×880×175.5mm</span></li>
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>السعة (KWH)</span><span class="spec-val">16.1 kWh</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">51.2V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">≥6000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-wifi"></i>وضع الإتصال</span><span class="spec-val">CAN, RS485</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">10 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                على حسب الطلب
+                                <span>للاستفسار تواصل معنا</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-info-circle"></i>التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: BD024314R07 -->
+                <div class="product-card reveal" data-category="battery">
+                    <span class="product-badge sale">عرض خاص</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/bd048314w-16.png" alt="BD024314R07" style="width:110px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">بطاريات</div>
+                        <div class="product-name">BD024314R07</div>
+                        <div class="product-desc">بطارية ليثيوم فوسفات الحديد 25.6 فولت عالية الأداء للاستخدامات المتنوعة، خفيفة الوزن وطويلة العمر مقارنة بالبطاريات التقليدية.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>نـوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>سـعـة البطارية</span><span class="spec-val">314 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>وزن البطارية</span><span class="spec-val">66.3 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>البـعـد</span><span class="spec-val">520×450×235mm</span></li>
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>السعة (KWH)</span><span class="spec-val">8.04 kWh</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">25.6V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">≥6000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-wifi"></i>وضع الإتصال</span><span class="spec-val">CAN, RS485</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">10 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                على حسب الطلب
+                                <span>للاستفسار تواصل معنا</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-info-circle"></i>التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: BD12-100 -->
+                <div class="product-card reveal" data-category="battery">
+                    <span class="product-badge sale">عرض خاص</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/lifepo4-12v-100ah.png" alt="BD12-100" style="width:210px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">بطاريات</div>
+                        <div class="product-name">BD12-100</div>
+                        <div class="product-desc">بطارية ليثيوم 12.8 فولت بسعة 100 أمبير ساعة، مثالية لأنظمة الطاقة الشمسية والمركبات الكهربائية والتطبيقات الصناعية.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>الموديل</span><span class="spec-val">BD12-100</span></li>
+                            <li><span class="spec-key"><i class="fas fa-microchip"></i>نوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">12.8V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>السعة</span><span class="spec-val">100 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>الوزن</span><span class="spec-val">10 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">&gt;4000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">3 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                على حسب الطلب
+                                <span>للاستفسار تواصل معنا</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-info-circle"></i>التفاصيل</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: BD12-200 / BD24-200 -->
+                <div class="product-card reveal" data-category="custom">
+                    <span class="product-badge sale">عرض خاص</span>
+                    <div class="product-img-wrap">
+                        <img loading="lazy" decoding="async" src="images/lifepo4-oem-12v24v-200ah.png" alt="BD12-200 / BD24-200" style="width:275px; height:auto; display:block;">
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">حزم مخصصة</div>
+                        <div class="product-name">BD12-200 / BD24-200</div>
+                        <div class="product-desc">بطاريات ليثيوم 200 أمبير ساعة متوفرة بنسختين 12.8V و 25.6V، مصممة خصيصاً وفق متطلبات مشروعك مع دعم هندسي متكامل.</div>
+                        <ul class="product-specs">
+                            <li><span class="spec-key"><i class="fas fa-bolt"></i>الموديلات</span><span class="spec-val">BD12-200 / BD24-200</span></li>
+                            <li><span class="spec-key"><i class="fas fa-microchip"></i>نوع البطارية</span><span class="spec-val">LiFePO4</span></li>
+                            <li><span class="spec-key"><i class="fas fa-plug"></i>الجهد الاسمي</span><span class="spec-val">12.8V / 25.6V</span></li>
+                            <li><span class="spec-key"><i class="fas fa-weight-hanging"></i>السعة</span><span class="spec-val">200 AH</span></li>
+                            <li><span class="spec-key"><i class="fas fa-recycle"></i>الوزن</span><span class="spec-val">19 KG / 40 KG</span></li>
+                            <li><span class="spec-key"><i class="fas fa-sync-alt"></i>دورات الحياة</span><span class="spec-val">&gt;4000</span></li>
+                            <li><span class="spec-key"><i class="fas fa-shield-alt"></i>الضمان</span><span class="spec-val">3 سنوات</span></li>
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                تصميم مخصص
+                                <span>تواصل للحصول على عرض سعر</span>
+                            </div>
+                            <a href="contact-us.html" class="btn-product"><i class="fas fa-paper-plane"></i>طلب تصميم</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section" style="padding-top: 1rem;">
+        <div class="container">
+            <span class="section-label">مقارنة المنتجات</span>
+            <h2 class="section-title">مقارنة مواصفات المنتجات</h2>
+            <p class="section-sub">اختر المنتج الأنسب لاحتياجاتك من خلال مقارنة المواصفات الرئيسية</p>
+            <div class="compare-table-wrap reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>المواصفة</th>
+                            <th>BD048100P05</th>
+                            <th class="highlight-col">BD048200P10 ⭐</th>
+                            <th>BD048314W16</th>
+                            <th>BD12-100</th>
+                            <th>BD24-200</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>سعة التخزين</td>
+                            <td>5.12 kWh</td>
+                            <td class="highlight-col">10.24 kWh</td>
+                            <td>16.1 kWh</td>
+                            <td>1.28 kWh</td>
+                            <td>5.12 kWh</td>
+                        </tr>
+                        <tr>
+                            <td>الجهد الاسمي</td>
+                            <td>51.2V</td>
+                            <td class="highlight-col">51.2V</td>
+                            <td>51.2V</td>
+                            <td>12.8V</td>
+                            <td>25.6V</td>
+                        </tr>
+                        <tr>
+                            <td>السعة (AH)</td>
+                            <td>100 AH</td>
+                            <td class="highlight-col">200 AH</td>
+                            <td>314 AH</td>
+                            <td>100 AH</td>
+                            <td>200 AH</td>
+                        </tr>
+                        <tr>
+                            <td>دورات الشحن</td>
+                            <td>≥6000</td>
+                            <td class="highlight-col">≥6000</td>
+                            <td>≥6000</td>
+                            <td>&gt;4000</td>
+                            <td>&gt;4000</td>
+                        </tr>
+                        <tr>
+                            <td>الوزن</td>
+                            <td>50.9 KG</td>
+                            <td class="highlight-col">93.5 KG</td>
+                            <td>130 KG</td>
+                            <td>10 KG</td>
+                            <td>40 KG</td>
+                        </tr>
+                        <tr>
+                            <td>وضع الإتصال</td>
+                            <td>CAN, RS485</td>
+                            <td class="highlight-col">CAN, RS485</td>
+                            <td>CAN, RS485</td>
+                            <td><i class="fas fa-minus" style="color:#94a3b8;"></i></td>
+                            <td><i class="fas fa-minus" style="color:#94a3b8;"></i></td>
+                        </tr>
+                        <tr>
+                            <td>الضمان</td>
+                            <td>10 سنوات</td>
+                            <td class="highlight-col">10 سنوات</td>
+                            <td>10 سنوات</td>
+                            <td>3 سنوات</td>
+                            <td>3 سنوات</td>
+                        </tr>
+                        <tr>
+                            <td>الاستخدام المثالي</td>
+                            <td>منزلي صغير</td>
+                            <td class="highlight-col">منزلي متوسط</td>
+                            <td>تجاري / صناعي</td>
+                            <td>شمسي / متعدد</td>
+                            <td>شمسي / صناعي</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-dark final-cta">
+        <div class="container">
+            <h2>هل تحتاج إلى حل مخصص لمشروعك؟</h2>
+            <p>فريقنا الهندسي المتخصص جاهز لتصميم حل تخزين طاقة يناسب متطلباتك بدقة. تواصل معنا للحصول على استشارة مجانية.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="contact-us.html" class="btn btn-primary"><i class="fas fa-file-invoice"></i><span>طلب عرض سعر احترافي</span></a>
+                <a href="products.html" class="btn btn-outline"><i class="fas fa-download"></i><span>تحميل كتالوج المنتجات</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    </main>
+<footer class="sn-footer">
+  <div class="sn-footer__grid">
+    <div>
+      <h3 data-en="Sky Innovations">ابتكارات السماء</h3>
+      <p data-en="A leading Omani company harnessing 4IR technologies, AI and space data analytics to serve vital government and private sectors.">شركة عُمانية رائدة في توظيف تقنيات الثورة الصناعية الرابعة والذكاء الاصطناعي وتحليل البيانات الفضائية لخدمة القطاعات الحيوية الحكومية والخاصة.</p>
+      <div class="sn-social">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/96812345678" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@spaceinnov.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-en="Company">الشركة</h4>
+      <ul>
+        <li><a href="index.html" data-en="Home">الرئيسية</a></li>
+        <li><a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a></li>
+        <li><a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a></li>
+        <li><a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a></li>
+        <li><a href="values.html" data-en="Our Values">قيم الشركة</a></li>
+        <li><a href="projects.html" data-en="Projects">المشاريع</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Services &amp; Products">الخدمات والمنتجات</h4>
+      <ul>
+        <li><a href="services.html" data-en="Corporate Services">الخدمات المؤسسية</a></li>
+        <li><a href="qibla-request.html" data-en="Qibla Determination">تحديد اتجاه القبلة</a></li>
+        <li><a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a></li>
+        <li><a href="bicodi-products.html" data-en="BICODI Batteries">بطاريات BICODI</a></li>
+        <li><a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a></li>
+        <li><a href="majan-academy.html" data-en="Majan Training Academy">أكاديمية مجان للتدريب</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Contact Us">تواصل معنا</h4>
+      <ul>
+        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@spaceinnov.com">info@spaceinnov.com</a></li>
+        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+96812345678">+968 1234 5678</a></li>
+        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/96812345678" target="_blank" rel="noopener" data-en="WhatsApp Support">الدعم عبر واتساب</a></li>
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> مسقط، سلطنة عُمان</li>
+        <li><a href="contact-us.html" data-en="Send a Request">إرسال طلب أو استفسار</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sn-footer__bottom">© 2026 شركة ابتكارات السماء للتقنية والفضاء — جميع الحقوق محفوظة | 4IRT تقنيات الثورة الصناعية الرابعة</div>
+</footer>
+
+    <script>
+        // Stars
+        (function(){
+            const hero = document.getElementById('hero');
+            for (let i = 0; i < 50; i++) {
+                const s = document.createElement('div');
+                s.className = 'star';
+                const size = Math.random() * 2.5 + 1;
+                s.style.width = size + 'px';
+                s.style.height = size + 'px';
+                s.style.top = Math.random() * 100 + '%';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.animationDelay = (Math.random() * 3) + 's';
+                hero.appendChild(s);
+            }
+        })();
+
+        // Filter
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.product-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+    <script src="assets/site.js" defer></script>
+</body>
+</html>

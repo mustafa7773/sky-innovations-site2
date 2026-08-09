@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>قيم الشركة | ابتكارات السماء</title>
+    <meta name="description" content="القيم المؤسسية لشركة ابتكارات السماء - الابتكار، الجودة، الاستدامة، والنزاهة">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-blue: #081526;
+            --space-blue-2: #0B1E33;
+            --space-blue-light: #14304f;
+            --celestial-gold: #C8A951;
+            --celestial-gold-light: #e2c877;
+            --celestial-gold-dark: #a88938;
+            --lunar-silver: #F6F8FC;
+            --aurora-teal: #00A896;
+            --aurora-teal-dark: #008f7a;
+            --text-dark: #16233a;
+            --text-gray: #64748b;
+            --shadow-sm: 0 4px 12px rgba(11,30,51,0.06);
+            --shadow-md: 0 12px 30px rgba(11,30,51,0.10);
+            --shadow-lg: 0 24px 50px rgba(11,30,51,0.16);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--lunar-silver);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        [dir="rtl"] { text-align: right; }
+        [dir="ltr"] { text-align: left; }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            background: rgba(8, 21, 38, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.6rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200,169,81,0.18);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
+
+        .logo-mark {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            display: flex; align-items: center; justify-content: center;
+            color: var(--space-blue); font-size: 1.2rem;
+            box-shadow: 0 4px 14px rgba(200,169,81,0.35);
+        }
+
+        .sn-brand__name {
+            color: #fff;
+            font-size: 1.35rem;
+            font-weight: 800;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+        }
+
+        .sn-brand__tag {
+            color: var(--celestial-gold);
+            font-size: 0.72rem;
+            font-weight: 500;
+            white-space: nowrap;
+            letter-spacing: 1px;
+        }
+
+        .lang-switch {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(200,169,81,0.35);
+            border-radius: 50px;
+            padding: 3px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: none; border: none;
+            color: var(--celestial-gold);
+            font-weight: 700; cursor: pointer;
+            padding: 6px 16px; border-radius: 50px;
+            font-family: inherit;
+            transition: var(--transition);
+            font-size: 0.85rem;
+        }
+        .lang-btn.active { background: var(--celestial-gold); color: var(--space-blue); }
+        .lang-btn:not(.active):hover { background: rgba(200,169,81,0.2); }
+
+        .nav-menu {
+            display: flex; gap: 0.15rem; list-style: none;
+            flex-wrap: wrap; align-items: center;
+        }
+
+        .nav-menu > li > a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            padding: 0.55rem 0.9rem;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.93rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .nav-menu > li > a:hover { color: var(--celestial-gold); background: rgba(200,169,81,0.1); }
+
+        .dropdown { position: relative; }
+        .dropdown > a::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.55rem;
+            margin: 0 6px;
+            opacity: 0.7;
+        }
+        .dropdown-content {
+            visibility: hidden; opacity: 0;
+            transform: translateY(8px);
+            position: absolute;
+            background: #0e2540;
+            min-width: 230px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(200,169,81,0.2);
+            border-radius: 12px;
+            padding: 0.5rem;
+            z-index: 10;
+            transition: var(--transition);
+        }
+        .dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+        .dropdown-content a {
+            display: block;
+            padding: 0.55rem 0.9rem;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .dropdown-content a:hover { background: rgba(200,169,81,0.12); color: var(--celestial-gold); padding-inline-start: 1.2rem; }
+
+        .menu-toggle {
+            display: none; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white; font-size: 1.2rem; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 10px;
+        }
+
+        /* ===== Page Hero ===== */
+        .page-hero {
+            background: radial-gradient(ellipse at 70% 20%, #1a3a63 0%, var(--space-blue-2) 45%, var(--space-blue) 100%);
+            color: #fff;
+            padding: 4.5rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-hero .star {
+            position: absolute; border-radius: 50%;
+            background: #fff; opacity: 0.5;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        @keyframes twinkle { 0%,100%{opacity:.15} 50%{opacity:.7} }
+
+        .page-hero .orbit {
+            position: absolute;
+            border: 1px dashed rgba(200,169,81,0.12);
+            border-radius: 50%;
+            width: 500px; height: 500px;
+            top: -200px; inset-inline-start: -150px;
+            animation: spin 60s linear infinite;
+        }
+        .page-hero .orbit.o2 { width: 350px; height: 350px; top: auto; bottom: -160px; inset-inline-start: auto; inset-inline-end: -100px; animation-duration: 40s; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .page-hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+
+        .page-hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(200,169,81,0.12);
+            border: 1px solid rgba(200,169,81,0.4);
+            color: var(--celestial-gold-light);
+            padding: 6px 18px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600;
+            margin-bottom: 1.2rem;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(90deg, #fff 30%, var(--celestial-gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeUp 0.8s 0.1s ease both;
+        }
+
+        .page-hero-desc {
+            max-width: 560px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            animation: fadeUp 0.8s 0.2s ease both;
+        }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+        /* ===== Breadcrumb ===== */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 5%;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .breadcrumb a {
+            color: var(--celestial-gold-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover { color: var(--celestial-gold); }
+        .breadcrumb span { margin: 0 6px; color: #cbd5e1; }
+
+        /* ===== Sections ===== */
+        .section { padding: 5rem 5%; }
+        .section-dark {
+            background: linear-gradient(160deg, var(--space-blue-2), var(--space-blue));
+            color: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-label {
+            display: inline-block;
+            color: var(--celestial-gold-dark);
+            background: rgba(200,169,81,0.12);
+            font-weight: 700; font-size: 0.85rem;
+            padding: 4px 16px; border-radius: 50px;
+            letter-spacing: 1px; margin-bottom: 0.8rem;
+        }
+        .section-dark .section-label { color: var(--celestial-gold-light); }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+            font-weight: 900;
+            margin-bottom: 0.6rem;
+        }
+        .section-sub { color: var(--text-gray); margin-bottom: 3rem; max-width: 640px; }
+        .section-dark .section-sub { color: rgba(255,255,255,0.7); }
+
+        /* ===== Values Intro ===== */
+        .values-intro {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3.5rem;
+        }
+        .values-intro p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+        }
+
+        /* ===== Values Grid ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .value-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eef1f6;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            top: 0; inset-inline-end: 0;
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(200,169,81,0.06), transparent 70%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+            transition: var(--transition);
+        }
+
+        .value-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(200,169,81,0.3); }
+        .value-card:hover::after { transform: translate(20%, -20%) scale(1.3); }
+
+        .value-number {
+            flex-shrink: 0;
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            box-shadow: 0 6px 18px rgba(200,169,81,0.3);
+        }
+
+        .value-card:nth-child(even) .value-number {
+            background: linear-gradient(135deg, var(--aurora-teal), var(--aurora-teal-dark));
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0,168,150,0.3);
+        }
+
+        .value-body h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .value-body p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .value-icon-watermark {
+            position: absolute;
+            bottom: -10px;
+            inset-inline-end: 16px;
+            font-size: 4rem;
+            color: rgba(200,169,81,0.06);
+            pointer-events: none;
+        }
+
+        /* ===== Values Manifesto ===== */
+        .manifesto {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .manifesto::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(200,169,81,0.12), transparent 50%);
+        }
+        .manifesto-content {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .manifesto-content .quote-icon-lg {
+            font-size: 3rem;
+            color: var(--celestial-gold);
+            opacity: 0.5;
+            margin-bottom: 1.5rem;
+        }
+        .manifesto-content blockquote {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+        .manifesto-content .attribution {
+            color: var(--celestial-gold-light);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ===== Values in Action ===== */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .action-card {
+            background: #fff;
+            padding: 2rem 1.8rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eef1f6;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .action-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .action-icon {
+            width: 64px; height: 64px; border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200,169,81,0.15), rgba(0,168,150,0.1));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--celestial-gold-dark);
+            margin: 0 auto 1.2rem;
+        }
+        .action-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .action-card p { color: var(--text-gray); font-size: 0.92rem; }
+
+        /* ===== Final CTA ===== */
+        .final-cta {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at 50% 120%, rgba(200,169,81,0.18), transparent 60%);
+        }
+        .final-cta h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; position: relative; }
+        .final-cta p { margin: 1rem auto 2rem; max-width: 560px; color: rgba(255,255,255,0.75); position: relative; }
+
+        .btn {
+            padding: 14px 34px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            box-shadow: 0 8px 24px rgba(200,169,81,0.35);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(200,169,81,0.45); }
+
+        /* ===== Footer ===== */
+        .footer { background: var(--space-blue); color: #cbd5e1; padding: 4rem 5% 1.5rem; border-top: 1px solid rgba(200,169,81,0.15); }
+        .footer-grid {
+            max-width: 1200px; margin: 0 auto 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+        }
+        .footer-col h4 {
+            color: var(--celestial-gold);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+        .footer-col a {
+            color: #94a3b8; text-decoration: none; display: block;
+            margin-bottom: 0.7rem; transition: var(--transition); font-size: 0.93rem;
+        }
+        .footer-col a:hover { color: var(--celestial-gold-light); padding-inline-start: 5px; }
+        .footer-col a i { width: 20px; }
+        .copyright {
+            text-align: center; padding-top: 1.8rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.82rem; color: #64748b;
+            max-width: 1200px; margin: 0 auto;
+        }
+
+        /* ===== Floating CTA ===== */
+        .floating-cta {
+            position: fixed; bottom: 28px; inset-inline-start: 28px;
+            background: linear-gradient(135deg, var(--aurora-teal), var(--aurora-teal-dark));
+            color: white; padding: 13px 26px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,168,150,0.4);
+            z-index: 999; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .floating-cta:hover { transform: scale(1.06) translateY(-2px); }
+
+        /* ===== Reveal on scroll ===== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .nav-menu { order: 3; width: 100%; justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; flex-direction: column; padding: 1rem 0; align-items: stretch; }
+            .nav-menu.active { display: flex; }
+            .nav-menu > li > a { display: block; }
+            .dropdown-content { visibility: visible; opacity: 1; transform: none; position: static; background: rgba(255,255,255,0.05); margin: 0 1rem; }
+            .page-hero { padding: 3.5rem 6% 3rem; }
+            .value-card { flex-direction: column; text-align: center; align-items: center; }
+            .floating-cta { padding: 11px 20px; font-size: 0.9rem; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body dir="rtl">
+    <a href="contact-us.html" class="floating-cta" id="floatingCta"><i class="fas fa-comments"></i><span>طلب استشارة مجانية</span></a>
+
+    <!-- Navigation -->
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<nav class="sn-nav" aria-label="التنقل الرئيسي">
+  <div class="sn-nav__inner">
+    <a class="sn-brand" href="index.html">
+      <span class="sn-brand__mark" aria-hidden="true"><i class="fas fa-satellite"></i></span>
+      <span class="sn-brand__text">
+        <span class="sn-brand__name">ابتكارات السماء</span>
+        <span class="sn-brand__tag">SKY INNOVATIONS · 4IRT</span>
+      </span>
+    </a>
+    <button class="sn-toggle" type="button" aria-expanded="false" aria-controls="snMenu" aria-label="فتح القائمة">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="sn-menu" id="snMenu" data-open="false">
+      <li><a class="sn-link" href="index.html" data-en="Home">الرئيسية</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snServices">
+          <span data-en="Services">الخدمات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub sn-sub--wide" id="snServices" data-open="false">
+          <span class="sn-sub__head" data-en="SERVICES">خدماتنا</span>
+          <a href="services.html" data-en="Services Overview">نظرة عامة على الخدمات</a>
+          <a href="qibla-request.html" data-en="Qibla Determination">تحديد القبلة</a>
+          <a href="services.html" data-en="Satellite Imagery Analysis">تحليل الصور الفضائية</a>
+          <a href="services.html" data-en="Remote Sensing">الاستشعار عن بعد</a>
+          <a href="services.html" data-en="Network Surveys">المسوحات الشبكية</a>
+          <a href="services.html" data-en="Network Site Optimization">تحسين المواقع الشبكية</a>
+          <a href="services.html" data-en="Astronomical Observatory Control">التحكم بالمراصد الفلكية</a>
+          <a href="services.html" data-en="Space Mission Management">إدارة المهام الفضائية</a>
+          <a href="services.html" data-en="Data Analysis &amp; Extrapolation">تحليل واستقراء البيانات</a>
+          <a href="services.html" data-en="Big Data Processing">معالجة البيانات الضخمة</a>
+          <a href="services.html" data-en="Innovative Solutions">الحلول الابتكارية</a>
+          <a href="services.html" data-en="Research &amp; Development">البحث والتطوير</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snProducts">
+          <span data-en="Products">المنتجات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snProducts" data-open="false">
+          <a href="products.html" data-en="All Products">جميع المنتجات</a>
+          <a href="bicodi-products.html" data-en="BICODI Energy Batteries">بطاريات BICODI للطاقة</a>
+          <a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment">الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li><a class="sn-link" href="projects.html" data-en="Projects">المشاريع</a></li>
+      <li><a class="sn-link" href="majan-academy.html" data-en="Capacity Building">بناء القدرات</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snAbout">
+          <span data-en="Company">عن الشركة</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snAbout" data-open="false">
+          <a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a>
+          <a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a>
+          <a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a>
+          <a href="values.html" data-en="Our Values">قيم الشركة</a>
+        </div>
+      </li>
+      <li class="sn-lang" role="group" aria-label="اللغة">
+        <button type="button" class="lang-btn active" onclick="setLanguage('ar', event)">العربية</button>
+        <button type="button" class="lang-btn" onclick="setLanguage('en', event)">English</button>
+      </li>
+      <li><a class="sn-link sn-nav__cta" href="contact-us.html" data-en="Contact Us">تواصل معنا</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+
+    <!-- Page Hero -->
+    <section class="page-hero" id="pageHero">
+        <div class="orbit"></div>
+        <div class="orbit o2"></div>
+        <div class="page-hero-content">
+            <span class="page-hero-badge"><i class="fas fa-gem"></i> <span id="heroBadge">هويتنا المؤسسية</span></span>
+            <h1 id="heroTitle">قيم الشركة</h1>
+            <p class="page-hero-desc" id="heroDesc">المبادئ الراسخة التي تشكل أساس كل قرار نتخذه وكل مشروع ننفذه</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html" id="breadHome">الرئيسية</a>
+        <span>/</span>
+        <a href="about-us.html" id="breadAbout">نبذة عن الشركة</a>
+        <span>/</span>
+        <strong id="breadCurrent">قيم الشركة</strong>
+    </div>
+
+    <!-- Values Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="values-intro reveal">
+                <span class="section-label" id="introLabel">منهجنا</span>
+                <h2 class="section-title" id="introTitle">قيمنا المؤسسية الثمانية</h2>
+                <p id="introText">في ابتكارات السماء، نؤمن بأن القيم هي البوصلة التي توجه مسيرتنا نحو التميز. هذه المبادئ الثمانية تمثل الحمض النووي لثقافتنا المؤسسية، وتنعكس في كل تفاعل مع عملائنا وشركائنا ومجتمعنا.</p>
+            </div>
+
+            <!-- Values Cards -->
+            <div class="values-grid">
+                <!-- Value 1: الابتكار -->
+                <div class="value-card reveal">
+                    <div class="value-number">01</div>
+                    <div class="value-body">
+                        <h3 id="v1Title">الابتكار والإبداع</h3>
+                        <p id="v1Desc">نتبنى ثقافة الابتكار المستمر ونسعى دائماً لتطوير حلول تقنية رائدة تتجاوز التوقعات. نستثمر في البحث والتطوير لخلق تقنيات فضائية متقدمة تخدم البشرية.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-lightbulb"></i></div>
+                </div>
+
+                <!-- Value 2: الجودة والتميز -->
+                <div class="value-card reveal">
+                    <div class="value-number">02</div>
+                    <div class="value-body">
+                        <h3 id="v2Title">الجودة والتميز</h3>
+                        <p id="v2Desc">نلتزم بأعلى معايير الجودة في كل مشروع نقوم به. التميز ليس هدفاً بل أسلوب حياة في مؤسستنا، ونسعى لتحقيقه في أدق التفاصيل.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-medal"></i></div>
+                </div>
+
+                <!-- Value 3: الاستدامة -->
+                <div class="value-card reveal">
+                    <div class="value-number">03</div>
+                    <div class="value-body">
+                        <h3 id="v3Title">الاستدامة والمسؤولية البيئية</h3>
+                        <p id="v3Desc">نعمل على تطوير تقنيات تراعي البيئة وتساهم في استدامة الموارد الطبيعية. نؤمن بأن التقدم التقني يجب أن يسير جنباً إلى جنب مع الحفاظ على كوكبنا.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-leaf"></i></div>
+                </div>
+
+                <!-- Value 4: النزاهة والشفافية -->
+                <div class="value-card reveal">
+                    <div class="value-number">04</div>
+                    <div class="value-body">
+                        <h3 id="v4Title">النزاهة والشفافية</h3>
+                        <p id="v4Desc">نمارس أعمالنا بأقصى درجات النزاهة والشفافية مع جميع الأطراف. الصدق والأمانة هما حجر الزاوية في علاقاتنا مع العملاء والشركاء والموظفين.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-balance-scale"></i></div>
+                </div>
+
+                <!-- Value 5: العمل الجماعي -->
+                <div class="value-card reveal">
+                    <div class="value-number">05</div>
+                    <div class="value-body">
+                        <h3 id="v5Title">العمل الجماعي وروح الفريق</h3>
+                        <p id="v5Desc">نؤمن بأن الإنجازات العظيمة تتحقق من خلال العمل الجماعي. نبني فرقاً متناغمة تجمع بين الخبرات المتنوعة لتحقيق أهداف مشتركة بروح التعاون والاحترام المتبادل.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-people-arrows"></i></div>
+                </div>
+
+                <!-- Value 6: المسؤولية الوطنية -->
+                <div class="value-card reveal">
+                    <div class="value-number">06</div>
+                    <div class="value-body">
+                        <h3 id="v6Title">المسؤولية الوطنية والمجتمعية</h3>
+                        <p id="v6Desc">نفخر بدورنا في دعم رؤية الوطن وبناء القدرات الوطنية في قطاع الفضاء والتقنية. نستثمر في تطوير الكفاءات المحلية ونقل المعرفة للمساهمة في نهضة مجتمعنا.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-flag"></i></div>
+                </div>
+
+                <!-- Value 7: التعلم المستمر -->
+                <div class="value-card reveal">
+                    <div class="value-number">07</div>
+                    <div class="value-body">
+                        <h3 id="v7Title">التعلم المستمر والتطوير</h3>
+                        <p id="v7Desc">نستثمر في تطوير قدرات فريقنا باستمرار ونواكب أحدث التطورات في مجالات الذكاء الاصطناعي وعلوم الفضاء. المعرفة المتجددة هي وقود ابتكاراتنا.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-graduation-cap"></i></div>
+                </div>
+
+                <!-- Value 8: التركيز على العميل -->
+                <div class="value-card reveal">
+                    <div class="value-number">08</div>
+                    <div class="value-body">
+                        <h3 id="v8Title">التركيز على العميل وشراكات النجاح</h3>
+                        <p id="v8Desc">نضع عملاءنا في قلب كل ما نقوم به. نفهم احتياجاتهم بعمق ونصمم حلولاً مخصصة تحقق أهدافهم وتتجاوز تطلعاتهم. نجاح عملائنا هو نجاحنا.</p>
+                    </div>
+                    <div class="value-icon-watermark"><i class="fas fa-handshake"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="section section-dark manifesto">
+        <div class="container manifesto-content reveal">
+            <div class="quote-icon-lg"><i class="fas fa-quote-right"></i></div>
+            <blockquote id="manifestoText">
+                قيمنا ليست مجرد كلمات نكتبها على الجدران، بل هي نبض مؤسستنا وهويتنا التي نمارسها يومياً. نؤمن بأن التكنولوجيا المتقدمة لا قيمة لها بدون مبادئ أخلاقية راسخة توجهها نحو خدمة الإنسان وبناء المستقبل.
+            </blockquote>
+            <p class="attribution" id="manifestoAttr">— الفريق القيادي لشركة ابتكارات السماء</p>
+        </div>
+    </section>
+
+    <!-- Values in Action -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label reveal" id="actionLabel">تطبيق القيم</span>
+            <h2 class="section-title reveal" id="actionTitle">قيمنا في الممارسة العملية</h2>
+            <p class="section-sub reveal" id="actionSub">كيف تترجم قيمنا إلى واقع ملموس في مشاريعنا وخدماتنا</p>
+            <div class="action-grid">
+                <div class="action-card reveal">
+                    <div class="action-icon"><i class="fas fa-microchip"></i></div>
+                    <h3 id="act1Title"></h3>
+                    <p id="act1Desc"></p>
+                </div>
+                <div class="action-card reveal">
+                    <div class="action-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 id="act2Title"></h3>
+                    <p id="act2Desc"></p>
+                </div>
+                <div class="action-card reveal">
+                    <div class="action-icon"><i class="fas fa-seedling"></i></div>
+                    <h3 id="act3Title"></h3>
+                    <p id="act3Desc"></p>
+                </div>
+                <div class="action-card reveal">
+                    <div class="action-icon"><i class="fas fa-users"></i></div>
+                    <h3 id="act4Title"></h3>
+                    <p id="act4Desc"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-dark final-cta">
+        <div class="container">
+            <h2 id="finalCtaTitle">هل تشاركنا نفس القيم؟</h2>
+            <p id="finalCtaText">تعرف على كيف يمكن لقيمنا المشتركة أن تبني شراكة استراتيجية ناجحة لمشروعك القادم.</p>
+            <a href="contact-us.html" class="btn btn-primary" id="finalCtaBtn"><i class="fas fa-file-invoice"></i><span>تواصل مع فريقنا</span></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    </main>
+<footer class="sn-footer">
+  <div class="sn-footer__grid">
+    <div>
+      <h3 data-en="Sky Innovations">ابتكارات السماء</h3>
+      <p data-en="A leading Omani company harnessing 4IR technologies, AI and space data analytics to serve vital government and private sectors.">شركة عُمانية رائدة في توظيف تقنيات الثورة الصناعية الرابعة والذكاء الاصطناعي وتحليل البيانات الفضائية لخدمة القطاعات الحيوية الحكومية والخاصة.</p>
+      <div class="sn-social">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/96812345678" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@spaceinnov.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-en="Company">الشركة</h4>
+      <ul>
+        <li><a href="index.html" data-en="Home">الرئيسية</a></li>
+        <li><a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a></li>
+        <li><a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a></li>
+        <li><a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a></li>
+        <li><a href="values.html" data-en="Our Values">قيم الشركة</a></li>
+        <li><a href="projects.html" data-en="Projects">المشاريع</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Services &amp; Products">الخدمات والمنتجات</h4>
+      <ul>
+        <li><a href="services.html" data-en="Corporate Services">الخدمات المؤسسية</a></li>
+        <li><a href="qibla-request.html" data-en="Qibla Determination">تحديد اتجاه القبلة</a></li>
+        <li><a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a></li>
+        <li><a href="bicodi-products.html" data-en="BICODI Batteries">بطاريات BICODI</a></li>
+        <li><a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a></li>
+        <li><a href="majan-academy.html" data-en="Majan Training Academy">أكاديمية مجان للتدريب</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Contact Us">تواصل معنا</h4>
+      <ul>
+        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@spaceinnov.com">info@spaceinnov.com</a></li>
+        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+96812345678">+968 1234 5678</a></li>
+        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/96812345678" target="_blank" rel="noopener" data-en="WhatsApp Support">الدعم عبر واتساب</a></li>
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> مسقط، سلطنة عُمان</li>
+        <li><a href="contact-us.html" data-en="Send a Request">إرسال طلب أو استفسار</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sn-footer__bottom">© 2026 شركة ابتكارات السماء للتقنية والفضاء — جميع الحقوق محفوظة | 4IRT تقنيات الثورة الصناعية الرابعة</div>
+</footer>
+
+    <script>
+        // ===== Random stars in hero =====
+        (function(){
+            const hero = document.getElementById('pageHero');
+            for (let i = 0; i < 40; i++) {
+                const s = document.createElement('div');
+                s.className = 'star';
+                const size = Math.random() * 2.5 + 1;
+                s.style.width = size + 'px';
+                s.style.height = size + 'px';
+                s.style.top = Math.random() * 100 + '%';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.animationDelay = (Math.random() * 3) + 's';
+                hero.appendChild(s);
+            }
+        })();
+
+        // ===== Language switching =====
+        function setLanguage(lang, evt) {
+            const $ = sel => document.querySelector(sel);
+            const $$ = sel => document.querySelectorAll(sel);
+
+            if (lang === 'en') {
+                document.body.dir = 'ltr';
+                document.body.classList.add('ltr');
+
+                // Navbar
+                $('.sn-brand__name').innerHTML = 'Space Innovations';
+                $('.sn-brand__tag').innerHTML = 'Fourth Industrial Revolution';
+                $('#floatingCta span').innerHTML = 'Free Consultation';
+
+                // Hero
+                $('#heroBadge').innerHTML = 'Our Corporate Identity';
+                $('#heroTitle').innerHTML = 'Company Values';
+                $('#heroDesc').innerHTML = 'The foundational principles that shape every decision we make and every project we deliver';
+
+                // Breadcrumb
+                $('#breadHome').innerHTML = 'Home';
+                $('#breadAbout').innerHTML = 'About Us';
+                $('#breadCurrent').innerHTML = 'Company Values';
+
+                // Intro
+                $('#introLabel').innerHTML = 'Our Approach';
+                $('#introTitle').innerHTML = 'Our Eight Core Values';
+                $('#introText').innerHTML = 'At Space Innovations, we believe that values are the compass guiding our journey towards excellence. These eight principles represent the DNA of our corporate culture, reflected in every interaction with our clients, partners, and community.';
+
+                // Values
+                const vTitles = [
+                    'Innovation & Creativity',
+                    'Quality & Excellence',
+                    'Sustainability & Environmental Responsibility',
+                    'Integrity & Transparency',
+                    'Teamwork & Collaborative Spirit',
+                    'National & Social Responsibility',
+                    'Continuous Learning & Development',
+                    'Customer Focus & Success Partnerships'
+                ];
+                const vDescs = [
+                    'We embrace a culture of continuous innovation and always strive to develop pioneering technical solutions that exceed expectations. We invest in R&D to create advanced space technologies that serve humanity.',
+                    'We are committed to the highest quality standards in every project we undertake. Excellence is not a goal but a way of life in our organization, pursued in the finest details.',
+                    'We develop technologies that respect the environment and contribute to the sustainability of natural resources. We believe that technological progress must go hand in hand with preserving our planet.',
+                    'We conduct our business with the utmost integrity and transparency with all stakeholders. Honesty and trustworthiness are the cornerstones of our relationships with clients, partners, and employees.',
+                    'We believe that great achievements are realized through teamwork. We build harmonious teams that combine diverse expertise to achieve common goals with a spirit of cooperation and mutual respect.',
+                    'We take pride in our role in supporting the national vision and building national capabilities in the space and technology sector. We invest in developing local talent and transferring knowledge to contribute to our society\'s advancement.',
+                    'We continuously invest in developing our team\'s capabilities and keep pace with the latest developments in AI and space sciences. Renewed knowledge is the fuel of our innovations.',
+                    'We place our clients at the heart of everything we do. We deeply understand their needs and design customized solutions that achieve their goals and exceed their expectations. Our clients\' success is our success.'
+                ];
+                for (let i = 1; i <= 8; i++) {
+                    $('#v' + i + 'Title').innerHTML = vTitles[i - 1];
+                    $('#v' + i + 'Desc').innerHTML = vDescs[i - 1];
+                }
+
+                // Manifesto
+                $('#manifestoText').innerHTML = 'Our values are not merely words we write on walls — they are the heartbeat of our organization and the identity we practice daily. We believe that advanced technology holds no value without solid ethical principles guiding it towards serving humanity and building the future.';
+                $('#manifestoAttr').innerHTML = '— The Leadership Team of Space Innovations';
+
+                // Values in Action
+                $('#actionLabel').innerHTML = 'Values in Practice';
+                $('#actionTitle').innerHTML = 'Our Values in Action';
+                $('#actionSub').innerHTML = 'How our values translate into tangible reality in our projects and services';
+                $('#act1Title').innerHTML = 'Innovation Lab';
+                $('#act1Desc').innerHTML = 'We allocate 15% of our resources to R&D in our internal innovation lab to explore advanced space and AI technologies.';
+                $('#act2Title').innerHTML = 'Quality Management System';
+                $('#act2Desc').innerHTML = 'We apply ISO 9001 standards across all our operations and undergo periodic audits to ensure the highest quality levels in our outputs.';
+                $('#act3Title').innerHTML = 'Green Initiatives';
+                $('#act3Desc').innerHTML = 'We adopt energy-efficient cloud computing and reduce the carbon footprint of our operations through corporate sustainability policies.';
+                $('#act4Title').innerHTML = 'Knowledge Transfer Program';
+                $('#act4Desc').innerHTML = 'We offer specialized training programs for national talent in space data analytics and AI in partnership with universities.';
+
+                // Final CTA
+                $('#finalCtaTitle').innerHTML = 'Do You Share Our Values?';
+                $('#finalCtaText').innerHTML = 'Discover how our shared values can build a successful strategic partnership for your next project.';
+                $('#finalCtaBtn span').innerHTML = 'Contact Our Team';
+
+                // Footer
+                const fMap = {
+                    'من نحن': 'About Us', 'الرؤية والرسالة': 'Vision & Mission', 'الجوائز والاعتماد': 'Awards & Accreditation', 'الوظائف': 'Careers',
+                    'تحليل الصور الفضائية': 'Satellite Imagery Analysis', 'إدارة المراصد': 'Observatory Management', 'تطوير الذكاء الاصطناعي': 'AI Development', 'الاستشعار عن بعد': 'Remote Sensing',
+                    'الأسئلة الشائعة': 'FAQ', 'مركز المساعدة': 'Help Center', 'سياسة الخصوصية': 'Privacy Policy', 'اتفاقيات الخدمة': 'Service Agreements'
+                };
+
+                // Nav translation
+                const navMap = {
+                    'الرئيسية': 'Home', 'الخدمات': 'Services', 'المنتجات': 'Products',
+                    'نبذة عن الشركة': 'About Us', 'قيم الشركة': 'Company Values',
+                    'تحديد القبلة': 'Qibla Determination', 'المسوحات الشبكية': 'Network Surveys', 'تحسين المواقع الشبكية': 'Network Site Optimization', 'تحليل الصور الفضائية': 'Satellite Imagery Analysis',
+                    'التحكم بالمراصد الفلكية': 'Astronomical Observatory Control', 'إدارة المهام الفضائية': 'Space Mission Management', 'تحليل واستقراء البيانات': 'Data Analysis & Extrapolation',
+                    'الحلول الإبتكارية': 'Innovative Solutions', 'البحث والتطوير': 'Research & Development', 'معالجة البيانات الضخمة': 'Big Data Processing',
+                    'منتجات BICODI': 'BICODI Products', 'أنظمة تخزين الطاقة المنزلية': 'Home Energy Storage Systems', 'الأنظمة المعيارية': 'Modular Systems', 'بطاريات 12V و24V': '12V & 24V Batteries', 'حزم البطاريات المخصصة': 'Custom Battery Packs',
+                    'أكاديمية مجان': 'Majjan Academy', 'المشاريع': 'Projects', 'الشركاء': 'Partners', 'مركز الأخبار': 'News Center', 'تواصل معنا': 'Contact Us'
+                };
+                $$('.sn-menu a').forEach(link => { const t = link.innerText.trim(); if (navMap[t]) link.innerText = navMap[t]; });
+
+            } else {
+                document.body.dir = 'rtl';
+                document.body.classList.remove('ltr');
+
+                // Navbar
+                $('.sn-brand__name').innerHTML = 'ابتكارات السماء';
+                $('.sn-brand__tag').innerHTML = 'الثورة الصناعية الرابعة';
+                $('#floatingCta span').innerHTML = 'طلب استشارة مجانية';
+
+                // Hero
+                $('#heroBadge').innerHTML = 'هويتنا المؤسسية';
+                $('#heroTitle').innerHTML = 'قيم الشركة';
+                $('#heroDesc').innerHTML = 'المبادئ الراسخة التي تشكل أساس كل قرار نتخذه وكل مشروع ننفذه';
+
+                // Breadcrumb
+                $('#breadHome').innerHTML = 'الرئيسية';
+                $('#breadAbout').innerHTML = 'نبذة عن الشركة';
+                $('#breadCurrent').innerHTML = 'قيم الشركة';
+
+                // Intro
+                $('#introLabel').innerHTML = 'منهجنا';
+                $('#introTitle').innerHTML = 'قيمنا المؤسسية الثمانية';
+                $('#introText').innerHTML = 'في ابتكارات السماء، نؤمن بأن القيم هي البوصلة التي توجه مسيرتنا نحو التميز. هذه المبادئ الثمانية تمثل الحمض النووي لثقافتنا المؤسسية، وتنعكس في كل تفاعل مع عملائنا وشركائنا ومجتمعنا.';
+
+                // Values
+                const vTitlesAr = [
+                    'الابتكار والإبداع', 'الجودة والتميز', 'الاستدامة والمسؤولية البيئية', 'النزاهة والشفافية',
+                    'العمل الجماعي وروح الفريق', 'المسؤولية الوطنية والمجتمعية', 'التعلم المستمر والتطوير', 'التركيز على العميل وشراكات النجاح'
+                ];
+                const vDescsAr = [
+                    'نتبنى ثقافة الابتكار المستمر ونسعى دائماً لتطوير حلول تقنية رائدة تتجاوز التوقعات. نستثمر في البحث والتطوير لخلق تقنيات فضائية متقدمة تخدم البشرية.',
+                    'نلتزم بأعلى معايير الجودة في كل مشروع نقوم به. التميز ليس هدفاً بل أسلوب حياة في مؤسستنا، ونسعى لتحقيقه في أدق التفاصيل.',
+                    'نعمل على تطوير تقنيات تراعي البيئة وتساهم في استدامة الموارد الطبيعية. نؤمن بأن التقدم التقني يجب أن يسير جنباً إلى جنب مع الحفاظ على كوكبنا.',
+                    'نمارس أعمالنا بأقصى درجات النزاهة والشفافية مع جميع الأطراف. الصدق والأمانة هما حجر الزاوية في علاقاتنا مع العملاء والشركاء والموظفين.',
+                    'نؤمن بأن الإنجازات العظيمة تتحقق من خلال العمل الجماعي. نبني فرقاً متناغمة تجمع بين الخبرات المتنوعة لتحقيق أهداف مشتركة بروح التعاون والاحترام المتبادل.',
+                    'نفخر بدورنا في دعم رؤية الوطن وبناء القدرات الوطنية في قطاع الفضاء والتقنية. نستثمر في تطوير الكفاءات المحلية ونقل المعرفة للمساهمة في نهضة مجتمعنا.',
+                    'نستثمر في تطوير قدرات فريقنا باستمرار ونواكب أحدث التطورات في مجالات الذكاء الاصطناعي وعلوم الفضاء. المعرفة المتجددة هي وقود ابتكاراتنا.',
+                    'نضع عملاءنا في قلب كل ما نقوم به. نفهم احتياجاتهم بعمق ونصمم حلولاً مخصصة تحقق أهدافهم وتتجاوز تطلعاتهم. نجاح عملائنا هو نجاحنا.'
+                ];
+                for (let i = 1; i <= 8; i++) {
+                    $('#v' + i + 'Title').innerHTML = vTitlesAr[i - 1];
+                    $('#v' + i + 'Desc').innerHTML = vDescsAr[i - 1];
+                }
+
+                // Manifesto
+                $('#manifestoText').innerHTML = 'قيمنا ليست مجرد كلمات نكتبها على الجدران، بل هي نبض مؤسستنا وهويتنا التي نمارسها يومياً. نؤمن بأن التكنولوجيا المتقدمة لا قيمة لها بدون مبادئ أخلاقية راسخة توجهها نحو خدمة الإنسان وبناء المستقبل.';
+                $('#manifestoAttr').innerHTML = '— الفريق القيادي لشركة ابتكارات السماء';
+
+                // Values in Action
+                $('#actionLabel').innerHTML = 'تطبيق القيم';
+                $('#actionTitle').innerHTML = 'قيمنا في الممارسة العملية';
+                $('#actionSub').innerHTML = 'كيف تترجم قيمنا إلى واقع ملموس في مشاريعنا وخدماتنا';
+                $('#act1Title').innerHTML = 'مختبر الابتكار';
+                $('#act1Desc').innerHTML = 'نخصص 15% من مواردنا للبحث والتطوير في مختبر الابتكار الداخلي لاستكشاف تقنيات الفضاء والذكاء الاصطناعي المتقدمة.';
+                $('#act2Title').innerHTML = 'نظام إدارة الجودة';
+                $('#act2Desc').innerHTML = 'نطبق معايير ISO 9001 في جميع عملياتنا ونخضع لمراجعات دورية لضمان أعلى مستويات الجودة في مخرجاتنا.';
+                $('#act3Title').innerHTML = 'مبادرات خضراء';
+                $('#act3Desc').innerHTML = 'نعتمد الحوسبة السحابية الموفرة للطاقة ونقلل البصمة الكربونية لعملياتنا من خلال سياسات الاستدامة المؤسسية.';
+                $('#act4Title').innerHTML = 'برنامج نقل المعرفة';
+                $('#act4Desc').innerHTML = 'نقدم برامج تدريبية متخصصة للكوادر الوطنية في مجالات تحليل البيانات الفضائية والذكاء الاصطناعي بالشراكة مع الجامعات.';
+
+                // Final CTA
+                $('#finalCtaTitle').innerHTML = 'هل تشاركنا نفس القيم؟';
+                $('#finalCtaText').innerHTML = 'تعرف على كيف يمكن لقيمنا المشتركة أن تبني شراكة استراتيجية ناجحة لمشروعك القادم.';
+                $('#finalCtaBtn span').innerHTML = 'تواصل مع فريقنا';
+
+                // Footer
+                const fMapAr = {
+                    'About Us': 'من نحن', 'Vision & Mission': 'الرؤية والرسالة', 'Awards & Accreditation': 'الجوائز والاعتماد', 'Careers': 'الوظائف',
+                    'Satellite Imagery Analysis': 'تحليل الصور الفضائية', 'Observatory Management': 'إدارة المراصد', 'AI Development': 'تطوير الذكاء الاصطناعي', 'Remote Sensing': 'الاستشعار عن بعد',
+                    'FAQ': 'الأسئلة الشائعة', 'Help Center': 'مركز المساعدة', 'Privacy Policy': 'سياسة الخصوصية', 'Service Agreements': 'اتفاقيات الخدمة'
+                };
+
+                // Nav translation
+                const navMapAr = {
+                    'Home': 'الرئيسية', 'Services': 'الخدمات', 'Products': 'المنتجات',
+                    'About Us': 'نبذة عن الشركة', 'Company Values': 'قيم الشركة',
+                    'Qibla Determination': 'تحديد القبلة', 'Network Surveys': 'المسوحات الشبكية', 'Network Site Optimization': 'تحسين المواقع الشبكية', 'Satellite Imagery Analysis': 'تحليل الصور الفضائية',
+                    'Astronomical Observatory Control': 'التحكم بالمراصد الفلكية', 'Space Mission Management': 'إدارة المهام الفضائية', 'Data Analysis & Extrapolation': 'تحليل واستقراء البيانات',
+                    'Innovative Solutions': 'الحلول الإبتكارية', 'Research & Development': 'البحث والتطوير', 'Big Data Processing': 'معالجة البيانات الضخمة',
+                    'BICODI Products': 'منتجات BICODI', 'Home Energy Storage Systems': 'أنظمة تخزين الطاقة المنزلية', 'Modular Systems': 'الأنظمة المعيارية', '12V & 24V Batteries': 'بطاريات 12V و24V', 'Custom Battery Packs': 'حزم البطاريات المخصصة',
+                    'Majjan Academy': 'أكاديمية مجان', 'Projects': 'المشاريع', 'Partners': 'الشركاء', 'News Center': 'مركز الأخبار', 'Contact Us': 'تواصل معنا'
+                };
+                $$('.sn-menu a').forEach(link => { const t = link.innerText.trim(); if (navMapAr[t]) link.innerText = navMapAr[t]; });
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            if (evt) evt.target.classList.add('active');
+        }
+
+        // ===== Scroll reveal =====
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ===== Mobile menu toggle =====
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+    </script>
+    <script src="assets/site.js" defer></script>
+</body>
+</html>

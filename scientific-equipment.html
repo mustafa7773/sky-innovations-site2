@@ -1,0 +1,1347 @@
+امسح الاراء 
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>توريد الأجهزة العلمية | ابتكارات السماء</title>
+    <meta name="description" content="توريد الأجهزة والمعدات العلمية للمختبرات والجامعات ومراكز الأبحاث - ابتكارات السماء">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --space-blue: #081526;
+            --space-blue-2: #0B1E33;
+            --space-blue-light: #14304f;
+            --celestial-gold: #C8A951;
+            --celestial-gold-light: #e2c877;
+            --celestial-gold-dark: #a88938;
+            --lunar-silver: #F6F8FC;
+            --aurora-teal: #00A896;
+            --aurora-teal-dark: #008f7a;
+            --text-dark: #16233a;
+            --text-gray: #64748b;
+            --shadow-sm: 0 4px 12px rgba(11,30,51,0.06);
+            --shadow-md: 0 12px 30px rgba(11,30,51,0.10);
+            --shadow-lg: 0 24px 50px rgba(11,30,51,0.16);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--lunar-silver);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        [dir="rtl"] { text-align: right; }
+        [dir="ltr"] { text-align: left; }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            background: rgba(8, 21, 38, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200, 169, 81, 0.15);
+        }
+        .navbar-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-area img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(200,169,81,0.2);
+        }
+        .brand-text h2 {
+            font-size: 1.05rem;
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+        .brand-text span {
+            font-size: 0.72rem;
+            color: var(--celestial-gold);
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--celestial-gold);
+            background: rgba(200,169,81,0.08);
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(200,169,81,0.3);
+            color: var(--celestial-gold);
+            padding: 8px 18px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            margin-right: 8px;
+        }
+        .lang-btn:hover {
+            background: rgba(200,169,81,0.15);
+            border-color: var(--celestial-gold);
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--space-blue) 0%, var(--space-blue-2) 40%, #0d2847 100%);
+            padding: 80px 24px 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(200,169,81,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0,168,150,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content { flex: 1; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(200,169,81,0.12);
+            color: var(--celestial-gold);
+            padding: 6px 18px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(200,169,81,0.25);
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+        .hero-content h1 .gold { color: var(--celestial-gold); }
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 32px;
+            max-width: 540px;
+            line-height: 1.8;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(200,169,81,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.25);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-outline:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.06);
+        }
+        .hero-visual {
+            flex: 0 0 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-icon-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .hero-icon-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 28px 22px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .hero-icon-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+        }
+        .hero-icon-card i {
+            font-size: 2.2rem;
+            color: var(--celestial-gold);
+            margin-bottom: 10px;
+        }
+        .hero-icon-card span {
+            display: block;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0;
+        }
+        .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .stat-item {
+            padding: 28px 20px;
+            text-align: center;
+            border-left: 1px solid #f1f5f9;
+            transition: var(--transition);
+        }
+        .stat-item:last-child { border-left: none; }
+        .stat-item:hover { background: #f8fafc; }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--space-blue-2);
+            display: block;
+        }
+        .stat-number .gold { color: var(--celestial-gold); }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* ===== Section Common ===== */
+        .section {
+            padding: 80px 24px;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-badge {
+            display: inline-block;
+            background: rgba(200,169,81,0.1);
+            color: var(--celestial-gold-dark);
+            padding: 6px 18px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--space-blue-2);
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== Category Tabs ===== */
+        .cat-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .cat-tab {
+            padding: 10px 22px;
+            border-radius: 28px;
+            border: 1.5px solid #e2e8f0;
+            background: #fff;
+            color: var(--text-gray);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            white-space: nowrap;
+        }
+        .cat-tab:hover {
+            border-color: var(--celestial-gold);
+            color: var(--celestial-gold-dark);
+        }
+        .cat-tab.active {
+            background: var(--space-blue-2);
+            color: #fff;
+            border-color: var(--space-blue-2);
+        }
+
+        /* ===== Product Grid ===== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--celestial-gold-light);
+        }
+        .product-img {
+            height: 200px;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-img i {
+            font-size: 4rem;
+            color: var(--space-blue-light);
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+        .product-card:hover .product-img i {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+        .product-category-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(8,21,38,0.8);
+            color: var(--celestial-gold);
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .product-body {
+            padding: 20px;
+        }
+        .product-body h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--space-blue-2);
+            margin-bottom: 8px;
+        }
+        .product-body p {
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .product-brand {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+        .btn-inquiry {
+            background: var(--space-blue-2);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-inquiry:hover {
+            background: var(--celestial-gold-dark);
+        }
+        .btn-inquiry.added {
+            background: var(--aurora-teal);
+        }
+
+        /* ===== Inquiry Bar ===== */
+        .inquiry-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--space-blue-2);
+            padding: 16px 24px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+            border-top: 2px solid var(--celestial-gold);
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.3);
+        }
+        .inquiry-bar.visible { transform: translateY(0); }
+        .inquiry-info {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .inquiry-count {
+            background: var(--celestial-gold);
+            color: var(--space-blue);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1rem;
+        }
+        .inquiry-text { font-weight: 600; font-size: 0.95rem; }
+        .inquiry-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .btn-clear-inquiry {
+            background: transparent;
+            color: #94a3b8;
+            border: 1px solid #475569;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+        }
+        .btn-clear-inquiry:hover { color: #fff; border-color: #fff; }
+        .btn-send-inquiry {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            font-family: 'Tajawal', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-send-inquiry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200,169,81,0.35);
+        }
+
+        /* ===== Why Us ===== */
+        .why-us { background: #fff; }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 36px 24px;
+            border-radius: var(--radius);
+            border: 1px solid #f1f5f9;
+            transition: var(--transition);
+        }
+        .why-card:hover {
+            border-color: var(--celestial-gold-light);
+            box-shadow: var(--shadow-md);
+        }
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200,169,81,0.12), rgba(200,169,81,0.04));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+        }
+        .why-icon i {
+            font-size: 1.8rem;
+            color: var(--celestial-gold-dark);
+        }
+        .why-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--space-blue-2);
+            margin-bottom: 8px;
+        }
+        .why-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* ===== How We Work ===== */
+        .steps-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .step-item {
+            flex: 0 0 200px;
+            text-align: center;
+            position: relative;
+            padding: 0 10px;
+        }
+        .step-number {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 2;
+        }
+        .step-connector {
+            position: absolute;
+            top: 28px;
+            left: 60%;
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--celestial-gold), #e2e8f0);
+            z-index: 1;
+        }
+        .step-item:last-child .step-connector { display: none; }
+        .step-item h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--space-blue-2);
+            margin-bottom: 6px;
+        }
+        .step-item p {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--space-blue) 0%, var(--space-blue-2) 100%);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200,169,81,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-inner h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+        .cta-inner p {
+            font-size: 1.05rem;
+            color: #94a3b8;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+        .cta-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--space-blue);
+            padding: 50px 24px 30px;
+            color: #94a3b8;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+        .footer-col h4 {
+            color: var(--celestial-gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+        .footer-col ul li a:hover { color: var(--celestial-gold); }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            text-align: center;
+            font-size: 0.82rem;
+        }
+
+        /* ===== Modal ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8,21,38,0.7);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 32px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .modal i.fa-check-circle {
+            font-size: 3.5rem;
+            color: var(--aurora-teal);
+            margin-bottom: 16px;
+        }
+        .modal h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--space-blue-2);
+            margin-bottom: 8px;
+        }
+        .modal p {
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .modal .inquiry-list {
+            text-align: right;
+            background: var(--lunar-silver);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .modal .inquiry-list li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .modal .inquiry-list li:last-child { border-bottom: none; }
+        .btn-close-modal {
+            background: var(--space-blue-2);
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .btn-close-modal:hover { background: var(--celestial-gold-dark); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-content p { margin: 0 auto 32px; }
+            .hero-visual { flex: 0 0 auto; }
+            .hero-icon-grid { grid-template-columns: 1fr 1fr; max-width: 400px; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .steps-container { gap: 20px; }
+            .step-connector { display: none; }
+            .step-item { flex: 0 0 160px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--space-blue-2);
+                padding: 16px;
+                gap: 4px;
+                border-bottom: 2px solid var(--celestial-gold);
+            }
+            .menu-toggle { display: block; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-icon-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .hero-icon-card { padding: 18px 12px; }
+            .stats-inner { grid-template-columns: 1fr 1fr; }
+            .stat-item { border-bottom: 1px solid #f1f5f9; }
+            .stat-item:nth-child(2) { border-left: none; }
+            .footer-inner { grid-template-columns: 1fr; }
+            .product-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .inquiry-bar { flex-direction: column; gap: 12px; text-align: center; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<nav class="sn-nav" aria-label="التنقل الرئيسي">
+  <div class="sn-nav__inner">
+    <a class="sn-brand" href="index.html">
+      <span class="sn-brand__mark" aria-hidden="true"><i class="fas fa-satellite"></i></span>
+      <span class="sn-brand__text">
+        <span class="sn-brand__name">ابتكارات السماء</span>
+        <span class="sn-brand__tag">SKY INNOVATIONS · 4IRT</span>
+      </span>
+    </a>
+    <button class="sn-toggle" type="button" aria-expanded="false" aria-controls="snMenu" aria-label="فتح القائمة">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="sn-menu" id="snMenu" data-open="false">
+      <li><a class="sn-link" href="index.html" data-en="Home">الرئيسية</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snServices">
+          <span data-en="Services">الخدمات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub sn-sub--wide" id="snServices" data-open="false">
+          <span class="sn-sub__head" data-en="SERVICES">خدماتنا</span>
+          <a href="services.html" data-en="Services Overview">نظرة عامة على الخدمات</a>
+          <a href="qibla-request.html" data-en="Qibla Determination">تحديد القبلة</a>
+          <a href="services.html" data-en="Satellite Imagery Analysis">تحليل الصور الفضائية</a>
+          <a href="services.html" data-en="Remote Sensing">الاستشعار عن بعد</a>
+          <a href="services.html" data-en="Network Surveys">المسوحات الشبكية</a>
+          <a href="services.html" data-en="Network Site Optimization">تحسين المواقع الشبكية</a>
+          <a href="services.html" data-en="Astronomical Observatory Control">التحكم بالمراصد الفلكية</a>
+          <a href="services.html" data-en="Space Mission Management">إدارة المهام الفضائية</a>
+          <a href="services.html" data-en="Data Analysis &amp; Extrapolation">تحليل واستقراء البيانات</a>
+          <a href="services.html" data-en="Big Data Processing">معالجة البيانات الضخمة</a>
+          <a href="services.html" data-en="Innovative Solutions">الحلول الابتكارية</a>
+          <a href="services.html" data-en="Research &amp; Development">البحث والتطوير</a>
+          <a href="scientific-equipment.html" data-lang-ar="توريد الأجهزة العلمية" data-lang-en="Scientific Equipment Supply" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snProducts">
+          <span data-en="Products">المنتجات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snProducts" data-open="false">
+          <a href="products.html" data-en="All Products">جميع المنتجات</a>
+          <a href="bicodi-products.html" data-en="BICODI Energy Batteries">بطاريات BICODI للطاقة</a>
+          <a href="mosques-app.html" data-lang-ar="تطبيق إدارة المساجد" data-lang-en="Mosque Management App" data-en="Mosque Management App">تطبيق إدارة المساجد</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment">الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li><a class="sn-link" href="projects.html" data-en="Projects">المشاريع</a></li>
+      <li><a class="sn-link" href="majan-academy.html" data-en="Capacity Building">بناء القدرات</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snAbout">
+          <span data-en="Company">عن الشركة</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snAbout" data-open="false">
+          <a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a>
+          <a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a>
+          <a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a>
+          <a href="values.html" data-en="Our Values">قيم الشركة</a>
+        </div>
+      </li>
+      <li class="sn-lang"><button type="button" id="langToggle" onclick="toggleLang()" class="active">English</button></li>
+      <li><a class="sn-link sn-nav__cta" href="contact-us.html" data-en="Contact Us">تواصل معنا</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-badge" data-lang-ar="منتجات ابتكارات السماء" data-lang-en="Sky Innovations Products">منتجات ابتكارات السماء</span>
+                <h1>
+                    <span data-lang-ar="توريد" data-lang-en="Supply of">توريد</span>
+                    <span class="gold" data-lang-ar="الأجهزة والمعدات العلمية" data-lang-en="Scientific Equipment & Instruments">الأجهزة والمعدات العلمية</span>
+                </h1>
+                <p data-lang-ar="نوفر أحدث الأجهزة والمعدات العلمية للمختبرات والجامعات ومراكز الأبحاث والمستشفيات بأعلى معايير الجودة العالمية وبأسعار تنافسية." data-lang-en="We provide the latest scientific equipment and instruments for laboratories, universities, research centers, and hospitals with the highest international quality standards at competitive prices.">نوفر أحدث الأجهزة والمعدات العلمية للمختبرات والجامعات ومراكز الأبحاث والمستشفيات بأعلى معايير الجودة العالمية وبأسعار تنافسية.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn-primary">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span data-lang-ar="اطلب عرض سعر" data-lang-en="Request a Quote">اطلب عرض سعر</span>
+                    </a>
+                    <a href="#products" class="btn-outline">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span data-lang-ar="تصفح الكتالوج" data-lang-en="Browse Catalog">تصفح الكتالوج</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-icon-grid">
+                    <div class="hero-icon-card">
+                        <i class="fa-solid fa-microscope"></i>
+                        <span data-lang-ar="أجهزة مختبرية" data-lang-en="Lab Equipment">أجهزة مختبرية</span>
+                    </div>
+                    <div class="hero-icon-card">
+                        <i class="fa-solid fa-flask"></i>
+                        <span data-lang-ar="أجهزة قياس" data-lang-en="Measurement Devices">أجهزة قياس</span>
+                    </div>
+                    <div class="hero-icon-card">
+                        <i class="fa-solid fa-telescope"></i>
+                        <span data-lang-ar="أجهزة بصرية" data-lang-en="Optical Instruments">أجهزة بصرية</span>
+                    </div>
+                    <div class="hero-icon-card">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        <span data-lang-ar="أجهزة طبية" data-lang-en="Medical Devices">أجهزة طبية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <span class="stat-number">000<span class="gold">+</span></span>
+                <span class="stat-label" data-lang-ar="جهاز ومعدة" data-lang-en="Devices & Equipment">جهاز ومعدة</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">000<span class="gold">+</span></span>
+                <span class="stat-label" data-lang-ar="عميل في السلطنة" data-lang-en="Clients in Oman">عميل في السلطنة</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">00</span>
+                <span class="stat-label" data-lang-ar="دولة حول العالم" data-lang-en="Countries Worldwide">دولة حول العالم</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">00<span class="gold">+</span></span>
+                <span class="stat-label" data-lang-ar="عاماً من الخبرة" data-lang-en="Years of Experience">عاماً من الخبرة</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section class="section" id="products">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge" data-lang-ar="كتالوج المنتجات" data-lang-en="Product Catalog">كتالوج المنتجات</span>
+                <h2 data-lang-ar="أجهزتنا ومعداتنا العلمية" data-lang-en="Our Scientific Equipment">أجهزتنا ومعداتنا العلمية</h2>
+                <p data-lang-ar="مجموعة متكاملة من الأجهزة العلمية عالية الدقة من أفضل المصنعين العالميين" data-lang-en="A comprehensive range of high-precision scientific instruments from the world's leading manufacturers">مجموعة متكاملة من الأجهزة العلمية عالية الدقة من أفضل المصنعين العالميين</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="cat-tabs" id="catTabs">
+                <button class="cat-tab active" data-cat="all" data-lang-ar="الكل" data-lang-en="All">الكل</button>
+                <button class="cat-tab" data-cat="lab" data-lang-ar="أجهزة المختبرات" data-lang-en="Lab Equipment">أجهزة المختبرات</button>
+                <button class="cat-tab" data-cat="measurement" data-lang-ar="أجهزة القياس" data-lang-en="Measurement">أجهزة القياس</button>
+                <button class="cat-tab" data-cat="optical" data-lang-ar="الأجهزة البصرية" data-lang-en="Optical">الأجهزة البصرية</button>
+                <button class="cat-tab" data-cat="medical" data-lang-ar="الأجهزة الطبية" data-lang-en="Medical">الأجهزة الطبية</button>
+                <button class="cat-tab" data-cat="environment" data-lang-ar="أجهزة البيئة" data-lang-en="Environmental">أجهزة البيئة</button>
+                <button class="cat-tab" data-cat="educational" data-lang-ar="الأجهزة التعليمية" data-lang-en="Educational">الأجهزة التعليمية</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section why-us">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge" data-lang-ar="لماذا تختارنا" data-lang-en="Why Choose Us">لماذا تختارنا</span>
+                <h2 data-lang-ar="ما يميز خدمات التوريد لدينا" data-lang-en="What Sets Our Supply Services Apart">ما يميز خدمات التوريد لدينا</h2>
+                <p data-lang-ar="نلتزم بتقديم أفضل الحلول العلمية بأعلى معايير الجودة والموثوقية" data-lang-en="We are committed to providing the best scientific solutions with the highest standards of quality and reliability">نلتزم بتقديم أفضل الحلول العلمية بأعلى معايير الجودة والموثوقية</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 data-lang-ar="شراكات عالمية" data-lang-en="Global Partnerships">شراكات عالمية</h3>
+                    <p data-lang-ar="نعمل مع كبرى الشركات المصنعة للأجهزة العلمية حول العالم لضمان توفير أحدث التقنيات." data-lang-en="We work with major scientific equipment manufacturers worldwide to ensure the latest technologies.">نعمل مع كبرى الشركات المصنعة للأجهزة العلمية حول العالم لضمان توفير أحدث التقنيات.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 data-lang-ar="ضمان وصيانة" data-lang-en="Warranty & Maintenance">ضمان وصيانة</h3>
+                    <p data-lang-ar="نوفر ضماناً شاملاً على جميع الأجهزة مع خدمات صيانة دورية وقطع غيار أصلية." data-lang-en="We provide comprehensive warranty on all equipment with regular maintenance and genuine spare parts.">نوفر ضماناً شاملاً على جميع الأجهزة مع خدمات صيانة دورية وقطع غيار أصلية.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h3 data-lang-ar="تدريب متخصص" data-lang-en="Specialized Training">تدريب متخصص</h3>
+                    <p data-lang-ar="نقدم برامج تدريبية متكاملة للفنيين والمستخدمين لضمان الاستخدام الأمثل للأجهزة." data-lang-en="We offer comprehensive training programs for technicians and users to ensure optimal use of equipment.">نقدم برامج تدريبية متكاملة للفنيين والمستخدمين لضمان الاستخدام الأمثل للأجهزة.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3 data-lang-ar="دعم فني 24/7" data-lang-en="24/7 Technical Support">دعم فني 24/7</h3>
+                    <p data-lang-ar="فريق دعم فني متخصص متاح على مدار الساعة للرد على استفساراتكم وحل أي مشكلة." data-lang-en="A specialized technical support team available around the clock to answer your inquiries and solve any issues.">فريق دعم فني متخصص متاح على مدار الساعة للرد على استفساراتكم وحل أي مشكلة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW WE WORK ===== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-badge" data-lang-ar="آلية العمل" data-lang-en="How We Work">آلية العمل</span>
+                <h2 data-lang-ar="كيف نعمل؟" data-lang-en="How We Work?">كيف نعمل؟</h2>
+                <p data-lang-ar="خطوات واضحة وممنهجة لضمان تلبية احتياجاتكم بأعلى كفاءة" data-lang-en="Clear and systematic steps to ensure your needs are met with the highest efficiency">خطوات واضحة وممنهجة لضمان تلبية احتياجاتكم بأعلى كفاءة</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-connector"></div>
+                    <h4 data-lang-ar="تحليل الاحتياج" data-lang-en="Needs Analysis">تحليل الاحتياج</h4>
+                    <p data-lang-ar="دراسة متطلباتكم الفنية وتحديد المواصفات المناسبة" data-lang-en="Studying your technical requirements and determining suitable specifications">دراسة متطلباتكم الفنية وتحديد المواصفات المناسبة</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-connector"></div>
+                    <h4 data-lang-ar="اختيار الأجهزة" data-lang-en="Equipment Selection">اختيار الأجهزة</h4>
+                    <p data-lang-ar="ترشيح أفضل الأجهزة من شركائنا العالميين" data-lang-en="Recommending the best equipment from our global partners">ترشيح أفضل الأجهزة من شركائنا العالميين</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-connector"></div>
+                    <h4 data-lang-ar="التوريد والشحن" data-lang-en="Supply & Shipping">التوريد والشحن</h4>
+                    <p data-lang-ar="شحن آمن وسريع مع تأمين شامل على الشحنة" data-lang-en="Safe and fast shipping with comprehensive cargo insurance">شحن آمن وسريع مع تأمين شامل على الشحنة</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-connector"></div>
+                    <h4 data-lang-ar="التركيب والتشغيل" data-lang-en="Installation & Operation">التركيب والتشغيل</h4>
+                    <p data-lang-ar="تركيب الأجهزة واختبارها على أيدي مهندسين متخصصين" data-lang-en="Installation and testing by specialized engineers">تركيب الأجهزة واختبارها على أيدي مهندسين متخصصين</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <h4 data-lang-ar="التدريب والتسليم" data-lang-en="Training & Handover">التدريب والتسليم</h4>
+                    <p data-lang-ar="تدريب الكوادر وتسليم المشروع مع توثيق كامل" data-lang-en="Staff training and project handover with full documentation">تدريب الكوادر وتسليم المشروع مع توثيق كامل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2 data-lang-ar="هل تبحث عن أجهزة علمية لمؤسستك؟" data-lang-en="Looking for Scientific Equipment for Your Institution?">هل تبحث عن أجهزة علمية لمؤسستك؟</h2>
+            <p data-lang-ar="فريقنا المتخصص جاهز لمساعدتك في اختيار أنسب الأجهزة والمعدات العلمية التي تلبي احتياجاتك بأعلى معايير الجودة." data-lang-en="Our specialized team is ready to help you select the most suitable scientific equipment and instruments that meet your needs with the highest quality standards.">فريقنا المتخصص جاهز لمساعدتك في اختيار أنسب الأجهزة والمعدات العلمية التي تلبي احتياجاتك بأعلى معايير الجودة.</p>
+            <div class="cta-btns">
+                <a href="mailto:info@spaceinnov.com" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span data-lang-ar="اطلب عرض سعر الآن" data-lang-en="Request a Quote Now">اطلب عرض سعر الآن</span>
+                </a>
+                <a href="tel:+96812345678" class="btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    <span data-lang-ar="اتصل بنا" data-lang-en="Call Us">اتصل بنا</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    </main>
+<footer class="sn-footer">
+  <div class="sn-footer__grid">
+    <div>
+      <h3 data-en="Sky Innovations">ابتكارات السماء</h3>
+      <p data-en="A leading Omani company harnessing 4IR technologies, AI and space data analytics to serve vital government and private sectors.">شركة عُمانية رائدة في توظيف تقنيات الثورة الصناعية الرابعة والذكاء الاصطناعي وتحليل البيانات الفضائية لخدمة القطاعات الحيوية الحكومية والخاصة.</p>
+      <div class="sn-social">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/96812345678" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@spaceinnov.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-en="Company">الشركة</h4>
+      <ul>
+        <li><a href="index.html" data-lang-ar="الرئيسية" data-lang-en="Home" data-en="Home">الرئيسية</a></li>
+        <li><a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a></li>
+        <li><a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a></li>
+        <li><a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a></li>
+        <li><a href="values.html" data-en="Our Values">قيم الشركة</a></li>
+        <li><a href="projects.html" data-lang-ar="المشاريع" data-lang-en="Projects" data-en="Projects">المشاريع</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Services &amp; Products">الخدمات والمنتجات</h4>
+      <ul>
+        <li><a href="services.html" data-en="Corporate Services">الخدمات المؤسسية</a></li>
+        <li><a href="qibla-request.html" data-en="Qibla Determination">تحديد اتجاه القبلة</a></li>
+        <li><a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a></li>
+        <li><a href="bicodi-products.html" data-en="BICODI Batteries">بطاريات BICODI</a></li>
+        <li><a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a></li>
+        <li><a href="majan-academy.html" data-en="Majan Training Academy">أكاديمية مجان للتدريب</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Contact Us">تواصل معنا</h4>
+      <ul>
+        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@spaceinnov.com">info@spaceinnov.com</a></li>
+        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+96812345678">+968 1234 5678</a></li>
+        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/96812345678" target="_blank" rel="noopener" data-en="WhatsApp Support">الدعم عبر واتساب</a></li>
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> مسقط، سلطنة عُمان</li>
+        <li><a href="contact-us.html" data-en="Send a Request">إرسال طلب أو استفسار</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sn-footer__bottom">© 2026 شركة ابتكارات السماء للتقنية والفضاء — جميع الحقوق محفوظة | 4IRT تقنيات الثورة الصناعية الرابعة</div>
+</footer>
+
+    <!-- ===== INQUIRY BAR ===== -->
+    <div class="inquiry-bar" id="inquiryBar">
+        <div class="inquiry-info">
+            <div class="inquiry-count" id="inquiryCount">0</div>
+            <span class="inquiry-text" data-lang-ar="أجهزة في قائمة الاستفسار" data-lang-en="items in inquiry list" id="inquiryLabel">أجهزة في قائمة الاستفسار</span>
+        </div>
+        <div class="inquiry-actions">
+            <button class="btn-clear-inquiry" onclick="clearInquiry()" data-lang-ar="تفريغ القائمة" data-lang-en="Clear List">تفريغ القائمة</button>
+            <button class="btn-send-inquiry" onclick="sendInquiry()">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span data-lang-ar="إرسال الاستفسار" data-lang-en="Send Inquiry">إرسال الاستفسار</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <i class="fa-solid fa-check-circle"></i>
+            <h3 data-lang-ar="تم إرسال استفسارك بنجاح!" data-lang-en="Your Inquiry Has Been Sent!">تم إرسال استفسارك بنجاح!</h3>
+            <p data-lang-ar="الأجهزة المطلوبة:" data-lang-en="Requested items:" id="modalItemsLabel">الأجهزة المطلوبة:</p>
+            <ul class="inquiry-list" id="modalInquiryList"></ul>
+            <button class="btn-close-modal" onclick="closeModal()" data-lang-ar="حسناً" data-lang-en="OK">حسناً</button>
+        </div>
+    </div>
+
+    <script>
+        // ===== DATA =====
+        const products = [
+            { id: 1, nameAr: 'مطياف الكتلة', nameEn: 'Mass Spectrometer', cat: 'lab', icon: 'fa-flask', brandAr: 'Thermo Fisher', brandEn: 'Thermo Fisher', descAr: 'مطياف كتلة عالي الدقة لتحليل المركبات الكيميائية والعضوية بدقة متناهية.', descEn: 'High-precision mass spectrometer for analyzing chemical and organic compounds with extreme accuracy.' },
+            { id: 2, nameAr: 'المجهر الإلكتروني', nameEn: 'Electron Microscope', cat: 'lab', icon: 'fa-microscope', brandAr: 'JEOL', brandEn: 'JEOL', descAr: 'مجهر إلكتروني ماسح بتقنية متطورة لفحص العينات على المستوى النانوي.', descEn: 'Advanced scanning electron microscope for examining samples at the nanoscale level.' },
+            { id: 3, nameAr: 'المطياف الضوئي', nameEn: 'Spectrophotometer', cat: 'measurement', icon: 'fa-wave-square', brandAr: 'Agilent', brandEn: 'Agilent', descAr: 'مطياف ضوئي للأشعة المرئية وفوق البنفسجية لقياس الامتصاصية والنفاذية.', descEn: 'UV-Vis spectrophotometer for measuring absorbance and transmittance.' },
+            { id: 4, nameAr: 'محطة أرصاد جوية', nameEn: 'Weather Station', cat: 'environment', icon: 'fa-cloud-sun-rain', brandAr: 'Davis Instruments', brandEn: 'Davis Instruments', descAr: 'محطة أرصاد جوية متكاملة لرصد درجة الحرارة والرطوبة وسرعة الرياح والضغط الجوي.', descEn: 'Complete weather station for monitoring temperature, humidity, wind speed, and atmospheric pressure.' },
+            { id: 5, nameAr: 'جهاز تخطيط القلب', nameEn: 'ECG Machine', cat: 'medical', icon: 'fa-heart-pulse', brandAr: 'GE Healthcare', brandEn: 'GE Healthcare', descAr: 'جهاز تخطيط قلب رقمي 12 قناة مع شاشة لمس عالية الدقة وتحليل تلقائي.', descEn: '12-channel digital ECG machine with high-resolution touchscreen and automatic analysis.' },
+            { id: 6, nameAr: 'روبوت تعليمي', nameEn: 'Educational Robot', cat: 'educational', icon: 'fa-robot', brandAr: 'LEGO Education', brandEn: 'LEGO Education', descAr: 'روبوت تعليمي تفاعلي لتعليم البرمجة والذكاء الاصطناعي للطلاب.', descEn: 'Interactive educational robot for teaching programming and AI to students.' },
+            { id: 7, nameAr: 'كروماتوغرافيا غازية', nameEn: 'Gas Chromatograph', cat: 'lab', icon: 'fa-vial', brandAr: 'Shimadzu', brandEn: 'Shimadzu', descAr: 'جهاز كروماتوغرافيا غازية مع كاشف مطياف الكتلة لتحليل المركبات العضوية المتطايرة.', descEn: 'Gas chromatograph with mass spectrometer detector for analyzing volatile organic compounds.' },
+            { id: 8, nameAr: 'جهاز قياس ليزر', nameEn: 'Laser Measurement Device', cat: 'measurement', icon: 'fa-ruler-combined', brandAr: 'Leica', brandEn: 'Leica', descAr: 'جهاز قياس مسافات ليزري عالي الدقة للمسافات الطويلة حتى 200 متر.', descEn: 'High-precision laser distance meter for long distances up to 200 meters.' },
+            { id: 9, nameAr: 'تلسكوب فلكي', nameEn: 'Astronomical Telescope', cat: 'optical', icon: 'fa-telescope', brandAr: 'Celestron', brandEn: 'Celestron', descAr: 'تلسكوب فلكي آلي مع نظام تتبع نجمي وتصوير فلكي عالي الوضوح.', descEn: 'Automated astronomical telescope with star tracking system and high-resolution astrophotography.' },
+            { id: 10, nameAr: 'جهاز تعقيم طبي', nameEn: 'Medical Autoclave', cat: 'medical', icon: 'fa-pump-medical', brandAr: 'Tuttnauer', brandEn: 'Tuttnauer', descAr: 'جهاز تعقيم بالبخار للمعدات الطبية والجراحية بدرجة حرارة عالية وضغط متحكم.', descEn: 'Steam sterilizer for medical and surgical equipment with high temperature and controlled pressure.' },
+            { id: 11, nameAr: 'جهاز قياس جودة المياه', nameEn: 'Water Quality Analyzer', cat: 'environment', icon: 'fa-droplet', brandAr: 'Hach', brandEn: 'Hach', descAr: 'جهاز متعدد المعايير لقياس جودة المياه من حيث الأس الهيدروجيني والأكسجين المذاب والعكورة.', descEn: 'Multi-parameter water quality analyzer for pH, dissolved oxygen, and turbidity.' },
+            { id: 12, nameAr: 'طابعة ثلاثية الأبعاد', nameEn: '3D Printer', cat: 'educational', icon: 'fa-cubes', brandAr: 'Ultimaker', brandEn: 'Ultimaker', descAr: 'طابعة ثلاثية الأبعاد احترافية للتعليم والتصنيع الرقمي بدقة طباعة عالية.', descEn: 'Professional 3D printer for education and digital manufacturing with high printing precision.' }
+        ];
+
+        const catLabelsAr = { all: 'الكل', lab: 'أجهزة المختبرات', measurement: 'أجهزة القياس', optical: 'الأجهزة البصرية', medical: 'الأجهزة الطبية', environment: 'أجهزة البيئة', educational: 'الأجهزة التعليمية' };
+        const catLabelsEn = { all: 'All', lab: 'Lab Equipment', measurement: 'Measurement', optical: 'Optical', medical: 'Medical', environment: 'Environmental', educational: 'Educational' };
+
+        // ===== STATE =====
+        let currentLang = 'ar';
+        let activeCat = 'all';
+        let inquiryList = [];
+
+        // ===== RENDER PRODUCTS =====
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const filtered = activeCat === 'all' ? products : products.filter(p => p.cat === activeCat);
+            grid.innerHTML = filtered.map(p => {
+                const inList = inquiryList.find(i => i.id === p.id);
+                const name = currentLang === 'ar' ? p.nameAr : p.nameEn;
+                const desc = currentLang === 'ar' ? p.descAr : p.descEn;
+                const brand = currentLang === 'ar' ? p.brandAr : p.brandEn;
+                const catLabel = currentLang === 'ar' ? catLabelsAr[p.cat] : catLabelsEn[p.cat];
+                const btnText = currentLang === 'ar' ? (inList ? 'تمت الإضافة' : 'أضف للاستفسار') : (inList ? 'Added' : 'Add to Inquiry');
+                const btnClass = inList ? 'btn-inquiry added' : 'btn-inquiry';
+                const btnIcon = inList ? 'fa-check' : 'fa-plus';
+                return `
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fa-solid ${p.icon}"></i>
+                            <span class="product-category-tag">${catLabel}</span>
+                        </div>
+                        <div class="product-body">
+                            <h3>${name}</h3>
+                            <p>${desc}</p>
+                            <div class="product-footer">
+                                <span class="product-brand"><i class="fa-solid fa-industry"></i> ${brand}</span>
+                                <button class="${btnClass}" onclick="toggleInquiry(${p.id})">
+                                    <i class="fa-solid ${btnIcon}"></i> ${btnText}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ===== TOGGLE INQUIRY =====
+        function toggleInquiry(id) {
+            const idx = inquiryList.findIndex(i => i.id === id);
+            if (idx > -1) {
+                inquiryList.splice(idx, 1);
+            } else {
+                const product = products.find(p => p.id === id);
+                if (product) inquiryList.push(product);
+            }
+            updateInquiryBar();
+            renderProducts();
+        }
+
+        // ===== UPDATE INQUIRY BAR =====
+        function updateInquiryBar() {
+            const bar = document.getElementById('inquiryBar');
+            const count = document.getElementById('inquiryCount');
+            count.textContent = inquiryList.length;
+            if (inquiryList.length > 0) {
+                bar.classList.add('visible');
+            } else {
+                bar.classList.remove('visible');
+            }
+        }
+
+        // ===== CLEAR INQUIRY =====
+        function clearInquiry() {
+            inquiryList = [];
+            updateInquiryBar();
+            renderProducts();
+        }
+
+        // ===== SEND INQUIRY =====
+        function sendInquiry() {
+            if (inquiryList.length === 0) return;
+            const items = inquiryList.map(i => currentLang === 'ar' ? i.nameAr : i.nameEn).join('\n- ');
+            const msgAr = encodeURIComponent(`مرحباً، أود الاستفسار عن الأجهزة العلمية التالية:\n- ${inquiryList.map(i => i.nameAr).join('\n- ')}\n\nالرجاء تزويدي بعرض سعر وشروط التوريد. شكراً`);
+            const msgEn = encodeURIComponent(`Hello, I would like to inquire about the following scientific equipment:\n- ${inquiryList.map(i => i.nameEn).join('\n- ')}\n\nPlease provide me with a quote and supply terms. Thank you.`);
+            const msg = currentLang === 'ar' ? msgAr : msgEn;
+            window.open(`https://wa.me/96812345678?text=${msg}`, '_blank');
+
+            // Show modal
+            const modalList = document.getElementById('modalInquiryList');
+            modalList.innerHTML = inquiryList.map(i => `<li>${currentLang === 'ar' ? i.nameAr : i.nameEn} - ${currentLang === 'ar' ? i.brandAr : i.brandEn}</li>`).join('');
+            document.getElementById('modalOverlay').classList.add('open');
+        }
+
+        // ===== CLOSE MODAL =====
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('open');
+        }
+
+        // ===== CATEGORY TABS =====
+        document.getElementById('catTabs').addEventListener('click', function(e) {
+            if (e.target.classList.contains('cat-tab')) {
+                document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+                activeCat = e.target.dataset.cat;
+                renderProducts();
+            }
+        });
+
+        // ===== LANGUAGE TOGGLE =====
+        function toggleLang() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const btn = document.getElementById('langToggle');
+            btn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update all data-lang elements
+            document.querySelectorAll('[data-lang-ar]').forEach(el => {
+                const val = currentLang === 'ar' ? el.dataset.langAr : el.dataset.langEn;
+                if (val !== undefined && !el.closest('.product-grid') && !el.closest('#modalInquiryList')) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = val;
+                    } else {
+                        el.textContent = val;
+                    }
+                }
+            });
+
+            // Update inquiry label
+            document.getElementById('inquiryLabel').textContent = currentLang === 'ar' ? 'أجهزة في قائمة الاستفسار' : 'items in inquiry list';
+            document.getElementById('modalItemsLabel').textContent = currentLang === 'ar' ? 'الأجهزة المطلوبة:' : 'Requested items:';
+
+            renderProducts();
+        }
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // ===== INIT =====
+        renderProducts();
+    </script>
+    <script src="assets/site.js" defer></script>
+</body>
+</html>

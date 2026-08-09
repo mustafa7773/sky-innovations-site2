@@ -1,0 +1,353 @@
+/* =========================================================
+   Sky Innovations — Dark Tech Theme
+   يُحمّل بعد أنماط الصفحة و site.css ويعيد صياغة الهوية البصرية
+   الأسود العميق + بطاقات محاطة بحلقة 1px + أزرار حادة + شرائح دائرية
+   ========================================================= */
+
+:root, [dir="rtl"], [dir="ltr"] {
+  /* إعادة تعريف متغيرات الصفحات الأصلية → لوحة داكنة */
+  --space-blue: #000000;
+  --space-blue-2: #0a0a0a;
+  --space-blue-light: #121212;
+  --celestial-gold: #52a8ff;
+  --celestial-gold-light: #8cc6ff;
+  --celestial-gold-dark: #3d8fe0;
+  --lunar-silver: #000000;
+  --aurora-teal: #62c073;
+  --aurora-teal-dark: #4da35d;
+  --text-dark: #ededed;
+  --text-gray: #999999;
+  --radius: 4px;
+  --shadow-sm: none; --shadow-md: none; --shadow-lg: none;
+
+  /* رموز التصميم الجديدة */
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #121212;
+  --chip: #1f1f1f;
+  --ring: rgba(255,255,255,.145);
+  --ring-strong: rgba(255,255,255,.28);
+  --fg: #ffffff;
+  --fg-soft: #e7e7e7;
+  --fg-mute: #999999;
+  --accent: #52a8ff;
+  --success: #62c073;
+  --mono: 'Geist Mono','JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --display: 'Inter Display','Inter',system-ui,sans-serif;
+  --ar: 'Tajawal','Inter',sans-serif;
+}
+
+/* ---------- الأساس ---------- */
+html, body { background: var(--bg) !important; }
+body {
+  color: var(--fg-soft) !important;
+  font-family: var(--ar);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: #000; }
+
+h1, h2, h3, h4,
+.hero h1, .section-title, .page-header h2, .final-cta h2 {
+  font-family: var(--display), var(--ar);
+  font-weight: 500 !important;
+  color: var(--fg) !important;
+  letter-spacing: -0.02em;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+.hero h1, .page-hero h1 { letter-spacing: -0.035em; }
+
+p, li, td, .section-sub, .section-subtitle, .hero-desc, .subtitle { color: var(--fg-mute); }
+.section-dark, .section-alt, .section, section { background: var(--bg) !important; color: var(--fg-soft); }
+
+/* بيانات وأرقام بخط أحادي المسافة */
+.counter, .stat-number, .stat-item h3, .number, .product-price, .spec-val, .spec-key,
+.value-number, .timeline-year, .phase-number, .step-number, .ref-number, .countdown,
+.compare-table td, .compare-table th, .featured-specs, .product-specs,
+.inquiry-count, .duration, code, pre, .metric-value {
+  font-family: var(--mono) !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- شريط التنقل ---------- */
+.sn-nav { background: rgba(0,0,0,.86) !important; border-bottom: 1px solid var(--ring) !important; }
+.sn-brand__mark { background: #fff !important; color: #000 !important; border-radius: 0 !important; box-shadow: none !important; }
+.sn-brand__name { color: #fff !important; font-family: var(--display), var(--ar); font-weight: 500; }
+.sn-brand__tag { color: var(--fg-mute) !important; font-family: var(--mono); font-size: .62rem; }
+.sn-link { color: #fff !important; border-radius: 0 !important; }
+.sn-link:hover { background: var(--surface-2) !important; color: #fff !important; }
+.sn-link[aria-current="page"] { color: #fff !important; background: var(--surface-2) !important; box-shadow: inset 0 -2px 0 var(--accent); }
+.sn-sub { background: var(--surface) !important; border: 1px solid var(--ring) !important; border-radius: 4px !important; box-shadow: none !important; }
+.sn-sub a { color: var(--fg-mute) !important; border-radius: 0 !important; }
+.sn-sub a:hover { background: var(--surface-2) !important; color: #fff !important; }
+.sn-sub__head { color: var(--fg-mute) !important; font-family: var(--mono); font-size: .68rem; }
+.sn-lang { background: var(--chip) !important; border: 1px solid var(--ring) !important; border-radius: 100px !important; }
+.sn-lang button { color: var(--fg-mute) !important; font-family: var(--mono); font-size: .72rem; border-radius: 100px !important; }
+.sn-lang button.active { background: #fff !important; color: #000 !important; }
+.sn-nav__cta {
+  background: #fff !important; color: #121212 !important; border-radius: 0 !important;
+  box-shadow: none !important; font-weight: 600 !important; padding: .5rem .85rem !important;
+}
+.sn-nav__cta:hover { background: var(--fg-soft) !important; filter: none; }
+.sn-toggle { background: transparent !important; border: 1px solid var(--ring) !important; border-radius: 0 !important; color: #fff !important; }
+@media(max-width:1100px){ .sn-menu { background: #000; } }
+
+/* ---------- الأزرار: زوايا صفرية ---------- */
+.btn, .btn-primary, .btn-outline, .btn-secondary, .cta-button, .btn-cta, .btn-product,
+.btn-sm, .btn-submit, .btn-whatsapp, .quick-btn, .tab-btn, .filter-btn, .cat-tab,
+.btn-send-inquiry, .btn-clear-inquiry, button[type="submit"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: var(--ar);
+  letter-spacing: 0;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn-primary, .btn-cta, .btn-submit, .btn-product, .btn-send-inquiry, .cta-button, button[type="submit"] {
+  background: #fff !important; color: #121212 !important; border: 1px solid #fff !important; font-weight: 600 !important;
+}
+.btn-primary:hover, .btn-cta:hover, .btn-submit:hover, .btn-product:hover, button[type="submit"]:hover {
+  background: var(--fg-soft) !important; transform: none !important;
+}
+.btn-outline, .btn-secondary, .btn-clear-inquiry {
+  background: transparent !important; color: #fff !important; border: 1px solid var(--ring) !important;
+}
+.btn-outline:hover, .btn-secondary:hover { background: var(--surface-2) !important; color: #fff !important; transform: none !important; }
+.floating-cta {
+  background: #fff !important; color: #121212 !important; border-radius: 0 !important;
+  box-shadow: none !important; font-weight: 600;
+}
+.floating-cta:hover { transform: none !important; background: var(--fg-soft) !important; }
+
+/* ---------- البطاقات: خلفية #0a0a0a + حلقة 1px ---------- */
+.service-card, .product-card, .value-card, .project-card, .info-card, .feature-card,
+.testimonial-card, .cert-card, .overview-card, .stat-card, .action-card, .why-card,
+.course-card, .step-card, .equipment-card, .mv-card, .founder-card, .form-card,
+.contact-info-card, .contact-form, .product-card-large, .featured-product, .card,
+.hero-icon-card, .partner-logo, .phone-frame, .compare-table-wrap, .modal, .manifesto {
+  background: var(--surface) !important;
+  border: 1px solid var(--ring) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.service-card:hover, .product-card:hover, .value-card:hover, .project-card:hover,
+.feature-card:hover, .testimonial-card:hover, .why-card:hover, .course-card:hover,
+.partner-logo:hover, .action-card:hover, .cert-card:hover {
+  transform: none !important;
+  border-color: var(--ring-strong) !important;
+  background: var(--surface-2) !important;
+}
+.service-card::before, .value-card::before, .product-card::before { display: none !important; }
+.service-card h3, .product-card h3, .value-card h3, .feature-card h3, .info-card h4 { color: #fff !important; }
+.service-card p, .product-card p, .value-card p, .feature-card p, .info-card p, .testimonial-card p { color: var(--fg-mute) !important; }
+
+/* الأيقونات داخل البطاقات */
+.service-icon, .feature-icon, .why-icon, .action-icon, .ov-icon, .stat-icon, .mv-icon,
+.icon-circle, .value-icon-watermark, .qibla-compass-icon {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--ring) !important;
+  border-radius: 4px !important;
+  color: var(--accent) !important;
+  box-shadow: none !important;
+}
+.icon-gold, .fi-gold { color: var(--accent) !important; }
+.icon-teal, .fi-teal, .icon-green, .fi-green { color: var(--success) !important; }
+.icon-blue, .fi-blue, .fi-purple, .fi-warning { color: var(--accent) !important; }
+
+/* ---------- شرائح الحالة (pill) ---------- */
+.badge, .hero-badge, .section-label, .section-badge, .page-hero-badge, .product-badge,
+.feature-badge, .featured-badge, .product-category, .product-category-tag, .cat-tab,
+.tech-used span, .course-meta span, .project-client, .v-chip, .sale, .new {
+  display: inline-flex !important; align-items: center; gap: 6px;
+  background: var(--chip) !important;
+  color: var(--fg-mute) !important;
+  border: 1px solid var(--ring) !important;
+  border-radius: 100px !important;
+  padding: 4px 10px !important;
+  font-family: var(--mono) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: .02em;
+  text-transform: none;
+  box-shadow: none !important;
+}
+.v-chip::before, .sale::before, .new::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+.cat-tab.active, .filter-btn.active, .tab-btn.active {
+  background: #fff !important; color: #000 !important; border-color: #fff !important;
+}
+.stars, .quote-icon, .quote-icon-lg { color: var(--fg-mute) !important; opacity: .5; }
+
+/* ---------- الهيرو + طبقة التعتيم ---------- */
+.hero, .page-header, .page-hero, .projects-hero, .final-cta, .cta-section {
+  background: #000 !important;
+  border-bottom: 1px solid var(--ring);
+  position: relative;
+}
+.hero::after, .page-header::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 60% at 70% 10%, rgba(82,168,255,.10) 0%, rgba(0,0,0,0) 70%);
+}
+.hero-content, .page-header-content, .hero-inner, .page-hero-content { position: relative; z-index: 2; }
+.hero .star { background: #fff !important; opacity: .35 !important; }
+.orbit { border-color: rgba(255,255,255,.08) !important; }
+.hero-sub { color: var(--fg-soft) !important; font-weight: 500 !important; }
+.hero-desc, .page-hero-desc { color: var(--fg-mute) !important; }
+.final-cta::before, .cta-section::before {
+  background: radial-gradient(60% 100% at 50% 120%, rgba(82,168,255,.12), transparent 65%) !important;
+}
+.section-divider { background: var(--ring) !important; }
+
+/* ---------- شبكة المقاييس (Metrics Grid) ---------- */
+.stats-bar { background: #000 !important; }
+.stats-grid, .stats-row, .stats-inner {
+  background: var(--ring) !important;
+  border: 1px solid var(--ring) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  gap: 1px !important;
+  margin-top: 0 !important;
+}
+.stat-item { background: #000 !important; padding: 2.2rem 1.2rem !important; }
+.stat-item:hover { background: var(--surface) !important; }
+.stat-item h3, .stat-number {
+  font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+  color: #fff !important; font-weight: 500 !important; letter-spacing: -.06em !important;
+}
+.stat-item h3 span, .stat-number span { color: var(--fg-mute) !important; font-size: .5em; }
+.stat-item p, .stat-label { color: var(--fg-mute) !important; font-size: .85rem !important; }
+
+/* ---------- الجداول ---------- */
+table, .compare-table { border-collapse: collapse; width: 100%; }
+.compare-table th, table th {
+  background: var(--surface-2) !important; color: var(--fg-mute) !important;
+  font-family: var(--mono) !important; font-size: 12px !important; font-weight: 400 !important;
+  text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--ring) !important;
+}
+.compare-table td, table td { border-bottom: 1px solid var(--ring) !important; color: var(--fg-soft) !important; }
+.compare-table tr:hover td { background: var(--surface) !important; }
+.highlight-col { background: rgba(82,168,255,.06) !important; }
+
+/* ---------- النماذج ---------- */
+label, .filter-label { color: var(--fg-soft) !important; }
+input, select, textarea {
+  background: var(--surface) !important; color: #fff !important;
+  border: 1px solid var(--ring) !important; border-radius: 0 !important;
+  font-family: var(--ar);
+}
+input::placeholder, textarea::placeholder { color: #5a5a5a !important; }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent) !important; box-shadow: 0 0 0 1px var(--accent) !important; outline: none;
+}
+.hint, .helper { color: var(--fg-mute) !important; font-family: var(--mono); font-size: 11px; }
+.required { color: var(--accent) !important; }
+.error-msg { color: #ff6b6b !important; font-family: var(--mono); font-size: 11px; }
+.success-message, .success-icon { color: var(--success) !important; }
+.file-upload-box, .map-placeholder, .phone-screen {
+  background: var(--surface-2) !important; border: 1px dashed var(--ring) !important; border-radius: 4px !important; color: var(--fg-mute) !important;
+}
+.tabs { background: transparent !important; border-bottom: 1px solid var(--ring) !important; }
+.tab-btn { background: transparent !important; color: var(--fg-mute) !important; border: 0 !important; }
+.tab-btn.active { background: transparent !important; color: #fff !important; box-shadow: inset 0 -2px 0 var(--accent) !important; }
+
+/* ---------- الخط الزمني والخطوات ---------- */
+.timeline-dot, .step-number, .phase-number {
+  background: var(--surface-2) !important; color: var(--accent) !important;
+  border: 1px solid var(--ring) !important; border-radius: 100px !important;
+  font-family: var(--mono) !important;
+}
+.step-connector, .timeline::before { background: var(--ring) !important; }
+
+/* ---------- شريط المسار والقوائم ---------- */
+.breadcrumb, .breadcrumb-inner { color: var(--fg-mute) !important; font-family: var(--mono); font-size: 12px; }
+.breadcrumb a { color: var(--fg-mute) !important; }
+.breadcrumb a:hover { color: #fff !important; }
+
+/* ---------- بطاقات المسارات في الرئيسية ---------- */
+.sn-paths { background: #000 !important; border-top: 1px solid var(--ring); }
+.sn-paths__title { color: #fff !important; font-family: var(--display), var(--ar); font-weight: 500; letter-spacing: -.03em; }
+.sn-paths__sub { color: var(--fg-mute) !important; }
+.sn-path { background: var(--surface) !important; border: 1px solid var(--ring) !important; border-radius: 4px !important; color: var(--fg-soft) !important; }
+.sn-path:hover { background: var(--surface-2) !important; border-color: var(--ring-strong) !important; transform: none !important; box-shadow: none !important; }
+.sn-path__icon { background: var(--surface-2) !important; border: 1px solid var(--ring); border-radius: 4px !important; color: var(--accent) !important; }
+.sn-path__title { color: #fff !important; }
+.sn-path__desc { color: var(--fg-mute) !important; }
+.sn-path__go { color: var(--accent) !important; font-family: var(--mono); font-size: 12px; }
+
+/* ---------- التذييل ---------- */
+.sn-footer { background: #000 !important; border-top: 1px solid var(--ring) !important; }
+.sn-footer h3, .sn-footer h4 { color: #fff !important; font-family: var(--display), var(--ar); font-weight: 500 !important; }
+.sn-footer h4 { font-size: 12px !important; font-family: var(--mono) !important; text-transform: uppercase; letter-spacing: .08em; color: var(--fg-mute) !important; }
+.sn-footer a, .sn-footer li, .sn-footer p { color: var(--fg-mute) !important; }
+.sn-footer a:hover { color: #fff !important; }
+.sn-footer i { color: var(--fg-mute) !important; }
+.sn-social a { background: var(--surface) !important; border: 1px solid var(--ring) !important; border-radius: 4px !important; }
+.sn-social a:hover { background: var(--surface-2) !important; }
+.sn-footer__bottom { border-top: 1px solid var(--ring) !important; color: #5a5a5a !important; font-family: var(--mono); font-size: 11px; }
+
+/* ---------- متفرقات ---------- */
+.whatsapp-divider::before, .whatsapp-divider::after { background: var(--ring) !important; }
+.inquiry-bar, .filter-bar, .projects-filter {
+  background: var(--surface) !important; border: 1px solid var(--ring) !important; border-radius: 0 !important;
+}
+.modal-overlay { background: rgba(0,0,0,.85) !important; }
+.highlight { color: var(--accent) !important; }
+hr { border-color: var(--ring); }
+:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 2px; }
+
+/* ---------- إصلاحات خلفيات فاتحة متبقية ---------- */
+.breadcrumb, .project-detail-grid, .compare-table, .success-message, .filter-btn,
+.ref-number, .products-grid, .product-grid, table, tbody, thead, tr {
+  background: transparent !important;
+}
+.breadcrumb { border-bottom: 1px solid var(--ring); padding-block: .75rem; }
+.project-detail-grid { border: 1px solid var(--ring) !important; border-radius: 4px !important; }
+td, th { background: transparent !important; color: var(--fg-soft) !important; }
+.filter-btn { border: 1px solid var(--ring) !important; color: var(--fg-mute) !important; }
+.filter-btn.active { background: #fff !important; color: #000 !important; }
+.success-message { border: 1px solid rgba(98,192,115,.4) !important; background: rgba(98,192,115,.08) !important; }
+.ref-number { background: var(--surface-2) !important; color: var(--accent) !important; border: 1px solid var(--ring) !important; }
+
+/* ---------- تصحيح ألوان نصوص موروثة ---------- */
+.spec-val, .value, .featured-specs .value { color: var(--fg) !important; }
+.spec-key, .label { color: var(--fg-mute) !important; }
+a { color: inherit; }
+.sn-brand, .sn-brand:visited { color: #fff !important; }
+.sn-footer a:visited, .sn-sub a:visited, .sn-link:visited { color: inherit !important; }
+
+/* ---------- عناصر ورثت لون النص الداكن ---------- */
+.product-name, .partner-logo, .project-stat .number, .value-number,
+.product-title, .course-info h3, .equipment-card h3, .featured-product h2 {
+  color: var(--fg) !important;
+}
+.product-price { color: var(--accent) !important; }
+.value-number { color: rgba(255,255,255,.14) !important; }
+.partner-logo i { color: var(--fg-mute) !important; }
+strong, b, h5, h6 { color: var(--fg) !important; }
+
+/* ---------- إزالة التدرجات اللونية المتبقية ---------- */
+.value-number, .product-img, .product-img-wrap, .product-preview, .course-image,
+.project-image-side, .founder-avatar, .mockup-screen, .hero-visual, .hero-icon-grid {
+  background-image: none !important;
+  background-color: var(--surface-2) !important;
+  border-radius: 4px !important;
+}
+.value-number {
+  color: var(--fg-mute) !important;
+  border: 1px solid var(--ring) !important;
+  font-family: var(--mono) !important;
+  font-weight: 400 !important;
+}
+.founder-avatar { color: var(--fg-mute) !important; border: 1px solid var(--ring) !important; }
+.product-img-wrap img, .product-img img { mix-blend-mode: normal; }
+
+/* ---------- بقايا اللون الذهبي ---------- */
+.skip-link { background: #fff !important; color: #000 !important; border-radius: 0 !important; }
+.prayer-card-mini, .qibla-mini, .featured-img, .mockup-phone, .phase {
+  background: var(--surface-2) !important;
+  border-color: var(--ring) !important;
+}
+.prayer-card-mini .countdown, .prayer-name-ar { color: var(--fg) !important; }
+.next-label, .qibla-info { color: var(--fg-mute) !important; }
+.check-list li, .check-list li i { color: var(--fg-soft) !important; }
+.check-list li i { color: var(--success) !important; }

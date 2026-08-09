@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>طلب تحديد القبلة | ابتكارات السماء</title>
+    <meta name="description" content="نموذج تقديم طلب خدمة تحديد القبلة بدقة فائقة باستخدام التقنيات الفلكية المتقدمة">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-blue: #081526;
+            --space-blue-2: #0B1E33;
+            --space-blue-light: #14304f;
+            --celestial-gold: #C8A951;
+            --celestial-gold-light: #e2c877;
+            --celestial-gold-dark: #a88938;
+            --lunar-silver: #F6F8FC;
+            --aurora-teal: #00A896;
+            --aurora-teal-dark: #008f7a;
+            --text-dark: #16233a;
+            --text-gray: #64748b;
+            --whatsapp-green: #25D366;
+            --shadow-sm: 0 4px 12px rgba(11,30,51,0.06);
+            --shadow-md: 0 12px 30px rgba(11,30,51,0.10);
+            --shadow-lg: 0 24px 50px rgba(11,30,51,0.16);
+            --radius: 16px;
+            --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Tajawal', 'Inter', sans-serif;
+            background-color: var(--lunar-silver);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            background: rgba(8, 21, 38, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.6rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200,169,81,0.18);
+        }
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-mark {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            display: flex; align-items: center; justify-content: center;
+            color: var(--space-blue); font-size: 1.2rem;
+            box-shadow: 0 4px 14px rgba(200,169,81,0.35);
+        }
+        .sn-brand__name { color: #fff; font-size: 1.35rem; font-weight: 800; white-space: nowrap; }
+        .sn-brand__tag { color: var(--celestial-gold); font-size: 0.72rem; font-weight: 500; white-space: nowrap; }
+        .lang-switch {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(200,169,81,0.35);
+            border-radius: 50px; padding: 3px; display: flex; gap: 2px;
+        }
+        .lang-btn {
+            background: none; border: none; color: var(--celestial-gold);
+            font-weight: 700; cursor: pointer; padding: 6px 16px;
+            border-radius: 50px; font-family: inherit;
+            transition: var(--transition); font-size: 0.85rem;
+        }
+        .lang-btn.active { background: var(--celestial-gold); color: var(--space-blue); }
+        .lang-btn:not(.active):hover { background: rgba(200,169,81,0.2); }
+        .nav-menu { display: flex; gap: 0.15rem; list-style: none; flex-wrap: wrap; align-items: center; }
+        .nav-menu > li > a {
+            color: rgba(255,255,255,0.85); text-decoration: none;
+            padding: 0.55rem 0.9rem; transition: var(--transition);
+            font-weight: 500; font-size: 0.93rem; border-radius: 8px; display: inline-block;
+        }
+        .nav-menu > li > a:hover { color: var(--celestial-gold); background: rgba(200,169,81,0.1); }
+        .dropdown { position: relative; }
+        .dropdown > a::after {
+            content: '\f078'; font-family: 'Font Awesome 6 Free';
+            font-weight: 900; font-size: 0.55rem; margin: 0 6px; opacity: 0.7;
+        }
+        .dropdown-content {
+            visibility: hidden; opacity: 0; transform: translateY(8px);
+            position: absolute; background: #0e2540; min-width: 230px;
+            box-shadow: var(--shadow-lg); border: 1px solid rgba(200,169,81,0.2);
+            border-radius: 12px; padding: 0.5rem; z-index: 10; transition: var(--transition);
+        }
+        .dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+        .dropdown-content a {
+            display: block; padding: 0.55rem 0.9rem;
+            color: rgba(255,255,255,0.85); text-decoration: none;
+            border-radius: 8px; font-size: 0.9rem; transition: var(--transition);
+        }
+        .dropdown-content a:hover { background: rgba(200,169,81,0.12); color: var(--celestial-gold); padding-inline-start: 1.2rem; }
+        .menu-toggle {
+            display: none; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white; font-size: 1.2rem; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 10px;
+        }
+
+        /* ===== Page Header ===== */
+        .page-header {
+            background: radial-gradient(ellipse at 70% 20%, #1a3a63 0%, var(--space-blue-2) 45%, var(--space-blue) 100%);
+            color: #fff; padding: 4rem 5% 3rem; text-align: center; position: relative; overflow: hidden;
+        }
+        .page-header .orbit {
+            position: absolute; border: 1px dashed rgba(200,169,81,0.12);
+            border-radius: 50%; width: 500px; height: 500px;
+            top: -200px; left: -150px; animation: spin 60s linear infinite;
+        }
+        .page-header .orbit.o2 {
+            width: 350px; height: 350px; top: auto; bottom: -150px;
+            left: auto; right: -80px; animation-duration: 40s;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .page-header .badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(200,169,81,0.12); border: 1px solid rgba(200,169,81,0.4);
+            color: var(--celestial-gold-light); padding: 6px 18px;
+            border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem;
+            position: relative; z-index: 2;
+        }
+        .page-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; margin-bottom: 0.6rem;
+            position: relative; z-index: 2;
+        }
+        .page-header p { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 550px; margin: 0 auto; position: relative; z-index: 2; }
+        .breadcrumb {
+            margin-top: 1.2rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);
+            position: relative; z-index: 2;
+        }
+        .breadcrumb a { color: var(--celestial-gold-light); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* ===== Info Cards ===== */
+        .info-cards {
+            max-width: 1100px; margin: -2.5rem auto 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem; padding: 0 5%; position: relative; z-index: 5;
+        }
+        .info-card {
+            background: #fff; padding: 1.6rem 1.2rem; border-radius: var(--radius);
+            box-shadow: var(--shadow-md); text-align: center; transition: var(--transition);
+            border: 1px solid #eef1f6;
+        }
+        .info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .icon-circle {
+            width: 56px; height: 56px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin: 0 auto 0.8rem;
+        }
+        .icon-gold { background: rgba(200,169,81,0.15); color: var(--celestial-gold-dark); }
+        .icon-teal { background: rgba(0,168,150,0.12); color: var(--aurora-teal); }
+        .icon-blue { background: rgba(20,48,79,0.1); color: var(--space-blue-light); }
+        .icon-green { background: rgba(37,211,102,0.12); color: var(--whatsapp-green); }
+        .info-card h4 { font-size: 1rem; font-weight: 800; margin-bottom: 0.3rem; }
+        .info-card p { color: var(--text-gray); font-size: 0.9rem; }
+
+        /* ===== Main Container ===== */
+        .main-container { max-width: 900px; margin: 2.5rem auto 4rem; padding: 0 5%; }
+
+        /* ===== Tabs ===== */
+        .tabs { display: flex; gap: 0; margin-bottom: 0; }
+        .tab-btn {
+            flex: 1; padding: 0.9rem 1.5rem; border: none; cursor: pointer;
+            font-family: inherit; font-size: 0.95rem; font-weight: 700;
+            background: #e8ecf2; color: var(--text-gray);
+            transition: var(--transition); display: flex; align-items: center;
+            justify-content: center; gap: 8px;
+        }
+        .tab-btn:first-child { border-radius: 0 12px 0 0; }
+        .tab-btn:last-child { border-radius: 12px 0 0 0; }
+        .tab-btn.active { background: #fff; color: var(--space-blue-2); box-shadow: var(--shadow-sm); }
+        .tab-btn:not(.active):hover { background: #dde3eb; }
+
+        /* ===== Form Card ===== */
+        .form-card {
+            background: #fff; padding: 2.5rem 2rem; border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow-md); border: 1px solid #eef1f6; border-top: none;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* ===== Form Grid ===== */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        .form-group label {
+            font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-dark);
+        }
+        .required { color: #e74c3c; }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 12px 16px; border: 1.5px solid #dde3eb; border-radius: 10px;
+            font-family: inherit; font-size: 0.95rem; transition: var(--transition);
+            background: #fafbfc;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--celestial-gold); box-shadow: 0 0 0 3px rgba(200,169,81,0.1);
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-group input.error, .form-group select.error { border-color: #e74c3c; }
+        .error-msg { color: #e74c3c; font-size: 0.8rem; margin-top: 0.3rem; display: none; }
+        .error-msg.show { display: block; }
+
+        /* ===== File Upload ===== */
+        .file-upload-wrapper { position: relative; }
+        .file-upload-wrapper input[type="file"] {
+            position: absolute; inset: 0; opacity: 0; cursor: pointer; z-index: 2;
+        }
+        .file-upload-box {
+            border: 2px dashed #dde3eb; border-radius: 10px; padding: 1.5rem;
+            text-align: center; transition: var(--transition); background: #fafbfc;
+        }
+        .file-upload-box:hover { border-color: var(--celestial-gold); background: rgba(200,169,81,0.03); }
+        .file-upload-box i { font-size: 1.8rem; color: var(--celestial-gold); margin-bottom: 0.5rem; }
+        .upload-text { display: block; color: var(--text-gray); font-size: 0.85rem; }
+        .file-name { display: block; color: var(--aurora-teal); font-weight: 600; font-size: 0.85rem; margin-top: 0.3rem; }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 13px 30px; border-radius: 50px;
+            text-decoration: none; font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.95rem; cursor: pointer; border: none; font-family: inherit;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--celestial-gold), var(--celestial-gold-dark));
+            color: var(--space-blue); box-shadow: 0 8px 24px rgba(200,169,81,0.35);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(200,169,81,0.45); }
+        .btn-outline {
+            border: 2px solid rgba(200,169,81,0.7); color: var(--celestial-gold-dark);
+            background: transparent;
+        }
+        .btn-outline:hover { background: var(--celestial-gold); color: var(--space-blue); transform: translateY(-3px); }
+        .btn-whatsapp {
+            background: var(--whatsapp-green); color: #fff;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+        }
+        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(37,211,102,0.4); }
+        .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; justify-content: center; }
+
+        /* ===== Map Placeholder ===== */
+        .map-placeholder {
+            text-align: center; padding: 4rem 2rem; color: var(--text-gray);
+        }
+        .map-placeholder i { font-size: 4rem; color: #dde3eb; margin-bottom: 1rem; }
+        .map-placeholder h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text-dark); }
+
+        /* ===== Modal ===== */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0; background: rgba(8,21,38,0.7);
+            z-index: 2000; align-items: center; justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: #fff; padding: 2.5rem 2rem; border-radius: var(--radius);
+            text-align: center; max-width: 450px; width: 90%;
+            box-shadow: var(--shadow-lg); animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: none; } }
+        .success-icon { font-size: 3.5rem; color: var(--aurora-teal); margin-bottom: 1rem; }
+        .modal h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 0.5rem; }
+        .modal p { color: var(--text-gray); margin-bottom: 1rem; font-size: 0.95rem; }
+        .ref-number {
+            background: #f0f4f8; padding: 0.8rem 1.2rem; border-radius: 10px;
+            font-weight: 700; margin-bottom: 1.2rem; font-size: 0.95rem;
+        }
+        .ref-number span:last-child { color: var(--celestial-gold-dark); font-family: monospace; }
+        .whatsapp-divider {
+            display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0;
+            color: var(--text-gray); font-size: 0.85rem;
+        }
+        .whatsapp-divider::before, .whatsapp-divider::after {
+            content: ''; flex: 1; height: 1px; background: #e8ecf2;
+        }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            background: var(--space-blue); color: #cbd5e1;
+            padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(200,169,81,0.15);
+        }
+        .site-footer .footer-grid {
+            max-width: 1100px; margin: 0 auto 2rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;
+        }
+        .site-footer .footer-grid h4 {
+            color: var(--celestial-gold); margin-bottom: 1rem;
+            font-size: 1rem; font-weight: 800;
+        }
+        .site-footer .footer-grid a {
+            color: #94a3b8; text-decoration: none; display: block;
+            margin-bottom: 0.6rem; transition: var(--transition); font-size: 0.9rem;
+        }
+        .site-footer .footer-grid a:hover { color: var(--celestial-gold-light); padding-inline-start: 5px; }
+        .footer-bottom {
+            text-align: center; padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.82rem; color: #64748b; max-width: 1100px; margin: 0 auto;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 992px) {
+            .nav-menu { order: 3; width: 100%; justify-content: center; }
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; flex-direction: column; padding: 1rem 0; align-items: stretch; }
+            .nav-menu.active { display: flex; }
+            .nav-menu > li > a { display: block; }
+            .dropdown-content { visibility: visible; opacity: 1; transform: none; position: static; background: rgba(255,255,255,0.05); margin: 0 1rem; }
+            .form-card { padding: 1.5rem 1.2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .info-cards { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .info-cards { grid-template-columns: 1fr; }
+            .btn-row { flex-direction: column; }
+            .btn { justify-content: center; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<nav class="sn-nav" aria-label="التنقل الرئيسي">
+  <div class="sn-nav__inner">
+    <a class="sn-brand" href="index.html">
+      <span class="sn-brand__mark" aria-hidden="true"><i class="fas fa-satellite"></i></span>
+      <span class="sn-brand__text">
+        <span class="sn-brand__name">ابتكارات السماء</span>
+        <span class="sn-brand__tag">SKY INNOVATIONS · 4IRT</span>
+      </span>
+    </a>
+    <button class="sn-toggle" type="button" aria-expanded="false" aria-controls="snMenu" aria-label="فتح القائمة">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+    <ul class="sn-menu" id="snMenu" data-open="false">
+      <li><a class="sn-link" href="index.html" data-en="Home">الرئيسية</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snServices">
+          <span data-en="Services">الخدمات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub sn-sub--wide" id="snServices" data-open="false">
+          <span class="sn-sub__head" data-en="SERVICES">خدماتنا</span>
+          <a href="services.html" data-en="Services Overview">نظرة عامة على الخدمات</a>
+          <a href="qibla-request.html" data-en="Qibla Determination">تحديد القبلة</a>
+          <a href="services.html" data-en="Satellite Imagery Analysis">تحليل الصور الفضائية</a>
+          <a href="services.html" data-en="Remote Sensing">الاستشعار عن بعد</a>
+          <a href="services.html" data-en="Network Surveys">المسوحات الشبكية</a>
+          <a href="services.html" data-en="Network Site Optimization">تحسين المواقع الشبكية</a>
+          <a href="services.html" data-en="Astronomical Observatory Control">التحكم بالمراصد الفلكية</a>
+          <a href="services.html" data-en="Space Mission Management">إدارة المهام الفضائية</a>
+          <a href="services.html" data-en="Data Analysis &amp; Extrapolation">تحليل واستقراء البيانات</a>
+          <a href="services.html" data-en="Big Data Processing">معالجة البيانات الضخمة</a>
+          <a href="services.html" data-en="Innovative Solutions">الحلول الابتكارية</a>
+          <a href="services.html" data-en="Research &amp; Development">البحث والتطوير</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snProducts">
+          <span data-en="Products">المنتجات</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snProducts" data-open="false">
+          <a href="products.html" data-en="All Products">جميع المنتجات</a>
+          <a href="bicodi-products.html" data-en="BICODI Energy Batteries">بطاريات BICODI للطاقة</a>
+          <a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a>
+          <a href="scientific-equipment.html" data-en="Scientific Equipment">الأجهزة العلمية</a>
+        </div>
+      </li>
+      <li><a class="sn-link" href="projects.html" data-en="Projects">المشاريع</a></li>
+      <li><a class="sn-link" href="majan-academy.html" data-en="Capacity Building">بناء القدرات</a></li>
+      <li>
+        <button class="sn-link" type="button" data-sub-toggle aria-expanded="false" aria-controls="snAbout">
+          <span data-en="Company">عن الشركة</span> <i class="fas fa-chevron-down sn-caret" aria-hidden="true"></i>
+        </button>
+        <div class="sn-sub" id="snAbout" data-open="false">
+          <a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a>
+          <a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a>
+          <a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a>
+          <a href="values.html" data-en="Our Values">قيم الشركة</a>
+        </div>
+      </li>
+      <li><a class="sn-link sn-nav__cta" href="contact-us.html" data-en="Contact Us">تواصل معنا</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main">
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="orbit"></div>
+        <div class="orbit o2"></div>
+        <span class="badge" id="pageBadge"><i class="fas fa-mosque"></i> خدمات تحليل البيانات المكانية</span>
+        <h2 id="pageTitle">طلب تحديد القبلة</h2>
+        <p id="pageDesc">نموذج تقديم طلب خدمة تحديد القبلة بدقة فائقة باستخدام التقنيات الفلكية المتقدمة</p>
+        <div class="breadcrumb">
+            <a href="index.html" id="breadHome">الرئيسية</a>
+            <span>/</span>
+            <a href="services.html" id="breadServices">الخدمات</a>
+            <span>/</span>
+            <span id="breadQibla">تحديد القبلة</span>
+        </div>
+    </section>
+
+    <!-- Info Cards -->
+    <div class="info-cards">
+        <div class="info-card">
+            <div class="icon-circle icon-gold"><i class="fas fa-clock"></i></div>
+            <h4 id="infoTitle1">مدة الإنجاز</h4>
+            <p id="infoDesc1">24 ساعة عمل</p>
+        </div>
+        <div class="info-card">
+            <div class="icon-circle icon-teal"><i class="fas fa-bullseye"></i></div>
+            <h4 id="infoTitle2">الدقة</h4>
+            <p id="infoDesc2">±0.01 درجة</p>
+        </div>
+        <div class="info-card">
+            <div class="icon-circle icon-blue"><i class="fas fa-satellite-dish"></i></div>
+            <h4 id="infoTitle3">التقنية</h4>
+            <p id="infoDesc3">الأقمار الصناعية + الحسابات الفلكية</p>
+        </div>
+        <div class="info-card">
+            <div class="icon-circle icon-green"><i class="fab fa-whatsapp"></i></div>
+            <h4 id="infoTitle4">الدعم الفني</h4>
+            <p id="infoDesc4">متاح عبر الواتساب</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Tabs -->
+        <div class="tabs" role="tablist">
+            <button class="tab-btn active" id="tabForm" role="tab" aria-selected="true" aria-controls="tabContentForm" onclick="switchTab('form')">
+                <i class="fas fa-file-alt"></i> <span id="tabFormText">بيانات الطلب</span>
+            </button>
+            <button class="tab-btn" id="tabMap" role="tab" aria-selected="false" aria-controls="tabContentMap" onclick="switchTab('map')">
+                <i class="fas fa-map-marked-alt"></i> <span id="tabMapText">الخرائط والموقع</span>
+            </button>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <!-- Tab: Form -->
+            <div class="tab-content active" id="tabContentForm">
+                <form id="qiblaForm" onsubmit="handleSubmit(event)" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="mosqueRequestNo"><span id="lblMosqueNo">رقم طلب المسجد</span> <span class="required">*</span></label>
+                            <input type="text" id="mosqueRequestNo" name="mosqueRequestNo" required aria-required="true" placeholder="ص-1-25-144">
+<span class="hint">كما ورد في خطاب وزارة الأوقاف — مثال: ص-1-25-144</span>
+                            <span class="error-msg" id="errMosqueNo"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="agentName"><span id="lblAgentName">اسم الوكيل</span> <span class="required">*</span></label>
+                            <input type="text" id="agentName" name="agentName" required aria-required="true" autocomplete="name">
+                            <span class="error-msg" id="errAgentName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="agentPhone"><span id="lblAgentPhone">رقم هاتف الوكيل</span> <span class="required">*</span></label>
+                            <input type="tel" id="agentPhone" name="agentPhone" required aria-required="true" autocomplete="tel" inputmode="tel" placeholder="+968 9XXXXXXX">
+                            <span class="error-msg" id="errAgentPhone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="governorate"><span id="lblGovernorate">المحافظة</span> <span class="required">*</span></label>
+                            <select id="governorate" name="governorate" required aria-required="true">
+                                <option value="">-- اختر المحافظة --</option>
+                                <option value="muscat">مسقط</option>
+                                <option value="dhofar">ظفار</option>
+                                <option value="musandam">مسندم</option>
+                                <option value="buraimi">البريمي</option>
+                                <option value="dakhiliyah">الداخلية</option>
+                                <option value="north-batinah">شمال الباطنة</option>
+                                <option value="south-batinah">جنوب الباطنة</option>
+                                <option value="south-sharqiyah">جنوب الشرقية</option>
+                                <option value="north-sharqiyah">شمال الشرقية</option>
+                                <option value="dhahirah">الظاهرة</option>
+                                <option value="wusta">الوسطى</option>
+                            </select>
+                            <span class="error-msg" id="errGovernorate"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="wilayat"><span id="lblWilayat">الولاية</span> <span class="required">*</span></label>
+                            <input type="text" id="wilayat" name="wilayat" required aria-required="true">
+                            <span class="error-msg" id="errWilayat"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="village"><span id="lblVillage">القرية / المنطقة</span></label>
+                            <input type="text" id="village" name="village">
+<span class="hint">اختياري</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mapFile"><span id="lblMapFile">رفع الخريطة</span></label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="mapFile" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" onchange="handleFileSelect(this, 'mapFileName')">
+                                <div class="file-upload-box">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span class="upload-text" id="mapUploadText">اختر ملف الخريطة (PDF, JPG, PNG, DWG)</span>
+                                    <span class="file-name" id="mapFileName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sketchFile"><span id="lblSketchFile">رفع المخطط الكروكي</span></label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="sketchFile" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" onchange="handleFileSelect(this, 'sketchFileName')">
+                                <div class="file-upload-box">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span class="upload-text" id="sketchUploadText">اختر ملف المخطط الكروكي (PDF, JPG, PNG, DWG)</span>
+                                    <span class="file-name" id="sketchFileName"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes"><span id="lblNotes">ملاحظات إضافية</span></label>
+                            <textarea id="notes" placeholder="أي ملاحظات إضافية تود إضافتها..."></textarea>
+                        </div>
+                    </div>
+                    <div class="btn-row">
+                        <button type="submit" class="btn btn-primary" id="btnSubmit">
+                            <i class="fas fa-paper-plane"></i> <span>إرسال الطلب</span>
+                        </button>
+                        <button type="button" class="btn btn-outline" id="btnReset" onclick="resetForm()">
+                            <i class="fas fa-redo"></i> <span>إعادة تعيين</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab: Map -->
+            <div class="tab-content" id="tabContentMap">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4 id="mapPlaceholderTitle">الخريطة التفاعلية</h4>
+                    <p id="mapPlaceholderText">سيتم إضافة الخريطة التفاعلية قريباً. يرجى رفع ملف الخريطة في تبويب "بيانات الطلب" حالياً.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3 id="modalTitle">تم إرسال الطلب بنجاح!</h3>
+            <p id="modalDesc">تم استلام طلب تحديد القبلة الخاص بكم. سيتم التواصل معكم خلال 24 ساعة.</p>
+            <div class="ref-number">
+                <span id="modalRefLabel">الرقم المرجعي:</span> <span id="modalRef">---</span>
+            </div>
+            <div class="whatsapp-divider">
+                <span id="whatsappDividerText">أو إرسال البيانات مباشرة عبر</span>
+            </div>
+            <div class="btn-row" style="margin-top: 0;">
+                <button type="button" class="btn btn-whatsapp" onclick="sendViaWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> <span id="whatsappBtnText">إرسال عبر الواتساب</span>
+                </button>
+            </div>
+            <div class="btn-row" style="margin-top: 0.75rem;">
+                <button type="button" class="btn btn-outline" id="modalBtn" onclick="closeModal()">
+                    <span>حسناً</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    </main>
+<footer class="sn-footer">
+  <div class="sn-footer__grid">
+    <div>
+      <h3 data-en="Sky Innovations">ابتكارات السماء</h3>
+      <p data-en="A leading Omani company harnessing 4IR technologies, AI and space data analytics to serve vital government and private sectors.">شركة عُمانية رائدة في توظيف تقنيات الثورة الصناعية الرابعة والذكاء الاصطناعي وتحليل البيانات الفضائية لخدمة القطاعات الحيوية الحكومية والخاصة.</p>
+      <div class="sn-social">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/96812345678" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@spaceinnov.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-en="Company">الشركة</h4>
+      <ul>
+        <li><a href="index.html" data-en="Home">الرئيسية</a></li>
+        <li><a href="about-us.html" data-en="About the Company">نبذة عن الشركة</a></li>
+        <li><a href="about-us.html" data-en="Vision &amp; Mission">الرؤية والرسالة</a></li>
+        <li><a href="about-us.html" data-en="Certifications">الشهادات والاعتمادات</a></li>
+        <li><a href="values.html" data-en="Our Values">قيم الشركة</a></li>
+        <li><a href="projects.html" data-en="Projects">المشاريع</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Services &amp; Products">الخدمات والمنتجات</h4>
+      <ul>
+        <li><a href="services.html" data-en="Corporate Services">الخدمات المؤسسية</a></li>
+        <li><a href="qibla-request.html" data-en="Qibla Determination">تحديد اتجاه القبلة</a></li>
+        <li><a href="mosques-app.html" data-en="Mosque Management App">تطبيق إدارة المساجد</a></li>
+        <li><a href="bicodi-products.html" data-en="BICODI Batteries">بطاريات BICODI</a></li>
+        <li><a href="scientific-equipment.html" data-en="Scientific Equipment Supply">توريد الأجهزة العلمية</a></li>
+        <li><a href="majan-academy.html" data-en="Majan Training Academy">أكاديمية مجان للتدريب</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="Contact Us">تواصل معنا</h4>
+      <ul>
+        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@spaceinnov.com">info@spaceinnov.com</a></li>
+        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+96812345678">+968 1234 5678</a></li>
+        <li><i class="fab fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/96812345678" target="_blank" rel="noopener" data-en="WhatsApp Support">الدعم عبر واتساب</a></li>
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> مسقط، سلطنة عُمان</li>
+        <li><a href="contact-us.html" data-en="Send a Request">إرسال طلب أو استفسار</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sn-footer__bottom">© 2026 شركة ابتكارات السماء للتقنية والفضاء — جميع الحقوق محفوظة | 4IRT تقنيات الثورة الصناعية الرابعة</div>
+</footer>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        var WHATSAPP_NUMBER = '96812345678'; // ضع رقم الواتساب هنا
+
+        // ==================== STATE ====================
+        var currentLang = 'ar';
+        var currentRefNumber = '';
+
+        // ==================== TRANSLATIONS ====================
+        var translations = {
+            ar: {
+                pageBadge: 'خدمات تحليل البيانات المكانية',
+                pageTitle: 'طلب تحديد القبلة',
+                pageDesc: 'نموذج تقديم طلب خدمة تحديد القبلة بدقة فائقة باستخدام التقنيات الفلكية المتقدمة',
+                breadHome: 'الرئيسية',
+                breadServices: 'الخدمات',
+                breadQibla: 'تحديد القبلة',
+                infoTitle1: 'مدة الإنجاز', infoDesc1: '24 ساعة عمل',
+                infoTitle2: 'الدقة', infoDesc2: '±0.01 درجة',
+                infoTitle3: 'التقنية', infoDesc3: 'الأقمار الصناعية + الحسابات الفلكية',
+                infoTitle4: 'الدعم الفني', infoDesc4: 'متاح عبر الواتساب',
+                tabFormText: 'بيانات الطلب', tabMapText: 'الخرائط والموقع',
+                lblMosqueNo: 'رقم طلب المسجد', lblAgentName: 'اسم الوكيل',
+                lblAgentPhone: 'رقم هاتف الوكيل', lblGovernorate: 'المحافظة',
+                lblWilayat: 'الولاية', lblVillage: 'القرية / المنطقة',
+                lblNotes: 'ملاحظات إضافية', lblMapFile: 'رفع الخريطة',
+                lblSketchFile: 'رفع المخطط الكروكي',
+                mapUploadText: 'اختر ملف الخريطة (PDF, JPG, PNG, DWG)',
+                sketchUploadText: 'اختر ملف المخطط الكروكي (PDF, JPG, PNG, DWG)',
+                mapPlaceholderTitle: 'الخريطة التفاعلية',
+                mapPlaceholderText: 'سيتم إضافة الخريطة التفاعلية قريباً. يرجى رفع ملف الخريطة في تبويب "بيانات الطلب" حالياً.',
+                btnSubmit: 'إرسال الطلب', btnReset: 'إعادة تعيين',
+                modalTitle: 'تم إرسال الطلب بنجاح!',
+                modalDesc: 'تم استلام طلب تحديد القبلة الخاص بكم. سيتم التواصل معكم خلال 24 ساعة.',
+                modalRefLabel: 'الرقم المرجعي:', modalBtn: 'حسناً',
+                whatsappDividerText: 'أو إرسال البيانات مباشرة عبر',
+                whatsappBtnText: 'إرسال عبر الواتساب',
+                footerTitle1: 'ابتكارات السماء', footerTitle2: 'الخدمات',
+                footerTitle3: 'روابط سريعة', footerTitle4: 'تواصل معنا',
+                copyright: '© 2026 ابتكارات السماء. جميع الحقوق محفوظة.',
+                errRequired: 'هذا الحقل مطلوب', errPhone: 'يرجى إدخال رقم هاتف صحيح',
+                governorates: ['-- اختر المحافظة --', 'مسقط', 'ظفار', 'مسندم', 'البريمي', 'الداخلية', 'شمال الباطنة', 'جنوب الباطنة', 'جنوب الشرقية', 'شمال الشرقية', 'الظاهرة', 'الوسطى'],
+                notesPlaceholder: 'أي ملاحظات إضافية تود إضافتها...',
+                whatsappMsg: function(data) {
+                    return '*طلب تحديد القبلة - ابتكارات السماء*\n\n' +
+                        '*الرقم المرجعي:* ' + data.refNumber + '\n\n' +
+                        '*رقم طلب المسجد:* ' + data.mosqueRequestNo + '\n' +
+                        '*اسم الوكيل:* ' + data.agentName + '\n' +
+                        '*رقم هاتف الوكيل:* ' + data.agentPhone + '\n' +
+                        '*المحافظة:* ' + data.governorate + '\n' +
+                        '*الولاية:* ' + data.wilayat + '\n' +
+                        (data.village ? '*القرية:* ' + data.village + '\n' : '') +
+                        (data.notes ? '*ملاحظات:* ' + data.notes + '\n' : '') +
+                        '\n---\n_تم الإرسال عبر نظام ابتكارات السماء_';
+                }
+            },
+            en: {
+                pageBadge: 'Spatial Data Analytics Services',
+                pageTitle: 'Qibla Determination Request',
+                pageDesc: 'Submit a request for precise Qibla direction determination using advanced astronomical technologies',
+                breadHome: 'Home', breadServices: 'Services', breadQibla: 'Qibla Determination',
+                infoTitle1: 'Turnaround Time', infoDesc1: '24 Working Hours',
+                infoTitle2: 'Accuracy', infoDesc2: '±0.01 Degrees',
+                infoTitle3: 'Technology', infoDesc3: 'Satellite + Astronomical Calculations',
+                infoTitle4: 'Technical Support', infoDesc4: 'Available via WhatsApp',
+                tabFormText: 'Request Data', tabMapText: 'Maps & Location',
+                lblMosqueNo: 'Mosque Request No.', lblAgentName: 'Agent Name',
+                lblAgentPhone: 'Agent Phone Number', lblGovernorate: 'Governorate',
+                lblWilayat: 'Wilayat', lblVillage: 'Village / Area',
+                lblNotes: 'Additional Notes', lblMapFile: 'Upload Map',
+                lblSketchFile: 'Upload Site Sketch',
+                mapUploadText: 'Select map file (PDF, JPG, PNG, DWG)',
+                sketchUploadText: 'Select sketch file (PDF, JPG, PNG, DWG)',
+                mapPlaceholderTitle: 'Interactive Map',
+                mapPlaceholderText: 'The interactive map will be added soon. Please upload your map file in the "Request Data" tab for now.',
+                btnSubmit: 'Submit Request', btnReset: 'Reset',
+                modalTitle: 'Request Submitted Successfully!',
+                modalDesc: 'Your Qibla determination request has been received. We will contact you within 24 hours.',
+                modalRefLabel: 'Reference Number:', modalBtn: 'OK',
+                whatsappDividerText: 'Or send data directly via',
+                whatsappBtnText: 'Send via WhatsApp',
+                footerTitle1: 'Sky Innovations', footerTitle2: 'Services',
+                footerTitle3: 'Quick Links', footerTitle4: 'Contact Us',
+                copyright: '© 2026 Sky Innovations. All rights reserved.',
+                errRequired: 'This field is required', errPhone: 'Please enter a valid phone number',
+                governorates: ['-- Select Governorate --', 'Muscat', 'Dhofar', 'Musandam', 'Al Buraimi', 'Ad Dakhiliyah', 'North Al Batinah', 'South Al Batinah', 'South Ash Sharqiyah', 'North Ash Sharqiyah', 'Adh Dhahirah', 'Al Wusta'],
+                notesPlaceholder: 'Any additional notes you would like to add...',
+                whatsappMsg: function(data) {
+                    return '*Qibla Determination Request - Sky Innovations*\n\n' +
+                        '*Reference Number:* ' + data.refNumber + '\n\n' +
+                        '*Mosque Request No.:* ' + data.mosqueRequestNo + '\n' +
+                        '*Agent Name:* ' + data.agentName + '\n' +
+                        '*Agent Phone:* ' + data.agentPhone + '\n' +
+                        '*Governorate:* ' + data.governorate + '\n' +
+                        '*Wilayat:* ' + data.wilayat + '\n' +
+                        (data.village ? '*Village:* ' + data.village + '\n' : '') +
+                        (data.notes ? '*Notes:* ' + data.notes + '\n' : '') +
+                        '\n---\n_Sent via Sky Innovations System_';
+                }
+            }
+        };
+
+        // ==================== LANGUAGE SWITCHING ====================
+        function switchLang(lang, evt) {
+            currentLang = lang;
+            var t = translations[lang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            var ids = ['pageBadge','pageTitle','pageDesc','breadHome','breadServices','breadQibla',
+                       'infoTitle1','infoDesc1','infoTitle2','infoDesc2','infoTitle3','infoDesc3','infoTitle4','infoDesc4',
+                       'tabFormText','tabMapText','lblMosqueNo','lblAgentName','lblAgentPhone','lblGovernorate',
+                       'lblWilayat','lblVillage','lblNotes','lblMapFile','lblSketchFile',
+                       'mapUploadText','sketchUploadText','mapPlaceholderTitle','mapPlaceholderText',
+                       'btnReset','modalTitle','modalDesc','modalRefLabel','modalBtn',
+                       'whatsappDividerText','whatsappBtnText',
+                       'footerTitle1','footerTitle2','footerTitle3','footerTitle4','copyright'];
+            for (var i = 0; i < ids.length; i++) {
+                var el = document.getElementById(ids[i]);
+                if (el && t[ids[i]]) el.innerHTML = t[ids[i]];
+            }
+
+            // Update submit button span
+            var submitSpan = document.querySelector('#btnSubmit span');
+            if (submitSpan) submitSpan.innerHTML = t.btnSubmit;
+
+            // Update governorate dropdown
+            var govSelect = document.getElementById('governorate');
+            var govs = t.governorates;
+            govSelect.innerHTML = '';
+            for (var j = 0; j < govs.length; j++) {
+                var opt = document.createElement('option');
+                opt.value = j === 0 ? '' : govs[j].toLowerCase().replace(/\s+/g, '-');
+                opt.textContent = govs[j];
+                govSelect.appendChild(opt);
+            }
+
+            // Update lang buttons
+            document.getElementById('langAr').classList.toggle('active', lang === 'ar');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+            // Update placeholders
+            document.getElementById('notes').placeholder = t.notesPlaceholder;
+        }
+
+        // ==================== TAB SWITCHING ====================
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+            document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+            if (tab === 'form') {
+                document.getElementById('tabForm').classList.add('active');
+                document.getElementById('tabContentForm').classList.add('active');
+            } else {
+                document.getElementById('tabMap').classList.add('active');
+                document.getElementById('tabContentMap').classList.add('active');
+            }
+        }
+
+        // ==================== FILE UPLOAD ====================
+        function handleFileSelect(input, displayId) {
+            var display = document.getElementById(displayId);
+            if (input.files && input.files[0]) {
+                display.textContent = input.files[0].name;
+                display.style.color = 'var(--aurora-teal)';
+            } else {
+                display.textContent = '';
+            }
+        }
+
+        // ==================== FORM SUBMIT ====================
+        function handleSubmit(event) {
+            event.preventDefault();
+            var valid = true;
+            var t = translations[currentLang];
+
+            document.querySelectorAll('.error-msg').forEach(function(el) { el.classList.remove('show'); el.textContent = ''; });
+            document.querySelectorAll('.error').forEach(function(el) { el.classList.remove('error'); });
+
+            var requiredFields = [
+                { id: 'mosqueRequestNo', errId: 'errMosqueNo' },
+                { id: 'agentName', errId: 'errAgentName' },
+                { id: 'agentPhone', errId: 'errAgentPhone' },
+                { id: 'governorate', errId: 'errGovernorate' },
+                { id: 'wilayat', errId: 'errWilayat' }
+            ];
+
+            for (var i = 0; i < requiredFields.length; i++) {
+                var field = document.getElementById(requiredFields[i].id);
+                var errEl = document.getElementById(requiredFields[i].errId);
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    errEl.textContent = t.errRequired;
+                    errEl.classList.add('show');
+                    valid = false;
+                }
+            }
+
+            var phone = document.getElementById('agentPhone').value.trim();
+            if (phone && !/^[\d\s\-\+\(\)]{7,20}$/.test(phone)) {
+                document.getElementById('agentPhone').classList.add('error');
+                document.getElementById('errAgentPhone').textContent = t.errPhone;
+                document.getElementById('errAgentPhone').classList.add('show');
+                valid = false;
+            }
+
+            if (!valid) {
+                var firstError = document.querySelector('.error');
+                if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            currentRefNumber = 'QBL-' + new Date().getFullYear() + '-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+            document.getElementById('modalRef').textContent = currentRefNumber;
+            document.getElementById('successModal').classList.add('show');
+        }
+
+        // ==================== WHATSAPP ====================
+        function sendViaWhatsApp() {
+            var t = translations[currentLang];
+            var data = {
+                refNumber: currentRefNumber,
+                mosqueRequestNo: document.getElementById('mosqueRequestNo').value.trim(),
+                agentName: document.getElementById('agentName').value.trim(),
+                agentPhone: document.getElementById('agentPhone').value.trim(),
+                governorate: document.getElementById('governorate').options[document.getElementById('governorate').selectedIndex].text,
+                wilayat: document.getElementById('wilayat').value.trim(),
+                village: document.getElementById('village').value.trim(),
+                notes: document.getElementById('notes').value.trim()
+            };
+            var message = t.whatsappMsg(data);
+            var whatsappURL = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+            window.open(whatsappURL, '_blank');
+        }
+
+        // ==================== RESET & CLOSE ====================
+        function resetForm() {
+            document.getElementById('qiblaForm').reset();
+            document.querySelectorAll('.error-msg').forEach(function(el) { el.classList.remove('show'); el.textContent = ''; });
+            document.querySelectorAll('.error').forEach(function(el) { el.classList.remove('error'); });
+            document.getElementById('mapFileName').textContent = '';
+            document.getElementById('sketchFileName').textContent = '';
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+            resetForm();
+        }
+
+        // ==================== MOBILE MENU ====================
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // ==================== CLOSE MODAL ON OVERLAY CLICK ====================
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+    <script src="assets/site.js" defer></script>
+</body>
+</html>
