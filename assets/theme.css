@@ -164,6 +164,42 @@ section, .section, .section-dark, .section-alt, .stats-bar, .sn-paths, main,
 }
 @media (prefers-reduced-motion: reduce){ .sky-stars--near { animation:none; } }
 
+/* ===== 3b. خلفية الهيرو بصورة حقيقية (تلغي المشهد المبني بـ CSS) ===== */
+.sky {
+  background-image: image-set(url("../images/space-hero.webp") type("image/webp"), url("../images/space-hero.jpg") type("image/jpeg"));
+  background-image: -webkit-image-set(url("../images/space-hero.webp") type("image/webp"), url("../images/space-hero.jpg") type("image/jpeg"));
+  background-position: center 22%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* الصورة تحوي الكواكب والنجوم — نُطفئ الطبقات المرسومة لتفادي الازدحام */
+.sky-band, .sky-neb, .sky-dust, .sky-stars, .sky-moon, .sky-planet, .sky-dawn { display: none !important; }
+.hero .star, .hero .orbit, .page-hero .star, .page-header .star { display: none !important; }
+
+/* طبقة تعتيم متدرّجة: تحمي قراءة النص على اليمين وتدمج الأسفل مع الصفحة */
+.sky-veil {
+  display: block !important;
+  inset: 0 !important; height: auto !important;
+  background:
+    linear-gradient(to left, rgba(7,12,26,.62) 0%, rgba(7,12,26,.34) 38%, rgba(7,12,26,.06) 68%, rgba(7,12,26,0) 86%),
+    linear-gradient(180deg, rgba(7,12,26,.50) 0%, rgba(7,12,26,.14) 28%, rgba(7,12,26,.50) 76%, #070C1A 100%);
+}
+/* الصفحات الداخلية: نص في المنتصف ← تعتيم متماثل */
+.page-header .sky-veil, .page-hero .sky-veil {
+  background:
+    radial-gradient(78% 88% at 50% 46%, rgba(7,12,26,.62) 0%, rgba(7,12,26,.30) 52%, rgba(7,12,26,.05) 82%),
+    linear-gradient(180deg, rgba(7,12,26,.48) 0%, rgba(7,12,26,.16) 30%, rgba(7,12,26,.55) 78%, #070C1A 100%) !important;
+}
+[dir="ltr"] .sky-veil {
+  background:
+    linear-gradient(to right, rgba(7,12,26,.88) 0%, rgba(7,12,26,.55) 34%, rgba(7,12,26,.12) 62%, rgba(7,12,26,0) 82%),
+    linear-gradient(180deg, rgba(7,12,26,.55) 0%, rgba(7,12,26,.10) 26%, rgba(7,12,26,.42) 72%, #070C1A 100%);
+}
+@media(max-width:900px){
+  .sky { background-image: url("../images/space-hero-mobile.jpg"); background-position: 28% 26%; }
+  .sky-veil { background: linear-gradient(180deg, rgba(7,12,26,.62) 0%, rgba(7,12,26,.34) 30%, rgba(7,12,26,.72) 74%, #070C1A 100%) !important; }
+}
+
 /* ===== 4. التيبوغرافيا ===== */
 h1,h2,h3,h4,h5,h6,.section-title,.sn-paths__title {
   font-family:var(--ar); color:var(--ink) !important;
@@ -435,3 +471,7 @@ hr { border-color:var(--line); }
 .reveal { transition:opacity .7s var(--ease), transform .7s var(--ease) !important; }
 @media (prefers-reduced-motion: reduce){ *,*::before,*::after { animation:none !important; transition:none !important; }
   .reveal { opacity:1 !important; transform:none !important; } }
+
+/* أرقام ورثت لون الخلفية الداكن */
+.stat-number, .number, .stat-value, .metric-value, .counter { color: var(--ink) !important; }
+.stat-number span, .number span { color: var(--champagne) !important; }
