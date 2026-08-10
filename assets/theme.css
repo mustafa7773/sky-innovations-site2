@@ -486,3 +486,59 @@ hr { border-color:var(--line); }
 @media(max-width:1100px){
   .sn-menu > li.sn-lang, .sn-menu > li:has(> .sn-nav__cta) { margin-inline-start: 0; margin-top: .5rem; }
 }
+
+/* =========================================================
+   طبقة الحركة — هادئة، بمنحنى واحد، وتحترم تفضيل تقليل الحركة
+   ========================================================= */
+:root { --ease-out: cubic-bezier(.16,.84,.44,1); --dur: .72s; }
+
+/* دخول الهيرو */
+.sn-motion .sn-enter { opacity: 0; transform: translateY(18px); }
+.sn-motion .sn-entered .sn-enter {
+  opacity: 1; transform: none;
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+/* كشف عند التمرير */
+.sn-motion .sn-rise { opacity: 0; transform: translateY(26px); }
+.sn-motion .sn-rise.sn-in {
+  opacity: 1; transform: none;
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+/* الشريط العلوي عند النزول */
+.sn-nav { transition: background .35s var(--ease-out), border-color .35s var(--ease-out), box-shadow .35s var(--ease-out); }
+.sn-nav--solid {
+  background: rgba(7,12,26,.86) !important;
+  border-bottom-color: rgba(255,255,255,.09) !important;
+  box-shadow: 0 12px 40px rgba(2,6,14,.42) !important;
+}
+
+/* انزياح خلفية الهيرو */
+.hero .sky, .page-hero .sky, .page-header .sky { will-change: transform; }
+
+/* تفاعلات دقيقة */
+.sn-link, .sn-sub a, .sn-footer a { transition: color .25s var(--ease-out), background .25s var(--ease-out); }
+.sn-path__go { display: inline-block; transition: transform .3s var(--ease-out); }
+.sn-path:hover .sn-path__go { transform: translateX(-6px); }
+[dir="ltr"] .sn-path:hover .sn-path__go { transform: translateX(6px); }
+.service-icon, .feature-icon, .sn-path__icon, .stat-ic, .why-icon, .action-icon {
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s var(--ease-out);
+}
+.service-card:hover .service-icon, .sn-path:hover .sn-path__icon,
+.feature-card:hover .feature-icon, .why-card:hover .why-icon, .action-card:hover .action-icon {
+  transform: translateY(-3px) scale(1.04);
+  border-color: var(--line-gold) !important;
+  box-shadow: 0 0 34px rgba(228,199,155,.14), 0 1px 0 rgba(255,255,255,.09) inset !important;
+}
+.sn-social a, .btn, .btn-primary, .btn-outline, .cta-button, .sn-nav__cta, .floating-cta {
+  will-change: transform;
+}
+.stat-item:hover .stat-ic { transform: scale(1.05); }
+
+/* لا حركة عند تفضيل التقليل */
+.sn-no-motion .sn-enter, .sn-no-motion .sn-rise { opacity: 1 !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sn-enter, .sn-rise { opacity: 1 !important; transform: none !important; }
+  .hero .sky, .page-hero .sky, .page-header .sky { transform: none !important; }
+}
