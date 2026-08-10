@@ -1,4 +1,4 @@
-/* SKY-THEME-VERSION: v4-minimal  (2026-08-10) */
+/* SKY-THEME-VERSION: v5-cosmic  (2026-08-10) */
 /* =========================================================
    Sky Innovations — "Orbital Dawn"
    فضاء عميق + أسطح زجاجية + لمسة شمبانيا
@@ -22,9 +22,9 @@
 
   --void: #05090F;
   --deep: #070D1C;
-  --nebula-violet: rgba(86,71,148,.07);
-  --nebula-blue: rgba(38,84,148,.07);
-  --horizon: rgba(228,199,155,.035);
+  --nebula-violet: rgba(96,78,158,.28);
+  --nebula-blue: rgba(44,92,158,.26);
+  --horizon: rgba(228,199,155,.16);
 
   --glass: rgba(255,255,255,.045);
   --glass-2: rgba(255,255,255,.075);
@@ -63,7 +63,25 @@ body::before {
     radial-gradient(85% 60% at 12% 108%, var(--horizon)       0%, transparent 55%),
     linear-gradient(180deg, #060B16 0%, #070E1E 45%, #050A14 100%);
 }
-body::after { display: none; }
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .75;
+  background-image:
+    radial-gradient(1.2px 1.2px at 8% 14%, rgba(255,255,255,.85), transparent),
+    radial-gradient(1px 1px at 17% 41%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 26% 22%, rgba(255,255,255,.65), transparent),
+    radial-gradient(1.3px 1.3px at 34% 68%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 43% 12%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 52% 55%, rgba(255,255,255,.55), transparent),
+    radial-gradient(1.2px 1.2px at 61% 31%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 69% 77%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 76% 18%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1.3px 1.3px at 84% 49%, rgba(255,255,255,.75), transparent),
+    radial-gradient(1px 1px at 91% 27%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 96% 63%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 12% 82%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 47% 88%, rgba(255,255,255,.35), transparent),
+    radial-gradient(1px 1px at 88% 88%, rgba(255,255,255,.4), transparent);
+}
 
 section, .section, .section-dark, .section-alt, .stats-bar, .sn-paths, main,
 .final-cta, .cta-section, .values-intro, .about-intro, .why-us { background: transparent !important; }
@@ -247,13 +265,13 @@ button[type="submit"], .sn-nav__cta {
 }
 .hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: none;
+  background: radial-gradient(56% 46% at 74% 6%, rgba(112,92,180,.20) 0%, transparent 62%);
 }
 .hero-content, .page-header-content, .hero-inner, .page-hero-content { position: relative; z-index: 3; }
 .hero h1 { text-shadow: 0 2px 40px rgba(0,0,0,.4); }
 .hero-sub { color: var(--ink-2) !important; font-weight: 600 !important; }
 .hero-desc, .page-hero-desc { color: var(--body-c) !important; }
-.hero .star { display: none !important; }
+.hero .star { background: #fff !important; opacity: .45 !important; }
 .orbit { border-color: rgba(255,255,255,.025) !important; }
 .section-divider { background: linear-gradient(90deg, transparent, var(--line-2), transparent) !important; height: 1px !important; }
 
@@ -427,11 +445,39 @@ hr { border-color: var(--line); }
   background:
     radial-gradient(circle at 50% 50%,
       rgba(12,20,40,.99) 0%, rgba(12,20,40,.99) 62.2%,
-      rgba(228,199,155,.07) 62.8%, rgba(228,199,155,.025) 64.6%,
-      transparent 68%) !important;
-  opacity: .5;
+      rgba(255,231,196,.62) 62.6%, rgba(228,199,155,.20) 63.8%,
+      rgba(150,180,240,.10) 65.5%, transparent 69%) !important;
+  opacity: 1;
+  box-shadow: 0 -30px 110px 12px rgba(228,199,155,.14) !important;
 }
 
 /* لإخفاء الكوكب نهائياً: احذف التعليق عن السطر التالي
 .hero::before { display: none !important; }
 */
+
+/* درب التبانة: شريط سديمي مائل خلف المحتوى */
+body { position: relative; }
+.hero { isolation: isolate; }
+body::before {
+  background:
+    radial-gradient(70% 55% at 78% -5%,  var(--nebula-violet) 0%, transparent 60%),
+    radial-gradient(60% 50% at 8% 12%,   var(--nebula-blue)   0%, transparent 62%),
+    radial-gradient(85% 60% at 12% 108%, var(--horizon)       0%, transparent 55%),
+    linear-gradient(196deg, transparent 34%, rgba(120,104,180,.16) 44%, rgba(150,170,225,.10) 50%, rgba(120,104,180,.14) 56%, transparent 66%),
+    linear-gradient(180deg, #060B16 0%, #070E1E 45%, #050A14 100%) !important;
+}
+
+/* الكوكب: أوسع وأخفض ليقترب من الصورة المرجعية + قمر بعيد أعلى اليسار */
+.hero::before {
+  left: -40% !important; bottom: -86% !important;
+  width: 118vw !important; height: 118vw !important;
+  max-width: 1750px !important; max-height: 1750px !important;
+}
+.hero .hero-content::before {
+  content: ""; position: fixed; top: 12vh; left: 6vw; z-index: -1;
+  width: 86px; height: 86px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 72% 72%, rgba(214,224,244,.22) 0%, rgba(120,134,168,.09) 46%, rgba(40,52,78,.03) 66%, transparent 74%);
+  box-shadow: inset -6px -8px 18px rgba(180,196,228,.10), 0 0 40px rgba(150,170,210,.06);
+  filter: blur(.4px); opacity: .8;
+}
+@media(max-width:900px){ .hero .hero-content::before { display: none; } }
