@@ -652,8 +652,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/site.css">
-    <link rel="stylesheet" href="assets/theme.css">
+    <link rel="stylesheet" href="assets/site.css?v=3">
+    <link rel="stylesheet" href="assets/theme.css?v=3">
 </head>
 <body dir="rtl">
     <a href="contact-us.html" class="floating-cta" id="floatingCta"><i class="fas fa-comments"></i><span>طلب استشارة مجانية</span></a>
@@ -731,6 +731,19 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
+    <div class="sky" aria-hidden="true">
+      <span class="sky-band"></span>
+      <span class="sky-neb sky-neb--violet"></span>
+      <span class="sky-neb sky-neb--blue"></span>
+      <span class="sky-dust"></span>
+      <span class="sky-stars sky-stars--far"></span>
+      <span class="sky-stars sky-stars--mid"></span>
+      <span class="sky-stars sky-stars--near"></span>
+      <span class="sky-moon"></span>
+      <span class="sky-planet"><span class="sky-planet__rim"></span></span>
+      <span class="sky-dawn"></span>
+      <span class="sky-veil"></span>
+    </div>
         <div class="orbit"></div>
         <div class="orbit o2"></div>
         <div class="hero-content">
@@ -975,6 +988,6 @@
             document.getElementById('navMenu').classList.toggle('active');
         }
     </script>
-    <script src="assets/site.js" defer></script>
+    <script src="assets/site.js?v=3" defer></script>
 </body>
     </html>
