@@ -21,9 +21,9 @@
 
   --void: #05090F;
   --deep: #070D1C;
-  --nebula-violet: rgba(86,71,148,.30);
-  --nebula-blue: rgba(38,84,148,.28);
-  --horizon: rgba(228,199,155,.22);
+  --nebula-violet: rgba(86,71,148,.14);
+  --nebula-blue: rgba(38,84,148,.13);
+  --horizon: rgba(228,199,155,.08);
 
   --glass: rgba(255,255,255,.045);
   --glass-2: rgba(255,255,255,.075);
@@ -63,16 +63,12 @@ body::before {
     linear-gradient(180deg, #060B16 0%, #070E1E 45%, #050A14 100%);
 }
 body::after {
-  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .5;
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .22;
   background-image:
-    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.7), transparent),
-    radial-gradient(1px 1px at 33% 62%, rgba(255,255,255,.45), transparent),
-    radial-gradient(1px 1px at 57% 26%, rgba(255,255,255,.6), transparent),
-    radial-gradient(1px 1px at 71% 71%, rgba(255,255,255,.35), transparent),
-    radial-gradient(1.4px 1.4px at 86% 34%, rgba(255,255,255,.5), transparent),
-    radial-gradient(1px 1px at 22% 84%, rgba(255,255,255,.4), transparent),
-    radial-gradient(1px 1px at 46% 8%,  rgba(255,255,255,.35), transparent),
-    radial-gradient(1px 1px at 92% 88%, rgba(255,255,255,.3), transparent);
+    radial-gradient(1px 1px at 18% 22%, rgba(255,255,255,.6), transparent),
+    radial-gradient(1px 1px at 62% 34%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 38% 74%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 84% 66%, rgba(255,255,255,.35), transparent);
 }
 section, .section, .section-dark, .section-alt, .stats-bar, .sn-paths, main,
 .final-cta, .cta-section, .values-intro, .about-intro, .why-us { background: transparent !important; }
@@ -256,14 +252,14 @@ button[type="submit"], .sn-nav__cta {
 }
 .hero::after {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: radial-gradient(58% 48% at 76% 8%, rgba(96,80,160,.16) 0%, transparent 64%);
+  background: radial-gradient(58% 48% at 76% 8%, rgba(96,80,160,.07) 0%, transparent 64%);
 }
 .hero-content, .page-header-content, .hero-inner, .page-hero-content { position: relative; z-index: 3; }
 .hero h1 { text-shadow: 0 2px 40px rgba(0,0,0,.4); }
 .hero-sub { color: var(--ink-2) !important; font-weight: 600 !important; }
 .hero-desc, .page-hero-desc { color: var(--body-c) !important; }
-.hero .star { background: #fff !important; opacity: .4 !important; }
-.orbit { border-color: rgba(255,255,255,.045) !important; }
+.hero .star { background: #fff !important; opacity: .18 !important; }
+.orbit { border-color: rgba(255,255,255,.025) !important; }
 .section-divider { background: linear-gradient(90deg, transparent, var(--line-2), transparent) !important; height: 1px !important; }
 
 /* ---------- الإحصائيات: مكوّن واحد ---------- */
@@ -436,7 +432,7 @@ hr { border-color: var(--line); }
   background:
     radial-gradient(circle at 50% 50%,
       rgba(12,20,40,.99) 0%, rgba(12,20,40,.99) 62.2%,
-      rgba(228,199,155,.38) 62.8%, rgba(228,199,155,.12) 64.2%,
-      rgba(140,170,235,.07) 66%, transparent 69%) !important;
-  opacity: .9;
+      rgba(228,199,155,.20) 62.8%, rgba(228,199,155,.06) 64.4%,
+      rgba(140,170,235,.04) 66%, transparent 69%) !important;
+  opacity: .65;
 }
