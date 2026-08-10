@@ -475,3 +475,14 @@ hr { border-color:var(--line); }
 /* أرقام ورثت لون الخلفية الداكن */
 .stat-number, .number, .stat-value, .metric-value, .counter { color: var(--ink) !important; }
 .stat-number span, .number span { color: var(--champagne) !important; }
+
+/* ===== تباعد شريط التنقل ===== */
+.sn-menu { gap: .18rem !important; }
+.sn-menu > li.sn-lang { margin-inline-start: .9rem; }          /* فصل مبدّل اللغة عن الروابط */
+.sn-menu > li:has(> .sn-nav__cta) { margin-inline-start: .75rem; } /* فصل زر "تواصل معنا" عن المبدّل */
+.sn-lang { padding: 4px !important; gap: 3px !important; }
+.sn-lang button { padding: 6px 15px !important; }
+.sn-nav__cta { padding: .62rem 1.25rem !important; }
+@media(max-width:1100px){
+  .sn-menu > li.sn-lang, .sn-menu > li:has(> .sn-nav__cta) { margin-inline-start: 0; margin-top: .5rem; }
+}
