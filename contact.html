@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-c
+ross-origin">
+<title>تواصل معنا | ابتكارات السماء</title>
+<meta name="description" content="تواصل مع شركة ابتكارات السماء للاستفسار عن الخدمات والمنتجات وفرص الشراكة.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  :root {
+    --brand-size: 1.8rem;        
+    --logo-size: 1.1rem;         
+  }
+
+  /* ===== الشعار في قسم الـ hero ===== */
+  .hero-brand {
+    display: flex;
+    align-items: baseline;       
+    justify-content: center;
+    gap: 16px;
+    margin: 0 0 1rem;
+  }
+  .hero-brand .brand-ar,
+  .hero-brand .brand-en {
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--brand-size) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hero-brand .brand-en { text-transform: uppercase; }
+  .hero-brand .brand-rule {
+    align-self: center;
+    width: 1px;
+    height: 1.4em;
+    background: currentColor;
+    opacity: .5;
+    flex: none;
+  }
+
+  /* ===== الشعار في الشريط العلوي ===== */
+  .logo h1,
+  .logo p {
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--logo-size) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* ===== الشعار في الفوتر ===== */
+  .footer-brand strong,
+  .footer-brand em {
+    display: block;
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--logo-size) !important;
+    font-style: normal;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  
+  .logo > div,
+  .footer-brand > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo h1, .logo p,
+  .footer-brand strong, .footer-brand em {
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  
+  .logo h1.is-latin,
+  .footer-brand strong.is-latin {
+    text-transform: uppercase;
+  }
+  .logo > div, .footer-brand > div { text-align: start; }
+  
+  .hero-brand,
+  .logo > div,
+  .footer-brand > div {
+    direction: rtl;
+  }
+  .hero-brand .brand-en,
+  .logo p,
+  .footer-brand em {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  .logo p,
+  .footer-brand em,
+  .hero-brand .brand-en {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    transform: none !important;
+    clip: auto !important;
+  }
+  .hero-brand .brand-en { display: inline-block !important; }
+  
+  .nav-menu .has-sub { position: relative; display: flex; align-items: center; gap: 4px; }
+  .nav-menu .sub-menu li { position: relative; }
+  .nav-menu .sub-toggle {
+    background: none; border: 0; color: inherit; cursor: pointer;
+    padding: 4px; font-size: .75rem; line-height: 1;
+  }
+  .nav-menu .sub-toggle i { transition: transform .2s; }
+  .nav-menu .has-sub.open > .sub-toggle i { transform: rotate(180deg); }
+  .nav-menu .sub-menu {
+    list-style: none; margin: 0; padding: 6px;
+    position: absolute; top: 100%; inset-inline-start: 0;
+    min-width: 180px;
+    background: #0b1626; border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    opacity: 0; visibility: hidden; transform: translateY(6px);
+    transition: opacity .2s, transform .2s, visibility .2s;
+    z-index: 100;
+  }
+  .nav-menu .sub-menu li { display: block; margin: 0; }
+  .nav-menu .sub-menu a { display: block; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+  .nav-menu .sub-menu a:hover { background: rgba(255,255,255,.08); }
+
+
+  .nav-menu .sub-menu li.has-sub { display: flex; justify-content: space-between; }
+  .nav-menu .sub-menu li.has-sub > a { flex: 1; }
+  .nav-menu .sub-menu .sub-menu {
+    top: -7px; inset-inline-start: auto; inset-inline-end: calc(100% - 2px);
+  }
+  .nav-menu .sub-menu .sub-toggle i,
+  .nav-menu .sub-menu .has-sub.open > .sub-toggle i { transform: rotate(90deg); }
+  html[dir="ltr"] .nav-menu .sub-menu .sub-toggle i,
+  html[dir="ltr"] .nav-menu .sub-menu .has-sub.open > .sub-toggle i { transform: rotate(-90deg); }
+
+  .nav-menu .has-sub.open > .sub-menu,
+  .nav-menu .has-sub:focus-within > .sub-menu {
+    opacity: 1; visibility: visible; transform: none;
+  }
+  @media (hover: hover) {
+    .nav-menu .has-sub:hover > .sub-menu { opacity: 1; visibility: visible; transform: none; }
+  }
+  @media (max-width: 900px) {
+    .nav-menu .has-sub { flex-wrap: wrap; }
+    .nav-menu .sub-menu {
+      position: static; width: 100%; flex-basis: 100%;
+      display: none; opacity: 1; visibility: visible; transform: none;
+      box-shadow: none; background: transparent; border: 0; padding: 0 12px;
+    }
+    .nav-menu .has-sub.open > .sub-menu { display: block; }
+  }
+</style>
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#050C18">
+</head>
+<body data-title-ar="تواصل معنا | ابتكارات السماء" data-title-en="Contact | Sky Innovations" data-desc-ar="تواصل مع شركة ابتكارات السماء للاستفسار عن الخدمات والمنتجات وفرص الشراكة." data-desc-en="Get in touch with Sky Innovations about services, products and partnership opportunities.">
+<nav class="navbar">
+  <div class="nav-container">
+    <a class="logo" href="index.html">
+      <img src="assets/logo.png" alt="شعار ابتكارات السماء">
+      <div><h1>ابتكارات السماء</h1><p>SKY INNOVATIONS</p></div>
+    </a>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="تبديل اللغة / Switch language">
+        <i class="fa-solid fa-globe"></i><span id="langLabel">EN</span>
+      </button>
+      <button class="nav-toggle" aria-label="القائمة / Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <ul class="nav-menu"><li class="has-sub"><a href="index.html" data-en="Home">الرئيسية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="about.html" data-en="About">نبذة عن الشركة</a></li>
+          <li><a href="about.html" data-en="About">سياسة الأمن والسلامة</a></li>
+        </ul></li><li class="has-sub"><a href="services.html" data-en="Services">الخدمات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="services.html#mosque-management" data-en="Mosque facility management">إدارة مرافق المساجد</a></li>
+          <li><a href="qibla.html" data-en="Qibla direction">تحديد اتجاه القبلة</a></li>
+          <li><a href="network-surveys.html" data-en="Network surveys">المسوحات الشبكية</a></li>
+          <li><a href="network-site-optimization.html" data-en="Network site optimization">تحسين مواقع الشبكية</a></li>
+          <li><a href="observatory-control.html" data-en="Astronomical observatory control">التحكم بالمراصد الفلكية</a></li>
+          <li><a href="space-mission-management.html" data-en="Space mission management">إدارة المهام الفضائية</a></li>
+          <li><a href="data-analysis-forecasting.html" data-en="Data analysis &amp; extrapolation">تحليل واستقراء البيانات</a></li>
+          <li><a href="rd-prototyping.html" data-en="R&amp;D and prototyping">البحث والتطوير والنمذجة الأولية</a></li>
+          <li><a href="big-data-processing.html" data-en="Big data processing">معالجة البيانات الضخمة</a></li>
+        </ul></li><li class="has-sub"><a href="innovations.html" data-en="Innovations &amp; Technology">الابتكارات والتقنية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="innovative-solutions.html" data-en="Innovative solutions">الحلول الابتكارية</a></li>
+          <li><a href="sustainable-environment.html" data-en="Sustainable environmental monitoring">مراقبة البيئة المستدامة</a></li>
+          <li><a href="cognitive-cities.html" data-en="Cognitive city systems">أنظمة المدن الإدراكية</a></li>
+          <li><a href="change-detection.html" data-en="Change detection &amp; forecasting">الكشف عن التغييرات والتوقعات</a></li>
+        </ul></li><li class="has-sub"><a href="capacity.html" data-en="Capacity building">بناء القدرات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="sky-innovations.html" data-en="Sky Innovations">الفلك والفضاء</a>
+            <!-- لإضافة انبثاق تحت هذا العنصر: ضع داخل الـ ul التالي عناصر بهذا الشكل <li><a href="الرابط" data-en="English">الاسم</a></li> -->
+            <ul class="sub-menu"></ul>
+          </li>
+          <li><a href="majan.html" data-en="Majan">الذكاء الاصطناعي</a>
+            <!-- لإضافة انبثاق تحت هذا العنصر: ضع داخل الـ ul التالي عناصر بهذا الشكل <li><a href="الرابط" data-en="English">الاسم</a></li> -->
+            <ul class="sub-menu"></ul>
+          </li>
+        </ul></li><li class="has-sub"><a href="products.html" data-en="Products">المنتجات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="imam-app.html" data-en="Imam app">تطبيق الهواتف النقالة</a></li>
+          <li><a href="scientific-equipment.html" data-en="Scientific equipment supply"> الأجهزة العلمية</a></li>
+          <li><a href="scientific-equipment.html" data-en="Scientific equipment supply"> الطاقة المتجددة</a></li>
+        </ul></li><li class="has-sub"><a href="projects.html" data-en="Projects">المشاريع</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="contributed-projects.html" data-en="Contributed projects">الشركاء والمشاريع</a></li>
+        </ul></li><li><a href="contact.html" class="active" data-en="Contact">تواصل معنا</a></li></ul>
+  </div>
+</nav>
+<header class="hero"><div class="hero-orbit" aria-hidden="true">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle class="ring" cx="200" cy="200" r="150" stroke-width="1.4"/>
+    <circle class="ring-b" cx="200" cy="200" r="118" stroke-width="1.2"/>
+    <ellipse class="ring" cx="200" cy="200" rx="150" ry="52" stroke-width="1.2"/>
+    <ellipse class="ring" cx="200" cy="200" rx="150" ry="96" stroke-width="1"/>
+    <ellipse class="ring-b" cx="200" cy="200" rx="52" ry="150" stroke-width="1.2"/>
+    <path class="ring-b" d="M62 246a150 150 0 0 0 276 0" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+</div><div class="hero-inner">
+  <div class="eyebrow" data-en="We would love to hear from you">نسعد بتواصلكم</div>
+  <h2 data-en="Contact us">تواصل معنا</h2>
+  <p data-en="We welcome your enquiries and look forward to working with you.">نرحّب باستفساراتكم ونتطلع إلى التعاون معكم.</p>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="grid g2">
+      <div>
+        <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:1rem" data-en="Contact information">معلومات التواصل</h3>
+        <div class="grid" style="gap:1rem">
+          <div class="card"><i class="ico fa-solid fa-envelope"></i><h4 data-en="Email">البريد الإلكتروني</h4><p>Info@4irt.com</p></div>
+          <div class="card"><i class="ico fa-solid fa-location-dot"></i><h4 data-en="Head office">المقر الرئيسي</h4><p data-en=" Alkhoudh, Muscat, Sultanate of Oman">الخوض, مسقط, سلطنة عُمان</p></div>
+          <div class="card"><i class="ico fa-solid fa-briefcase"></i><h4 data-en="Primary activity">النشاط الأساسي</h4><p data-en="Technology development, AI-enhanced Earth imagery and space data analytics, observatory control services, and national capacity building.">تطوير التكنولوجيا، تحليلات صور الأرض المعززة بالذكاء الاصطناعي وبيانات الفضاء، خدمات التحكم بالمراصد، وبناء القدرات الوطنية.</p></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:1.2rem" data-en="Send your enquiry">أرسل استفسارك</h3>
+        <form id="contactForm" data-web3forms>
+          <input type="hidden" name="access_key" value="9ddf36c1-501b-467d-b964-2cab23d40c35">
+          <input type="hidden" name="subject" value="استفسار جديد من موقع ابتكارات السماء">
+          <input type="hidden" name="from_name" value="نموذج تواصل معنا">
+          <div class="field"><label for="name" data-en="Full name *">الاسم الكامل *</label><input id="name" name="name" required></div>
+          <div class="field"><label for="email" data-en="Email address *">البريد الإلكتروني *</label><input id="email" name="email" type="email" required></div>
+          <div class="field"><label for="org" data-en="Organisation / company">الجهة / الشركة</label><input id="org" name="org"></div>
+          <div class="field">
+            <label for="type" data-en="Enquiry type *">نوع الاستفسار *</label>
+            <select id="type" name="type" required>
+              <option value="" data-en="— Select enquiry type —">— اختر نوع الاستفسار —</option>
+              <option data-en="Space data analysis services">خدمات تحليل البيانات الفضائية</option><option data-en="Observatory control services">خدمات التحكم بالمراصد</option><option data-en="AI solutions">حلول الذكاء الاصطناعي</option><option data-en="Mosque facility management and qibla determination">حلول المساجد وتحديد القبلة</option><option data-en="BICODI energy storage products">منتجات BICODI لتخزين الطاقة</option><option data-en="Scientific equipment supply">توريد الأجهزة العلمية</option><option data-en="Training and capacity building">برامج التدريب وبناء القدرات</option><option data-en="Strategic partnership">شراكة استراتيجية</option><option data-en="Other enquiry">استفسار آخر</option>
+            </select>
+          </div>
+          
+        <div class="hp" aria-hidden="true"><label for="hp-contact">اتركه فارغاً</label><input id="hp-contact" name="botcheck" type="text" tabindex="-1" autocomplete="off"></div>
+          <div class="field"><label for="msg" data-en="Message *">الرسالة *</label><textarea id="msg" name="msg" required></textarea></div>
+          <p data-form-status role="status" aria-live="polite" style="margin:.6rem 0;font-weight:600"></p>
+          <button class="btn btn-primary" type="submit" id="contactSubmitBtn" data-en="Send enquiry">إرسال الاستفسار</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="assets/logo.png" alt=""><div><strong>ابتكارات السماء</strong><em>SKY INNOVATIONS</em></div></div>
+      <p style="font-size:.92rem" data-en="An Omani company turning space data into actionable insight with artificial intelligence.">شركة عُمانية متخصصة في تحويل البيانات الفضائية إلى رؤى قابلة للتنفيذ باستخدام الذكاء الاصطناعي.</p>
+    </div>
+    <div>
+      <h5 data-en="Links">روابط</h5>
+      <ul>
+        <li><a href="about.html" data-en="About us">من نحن</a></li>
+        <li><a href="services.html" data-en="Services">الخدمات</a></li>
+        <li><a href="products.html" data-en="Products">المنتجات</a></li>
+        <li><a href="contact.html" data-en="Contact us">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-en="Our services">خدماتنا</h5>
+            <ul>
+        <li data-en="AI-powered satellite imagery analysis">تحليل الصور الفضائية بالذكاء الاصطناعي</li>
+        <li data-en="Remote observatory control">التحكم بالمراصد عن بُعد</li>
+        <li data-en="Artificial intelligence applications">تطبيقات الذكاء الاصطناعي</li>
+        <li data-en="R&D and capacity building">البحث والتطوير وبناء القدرات</li>
+        <li data-en="Mosque facility management"><a href="services.html#mosque-management">إدارة مرافق المساجد</a></li>
+        <li data-en="Qibla direction for mosques and prayer halls"><a href="qibla.html">تحديد اتجاه القبلة للجوامع والمصليات</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-en="Contact">تواصل</h5>
+      <ul>
+        <li><i class="fa-solid fa-envelope"></i> Info@4irt.com</li>
+        <li><i class="fa-solid fa-location-dot"></i> <span data-en="Alkhoudh, Muscat, Sultanate of Oman">الخوض, مسقط, سلطنة عُمان</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy" data-en="© 2026 Sky Innovations for Technology and Space. All rights reserved.">© 2026 شركة ابتكارات السماء . جميع الحقوق محفوظة.</div>
+</footer>
+
+<script src="assets/lang.js"></script>
+<script src="assets/brand-fit.js"></script>
+<script src="assets/nav-dropdown.js"></script>
+<script src="assets/web3forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>المنتجات | ابتكارات السماء</title>
+<meta name="description" content="منتجات ابتكارات السماء: إدارة مرافق المساجد وتحديد القبلة، أنظمة تخزين الطاقة BICODI، وتوريد الأجهزة العلمية.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+  :root {
+    --brand-size: 1.8rem;       
+    --logo-size: 1.1rem;        
+  }
+
+ 
+  .hero-brand {
+    display: flex;
+    align-items: baseline;       
+    justify-content: center;
+    gap: 16px;
+    margin: 0 0 1rem;
+  }
+  .hero-brand .brand-ar,
+  .hero-brand .brand-en {
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--brand-size) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .hero-brand .brand-en { text-transform: uppercase; }
+  .hero-brand .brand-rule {
+    align-self: center;
+    width: 1px;
+    height: 1.4em;
+    background: currentColor;
+    opacity: .5;
+    flex: none;
+  }
+
+ 
+  .logo h1,
+  .logo p {
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--logo-size) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  
+  .footer-brand strong,
+  .footer-brand em {
+    display: block;
+    font-family: "Tajawal", sans-serif !important;
+    font-size: var(--logo-size) !important;
+    font-style: normal;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  
+  .logo > div,
+  .footer-brand > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo h1, .logo p,
+  .footer-brand strong, .footer-brand em {
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  
+  .logo h1.is-latin,
+  .footer-brand strong.is-latin {
+    text-transform: uppercase;
+  }
+  .logo > div, .footer-brand > div { text-align: start; }
+
+  .hero-brand,
+  .logo > div,
+  .footer-brand > div {
+    direction: rtl;
+  }
+  .hero-brand .brand-en,
+  .logo p,
+  .footer-brand em {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+ 
+  .logo p,
+  .footer-brand em,
+  .hero-brand .brand-en {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    transform: none !important;
+    clip: auto !important;
+  }
+  .hero-brand .brand-en { display: inline-block !important; }
+ 
+  .nav-menu .has-sub { position: relative; display: flex; align-items: center; gap: 4px; }
+  .nav-menu .sub-menu li { position: relative; }
+  .nav-menu .sub-toggle {
+    background: none; border: 0; color: inherit; cursor: pointer;
+    padding: 4px; font-size: .75rem; line-height: 1;
+  }
+  .nav-menu .sub-toggle i { transition: transform .2s; }
+  .nav-menu .has-sub.open > .sub-toggle i { transform: rotate(180deg); }
+  .nav-menu .sub-menu {
+    list-style: none; margin: 0; padding: 6px;
+    position: absolute; top: 100%; inset-inline-start: 0;
+    min-width: 180px;
+    background: #0b1626; border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    opacity: 0; visibility: hidden; transform: translateY(6px);
+    transition: opacity .2s, transform .2s, visibility .2s;
+    z-index: 100;
+  }
+  .nav-menu .sub-menu li { display: block; margin: 0; }
+  .nav-menu .sub-menu a { display: block; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+  .nav-menu .sub-menu a:hover { background: rgba(255,255,255,.08); }
+
+ 
+  .nav-menu .sub-menu li.has-sub { display: flex; justify-content: space-between; }
+  .nav-menu .sub-menu li.has-sub > a { flex: 1; }
+  .nav-menu .sub-menu .sub-menu {
+    top: -7px; inset-inline-start: auto; inset-inline-end: calc(100% - 2px);
+  }
+  .nav-menu .sub-menu .sub-toggle i,
+  .nav-menu .sub-menu .has-sub.open > .sub-toggle i { transform: rotate(90deg); }
+  html[dir="ltr"] .nav-menu .sub-menu .sub-toggle i,
+  html[dir="ltr"] .nav-menu .sub-menu .has-sub.open > .sub-toggle i { transform: rotate(-90deg); }
+
+  .nav-menu .has-sub.open > .sub-menu,
+  .nav-menu .has-sub:focus-within > .sub-menu {
+    opacity: 1; visibility: visible; transform: none;
+  }
+  @media (hover: hover) {
+    .nav-menu .has-sub:hover > .sub-menu { opacity: 1; visibility: visible; transform: none; }
+  }
+  @media (max-width: 900px) {
+    .nav-menu .has-sub { flex-wrap: wrap; }
+    .nav-menu .sub-menu {
+      position: static; width: 100%; flex-basis: 100%;
+      display: none; opacity: 1; visibility: visible; transform: none;
+      box-shadow: none; background: transparent; border: 0; padding: 0 12px;
+    }
+    .nav-menu .has-sub.open > .sub-menu { display: block; }
+  }
+</style>
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#050C18">
+</head>
+<body data-title-ar="المنتجات | ابتكارات السماء" data-title-en="Products | Sky Innovations" data-desc-ar="منتجات ابتكارات السماء: إدارة مرافق المساجد وتحديد القبلة، أنظمة تخزين الطاقة BICODI، وتوريد الأجهزة العلمية." data-desc-en="Sky Innovations products: mosque facility management and qibla determination, BICODI energy storage, and scientific equipment supply.">
+<nav class="navbar">
+  <div class="nav-container">
+    <a class="logo" href="index.html">
+      <img src="assets/logo.png" alt="شعار ابتكارات السماء">
+      <div><h1>ابتكارات السماء</h1><p>SKY INNOVATIONS</p></div>
+    </a>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="تبديل اللغة / Switch language">
+        <i class="fa-solid fa-globe"></i><span id="langLabel">EN</span>
+      </button>
+      <button class="nav-toggle" aria-label="القائمة / Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <ul class="nav-menu"><li class="has-sub"><a href="index.html" data-en="Home">الرئيسية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="about.html" data-en="About">نبذة عن الشركة</a></li>
+          <li><a href="about.html" data-en="About">سياسة الأمن والسلامة</a></li>
+        </ul></li><li class="has-sub"><a href="services.html" data-en="Services">الخدمات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="services.html#mosque-management" data-en="Mosque facility management">إدارة مرافق المساجد</a></li>
+          <li><a href="qibla.html" data-en="Qibla direction">تحديد اتجاه القبلة</a></li>
+          <li><a href="network-surveys.html" data-en="Network surveys">المسوحات الشبكية</a></li>
+          <li><a href="network-site-optimization.html" data-en="Network site optimization">تحسين مواقع الشبكية</a></li>
+          <li><a href="observatory-control.html" data-en="Astronomical observatory control">التحكم بالمراصد الفلكية</a></li>
+          <li><a href="space-mission-management.html" data-en="Space mission management">إدارة المهام الفضائية</a></li>
+          <li><a href="data-analysis-forecasting.html" data-en="Data analysis &amp; extrapolation">تحليل واستقراء البيانات</a></li>
+          <li><a href="rd-prototyping.html" data-en="R&amp;D and prototyping">البحث والتطوير والنمذجة الأولية</a></li>
+          <li><a href="big-data-processing.html" data-en="Big data processing">معالجة البيانات الضخمة</a></li>
+        </ul></li><li class="has-sub"><a href="innovations.html" data-en="Innovations &amp; Technology">الابتكارات والتقنية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="innovative-solutions.html" data-en="Innovative solutions">الحلول الابتكارية</a></li>
+          <li><a href="sustainable-environment.html" data-en="Sustainable environmental monitoring">مراقبة البيئة المستدامة</a></li>
+          <li><a href="cognitive-cities.html" data-en="Cognitive city systems">أنظمة المدن الإدراكية</a></li>
+          <li><a href="change-detection.html" data-en="Change detection &amp; forecasting">الكشف عن التغييرات والتوقعات</a></li>
+        </ul></li><li class="has-sub"><a href="capacity.html" data-en="Capacity building">بناء القدرات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="sky-innovations.html" data-en="Sky Innovations">الفلك الفضاء</a>
+            <ul class="sub-menu"></ul>
+          </li>
+          <li><a href="majan.html" data-en="Majan">الذكاء الاصطناعي</a>
+            <ul class="sub-menu"></ul>
+          </li>
+        </ul></li><li class="has-sub"><a href="products.html" class="active" data-en="Products">المنتجات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="imam-app.html" data-en="Imam app">تطبيق الهواتف النقالة</a></li>
+          <li><a href="scientific-equipment.html" data-en="Scientific equipment supply"> الأجهزة العلمية</a></li>
+          <li><a href="scientific-equipment.html" data-en="Scientific equipment supply"> الطاقة المتجددة</a></li>
+        </ul></li><li class="has-sub"><a href="projects.html" data-en="Projects">المشاريع</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="sub-menu">
+          <li><a href="contributed-projects.html" data-en="Contributed projects">الشرُكاء والمشاريع</a></li>
+        </ul></li><li><a href="contact.html" data-en="Contact">تواصل معنا</a></li></ul>
+  </div>
+</nav>
+<header class="hero"><div class="hero-orbit" aria-hidden="true">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle class="ring" cx="200" cy="200" r="150" stroke-width="1.4"/>
+    <circle class="ring-b" cx="200" cy="200" r="118" stroke-width="1.2"/>
+    <ellipse class="ring" cx="200" cy="200" rx="150" ry="52" stroke-width="1.2"/>
+    <ellipse class="ring" cx="200" cy="200" rx="150" ry="96" stroke-width="1"/>
+    <ellipse class="ring-b" cx="200" cy="200" rx="52" ry="150" stroke-width="1.2"/>
+    <path class="ring-b" d="M62 246a150 150 0 0 0 276 0" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+</div><div class="hero-inner">
+  <div class="eyebrow" data-en="Our products">منتجاتنا</div>
+  <h2 data-en="Ready-to-deploy solutions">حلول جاهزة للتطبيق</h2>
+  <p data-en="Three product families serving the religious, energy and scientific sectors.">ثلاث عائلات من المنتجات تخدم القطاع الديني والطاقة والقطاع العلمي.</p>
+</div></header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow" data-en="Religious sector">القطاع الديني</div><h3 data-en="Mosque facility management by prayer times">إدارة مرافق المساجد وفق أوقات الصلاة</h3><p data-en="A system that operates mosque facilities according to prayer times, and includes qibla direction determination for mosques and prayer halls.">منظومة تُشغّل مرافق المسجد وفق مواقيت الصلاة، وتشمل تحديد اتجاه القبلة للجوامع والمصليات.</p></div>
+    <div class="grid g2">
+      <div class="card"><i class="ico fa-solid fa-mosque"></i>
+        <h4 data-en="Mosque facility management">إدارة مرافق المساجد</h4>
+        <p data-en="A system that runs mosque facilities — lighting, air conditioning and sound — according to prayer times, alongside prayer schedules, adhan alerts, and a digital library for adhkar and the Holy Quran.">نظام يُشغّل مرافق المسجد — الإنارة والتكييف والصوتيات — وفق مواقيت الصلاة، إلى جانب جداول الصلاة وتنبيهات الأذان ومكتبة رقمية للأذكار والقرآن الكريم.</p>
+        <ul>
+          <li data-en="Operation linked to prayer times">تشغيل مرتبط بمواقيت الصلاة</li>
+          <li data-en="Works offline">يعمل بدون اتصال بالإنترنت</li>
+          <li data-en="Bilingual (Arabic and English)">متعدد اللغات (العربية والإنجليزية)</li>
+          <li data-en="Available on iOS and Android">متوفر على iOS و Android</li>
+        </ul></div>
+
+      <div class="card"><span class="tag" data-en="In development">قيد التطوير</span><i class="ico fa-solid fa-user-tie"></i>
+        <h4 data-en="Imam Assistant app">تطبيق مساعد الإمام</h4>
+        <p data-en="A companion for the imam during prayer: it follows the prayer with him, prompts the correct verse when recitation falters, and reminds him of the current rakah if the count becomes unclear in congregational prayer.">رفيق للإمام أثناء الصلاة: يتابع معه الصلاة ويصحّح له التلاوة عند التوقف أو الخطأ، ويذكّره برقم الركعة الحالية إذا التبس عليه العدد في صلاة الجماعة.</p>
+        <p style="margin-top:.7rem"><a class="btn btn-dark" href="contact.html" data-en="Register your interest">سجّل اهتمامك</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow" data-en="Energy storage">تخزين الطاقة</div><h3 data-en="BICODI products">منتجات BICODI</h3><p data-en="Lithium iron phosphate (LiFePO4) battery systems for home and commercial use, with smart management.">أنظمة بطاريات ليثيوم فوسفات الحديد (LiFePO4) للاستخدام المنزلي والتجاري، بأنظمة إدارة ذكية.</p></div>
+    <div class="grid g3">
+      <div class="card"><img src="IMAGE/BD048200P10.png" alt="BD048200P10" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048200P10</h4><p data-en="A compact home storage system with a smart control interface.">نظام تخزين منزلي مدمج مع واجهة تحكم ذكية.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>10.24 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048100P 05.png" alt="BD048100P05" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048100P05</h4><p data-en="An integrated system with a BMS battery management system and smart app.">نظام متكامل مع نظام إدارة بطارية BMS وتطبيق ذكي.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>5.12 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048314W 16.png" alt="BD048314W16" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Modular systems">أنظمة معيارية</span><h4>BD048314W16</h4><p data-en="An expandable modular system suited to small commercial and industrial projects.">نظام معياري قابل للتوسعة، مناسب للمشاريع التجارية والصناعية الصغيرة.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>16.1 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 12V 100ah.png" alt="BD12-100" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Batteries">بطاريات</span><h4>BD12-100</h4><p data-en="A 12.8V battery suited to solar power systems and industrial applications.">بطارية 12.8V مناسبة لأنظمة الطاقة الشمسية والتطبيقات الصناعية.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V</span></li><li><span data-en="Capacity">السعة</span><span>100 Ah</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>&gt;4000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="3 years">3 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 OEM 12V24V 200ah.png" alt="BD12-200 / BD24-200" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Custom packs">حزم مخصصة</span><h4>BD12-200 / BD24-200</h4><p data-en="200 Ah batteries in 12.8V and 25.6V versions, engineered to project requirements with technical support.">بطاريات 200 أمبير ساعة بنسختي 12.8V و25.6V، تُصمّم وفق متطلبات المشروع مع دعم هندسي.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V / 25.6V</span></li><li><span data-en="Capacity">السعة</span><span>200 Ah</span></li></ul></div>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+        <h4 data-en="Need full specifications?">تحتاج مواصفات تفصيلية؟</h4>
+        <p data-en="We send the complete technical datasheet and a quotation on request.">نرسل ورقة البيانات الفنية الكاملة وعرض السعر عند الطلب.</p>
+        <p style="margin-top:1rem"><a class="btn btn-primary" href="contact.html" data-en="Request a quote">اطلب عرض سعر</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow" data-en="Scientific sector">القطاع العلمي</div><h3 data-en="Scientific equipment supply">توريد الأجهزة والمعدات العلمية</h3><p data-en="We supply scientific instruments to laboratories, universities, research centres and hospitals from accredited global manufacturers.">نوفّر الأجهزة العلمية للمختبرات والجامعات ومراكز الأبحاث والمستشفيات، من مصنّعين عالميين معتمدين.</p></div>
+    <div class="grid g4">
+      <div class="card"><i class="ico fa-solid fa-flask-vial"></i><h4 data-en="Laboratory instruments">أجهزة المختبرات</h4><p data-en="High-precision laboratory measurement and analysis instruments.">أجهزة قياس وتحليل مخبري عالية الدقة.</p></div>
+      <div class="card"><i class="ico fa-solid fa-binoculars"></i><h4 data-en="Optical &amp;amp; astronomical instruments">الأجهزة البصرية والفلكية</h4><p data-en="Robotic telescopes and high-resolution astronomical cameras.">تلسكوبات آلية وكاميرات فلكية عالية الدقة.</p></div>
+      <div class="card"><i class="ico fa-solid fa-server"></i><h4 data-en="Ground stations &amp;amp; data processing">محطات ومعالجة البيانات</h4><p data-en="Satellite data reception stations and processing servers.">محطات استقبال بيانات الأقمار الصناعية وخوادم المعالجة.</p></div>
+      <div class="card"><i class="ico fa-solid fa-wind"></i><h4 data-en="Environmental &amp;amp; sensing equipment">أجهزة البيئة والاستشعار</h4><p data-en="Weather monitoring stations and remote sensing devices.">محطات رصد جوي وأجهزة استشعار عن بُعد.</p></div>
+    </div>
+    <div class="grid g4" style="margin-top:1.4rem">
+      <div class="card"><h4 data-en="Warranty &amp;amp; maintenance">ضمان وصيانة</h4><p data-en="Comprehensive warranty with scheduled maintenance and genuine spare parts.">ضمان شامل مع صيانة دورية وقطع غيار أصلية.</p></div>
+      <div class="card"><h4 data-en="Installation &amp;amp; commissioning">تركيب وتشغيل</h4><p data-en="Installation and testing carried out by specialist engineers.">تركيب واختبار الأجهزة على أيدي مهندسين متخصصين.</p></div>
+      <div class="card"><h4 data-en="User training">تدريب المستخدمين</h4><p data-en="Training programmes for technicians to ensure optimal use.">برامج تدريبية للفنيين لضمان الاستخدام الأمثل.</p></div>
+      <div class="card"><h4 data-en="Technical support">دعم فني</h4><p data-en="A specialist support team for enquiries and problem resolution.">فريق دعم متخصص للرد على الاستفسارات وحل المشكلات.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:1.8rem"><a class="btn btn-primary" href="contact.html" data-en="Request a quote">اطلب عرض سعر</a></p>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><img src="assets/logo.png" alt=""><div><strong data-en="Sky Innovations">ابتكارات السماء</strong><em>SKY INNOVATIONS</em></div></div>
+      <p style="font-size:.92rem" data-en="An Omani company turning space data into actionable insight with artificial intelligence.">شركة عُمانية متخصصة في تحويل البيانات الفضائية إلى رؤى قابلة للتنفيذ باستخدام الذكاء الاصطناعي.</p>
+    </div>
+    <div>
+      <h5 data-en="Links">روابط</h5>
+      <ul>
+        <li><a href="about.html" data-en="About us">من نحن</a></li>
+        <li><a href="services.html" data-en="Services">الخدمات</a></li>
+        <li><a href="products.html" data-en="Products">المنتجات</a></li>
+        <li><a href="contact.html" data-en="Contact us">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-en="Our services">خدماتنا</h5>
+      <ul>
+        <li data-en="AI-powered satellite imagery analysis">تحليل الصور الفضائية بالذكاء الاصطناعي</li>
+        <li data-en="Remote observatory control">التحكم بالمراصد عن بُعد</li>
+        <li data-en="Artificial intelligence applications">تطبيقات الذكاء الاصطناعي</li>
+        <li data-en="R&amp;amp;D and capacity building">البحث والتطوير وبناء القدرات</li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-en="Contact">تواصل</h5>
+      <ul>
+        <li><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="05316c7771456268646c692b666a68">[email&#160;protected]</a></li>
+        <li><i class="fa-solid fa-location-dot"></i> <span data-en="  Alkhoudh, Muscat, Sultanate of Oman">الخوض، سقط، سلطنة عُمان</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy" data-en="© 2026 Sky Innovations for Technology and Space. All rights reserved.">© 2026 شركة ابتكارات السماء . جميع الحقوق محفوظة.</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/lang.js"></script>
+<script src="assets/brand-fit.js"></script>
+<script src="assets/nav-dropdown.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"f0f03d0605bf45f1a3b17cf7d5e6861f","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

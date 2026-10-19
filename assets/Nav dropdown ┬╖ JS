@@ -1,0 +1,40 @@
+(function () {
+  function closeLi(li) {
+    li.classList.remove('open');
+    var b = li.querySelector(':scope > .sub-toggle');
+    if (b) b.setAttribute('aria-expanded', 'false');
+  }
+
+  // أي li فيه ul.sub-menu وبداخله عناصر يصير قائمة منبثقة تلقائياً (بأي مستوى)
+  document.querySelectorAll('.nav-menu li').forEach(function (li) {
+    var sub = li.querySelector(':scope > ul.sub-menu');
+    if (!sub || !sub.querySelector('li')) return;
+    li.classList.add('has-sub');
+    if (!li.querySelector(':scope > .sub-toggle')) {
+      var btn = document.createElement('button');
+      btn.className = 'sub-toggle';
+      btn.type = 'button';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'القائمة الفرعية / Submenu');
+      btn.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+      li.insertBefore(btn, sub);
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.sub-toggle') : null;
+    if (btn) {
+      var li = btn.parentElement;
+      var open = !li.classList.contains('open');
+      Array.prototype.forEach.call(li.parentElement.children, function (sib) {
+        if (sib !== li && sib.classList.contains('open')) closeLi(sib);
+      });
+      li.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      return;
+    }
+    document.querySelectorAll('.has-sub.open').forEach(function (li) {
+      if (!li.contains(e.target)) closeLi(li);
+    });
+  });
+})();
