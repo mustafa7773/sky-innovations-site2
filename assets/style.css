@@ -100,6 +100,9 @@ a { text-decoration: none; color: inherit; }
 .nav-menu a.active::after { display: none; }
 
 .nav-right { display: flex; align-items: center; gap: .55rem; }
+.logo { order: 1; }
+.nav-menu { order: 2; }
+.nav-right { order: 3; }
 
 .lang-btn {
   display: flex; align-items: center; gap: .4rem;
