@@ -458,3 +458,9 @@ footer { background: radial-gradient(90% 70% at 90% 0%, rgba(83,199,242,.1), tra
 .cta-img{color:#fff;--gray:#B9C9DA;margin:1.6rem 2.5%;border-radius:30px;border:1px solid rgba(83,199,242,.3);
   background:linear-gradient(rgba(3,17,38,.72),rgba(3,17,38,.88)),url(img/contents-city.webp) center/cover no-repeat,#031126}
 @media (max-width:860px){.hero.hero-img{--hero-pos:68% center}.feature-img{aspect-ratio:16/9}.cta-img{margin-inline:3%;border-radius:22px}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;align-items:center;margin-bottom:3rem}
+.split-img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:26px;border:1px solid rgba(83,199,242,.35);box-shadow:0 22px 50px rgba(3,17,38,.25)}
+.split.rev .split-img{order:2}
+.split h3{font-size:1.6rem;font-weight:800;margin-bottom:.7rem}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:1.4rem}.split.rev .split-img{order:0}}
