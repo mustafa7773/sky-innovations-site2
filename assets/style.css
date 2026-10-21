@@ -439,3 +439,22 @@ footer { background: radial-gradient(90% 70% at 90% 0%, rgba(83,199,242,.1), tra
 @supports (animation-timeline: view()) {
   .card, .section-head, .form-card { animation: revealUp linear backwards; animation-timeline: view(); animation-range: entry 0% entry 30%; }
 }
+
+/* ===== Image-led layouts ===== */
+.hero-home{--hero-bg:url(img/hero-home.webp);--hero-pos:72% center}
+.hero-about{--hero-bg:url(img/about-team.webp)}
+.hero-services{--hero-bg:url(img/space-missions.webp)}
+.hero-products{--hero-bg:url(img/products-portfolio.webp)}
+.hero-contact{--hero-bg:url(img/contact-office.webp);--hero-pos:75% center}
+.hero-qibla{--hero-bg:url(img/qibla-mosque.webp);--hero-pos:30% center}
+.hero.hero-img{background:
+  linear-gradient(180deg,rgba(3,17,38,.38) 0%,rgba(3,17,38,.78) 100%),
+  radial-gradient(90% 55% at 50% 125%,rgba(83,199,242,.25),transparent 65%),
+  var(--hero-bg) var(--hero-pos,center)/cover no-repeat,#031126}
+.hero.hero-img .hero-orbit{opacity:.28}
+.hero.hero-img h2,.hero.hero-img p{text-shadow:0 2px 18px rgba(3,17,38,.75)}
+.card-img{display:block;width:calc(100% + 3.4rem);max-width:none;height:auto;aspect-ratio:16/9;object-fit:cover;margin:-1.7rem -1.7rem 1.2rem;border-bottom:1px solid rgba(83,199,242,.3)}
+.feature-img{display:block;width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;border-radius:24px;border:1px solid rgba(83,199,242,.35);box-shadow:0 18px 44px rgba(3,17,38,.25);margin:1.4rem 0 2rem}
+.cta-img{color:#fff;--gray:#B9C9DA;margin:1.6rem 2.5%;border-radius:30px;border:1px solid rgba(83,199,242,.3);
+  background:linear-gradient(rgba(3,17,38,.72),rgba(3,17,38,.88)),url(img/contents-city.webp) center/cover no-repeat,#031126}
+@media (max-width:860px){.hero.hero-img{--hero-pos:68% center}.feature-img{aspect-ratio:16/9}.cta-img{margin-inline:3%;border-radius:22px}}
