@@ -100,5 +100,5 @@
   } else {
     window.addEventListener('load', init);
   }
-  window.addEventListener('resize', fit);
+  var rt;window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(fit,150); });
 })();

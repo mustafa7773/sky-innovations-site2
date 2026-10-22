@@ -432,8 +432,8 @@ footer { background: radial-gradient(90% 70% at 90% 0%, rgba(83,199,242,.1), tra
 /* restored visual details, GPU-friendly */
 .hero { isolation: isolate; }
 .hero::after, footer::after {
-  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .045;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .028;
+  background-image: url(img/grain.png);
 }
 @keyframes revealUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 @supports (animation-timeline: view()) {
@@ -464,3 +464,8 @@ footer { background: radial-gradient(90% 70% at 90% 0%, rgba(83,199,242,.1), tra
 .split.rev .split-img{order:2}
 .split h3{font-size:1.6rem;font-weight:800;margin-bottom:.7rem}
 @media (max-width:860px){.split{grid-template-columns:1fr;gap:1.4rem}.split.rev .split-img{order:0}}
+
+/* performance */
+.hero::after,footer::after{background-size:128px 128px;background-repeat:repeat}
+section,footer{content-visibility:auto;contain-intrinsic-size:auto 700px}
+.hero{content-visibility:visible}
