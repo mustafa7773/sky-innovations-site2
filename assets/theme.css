@@ -182,7 +182,7 @@ section.alt {
 /* ---------- القسم الختامي ---------- */
 .cta-img {
   margin: 1.6rem 2.5%; border: 0; border-radius: 40px; padding: 5.4rem 5%;
-  background: linear-gradient(rgba(10,24,64,.7), rgba(10,24,64,.9)), url(img/contents-city.webp) center/cover no-repeat, #0B1B3A;
+  background: linear-gradient(rgba(8,20,56,.58), rgba(8,20,56,.82)), url(img/cta-bg.webp) center/cover no-repeat, #0B1B3A;
   box-shadow: 0 30px 70px rgba(15,35,90,.28);
 }
 .cta-img .section-head { display: block; text-align: center; max-width: 720px; margin: 0 auto 2.2rem; }
@@ -229,3 +229,5 @@ footer h5 { color: #fff; }
 .hero.hero-img .hero-orbit { display: none; }
 .card .tag { align-self: flex-start; }
 .card:has(> .card-img) .tag { background: rgba(255,255,255,.2); color: #fff; border: 1px solid rgba(255,255,255,.3); }
+
+.cta-img .section-head h3, .cta-img .section-head p { text-shadow: 0 2px 18px rgba(4,12,36,.55); }
