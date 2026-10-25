@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pages.css">
 <style>
   :root {
     --brand-size: 1.8rem;        
@@ -193,7 +194,7 @@
     <ul class="nav-menu"></ul>
   </div>
 </nav>
-<header class="hero"><div class="hero-orbit" aria-hidden="true">
+<header class="hero hero-compact"><div class="hero-orbit" aria-hidden="true">
   <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
     <circle class="ring" cx="200" cy="200" r="150" stroke-width="1.4"/>
     <circle class="ring-b" cx="200" cy="200" r="118" stroke-width="1.2"/>
@@ -205,13 +206,20 @@
 </div><div class="hero-inner">
   <div class="eyebrow" data-en="Home">الرئيسية</div>
   <h2 data-en="Company news">أخبار الشركة</h2>
-  <p data-en="Project updates, partnerships and new product launches, with technical and operational documentation.">تحديثات مشاريع، شراكات، وإطلاق منتجات جديدة مع توثيق تقني وعملياتي.</p>
-</div></header>
+  </div></header>
 
 <section>
   <div class="wrap">
-    <div class="card" style="padding:0"><img src="assets/img/p2.jpg" alt="أخبار الشركة" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius)"></div>
-    <p style="text-align:center;margin-top:2rem"><a class="btn btn-primary" href="contact.html" data-en="Request a quote or consultation">اطلب عرضاً أو استشارة</a></p>
+    <div class="page-split">
+      <div class="txt">
+        <p data-en="Project updates, partnerships and new product launches, with technical and operational documentation.">تحديثات مشاريع، شراكات، وإطلاق منتجات جديدة مع توثيق تقني وعملياتي.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="contact.html" data-en="Request a quote or consultation">اطلب عرضاً أو استشارة</a>
+          <a class="btn btn-dark" href="index.html" data-en="Back to: Home">العودة إلى: الرئيسية</a>
+        </div>
+      </div>
+      <figure><img src="assets/img/p2.jpg" alt="أخبار الشركة" loading="lazy" decoding="async"></figure>
+    </div>
   </div>
 </section>
 
