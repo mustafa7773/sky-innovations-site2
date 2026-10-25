@@ -54,7 +54,7 @@
   ];
 
   /* تنسيق الشريط العلوي (ملف مستقل، لا يمس style.css) */
-  if (!document.querySelector('link[href$="navbar-fix.css"]')) {
+  if (!document.querySelector('link[href*="navbar-fix.css"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
     css.href = 'assets/navbar-fix.css';
