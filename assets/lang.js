@@ -53,6 +53,14 @@
     ['تواصل معنا', 'Contact', 'contact.html', []]
   ];
 
+  /* تنسيق الشريط العلوي (ملف مستقل، لا يمس style.css) */
+  if (!document.querySelector('link[href$="navbar-fix.css"]')) {
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'assets/navbar-fix.css';
+    document.head.appendChild(css);
+  }
+
   function el(tag, attrs, html) {
     var e = document.createElement(tag);
     for (var k in attrs) e.setAttribute(k, attrs[k]);
