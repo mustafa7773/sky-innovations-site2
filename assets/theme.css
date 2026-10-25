@@ -285,3 +285,15 @@ footer h5 { color: #fff; }
     var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
 }
 @media (max-width: 860px) { .hero.hero-img.hero-about { --hero-pos: 62% center; } }
+
+/* ---------- هيرو صفحة «تواصل معنا» ---------- */
+.hero.hero-img.hero-contact {
+  --hero-bg: url(img/contact-hero.webp); --hero-pos: 58% 24%;
+  background:
+    linear-gradient(180deg, rgba(6,16,44,.50) 0%, rgba(6,16,44,.58) 55%, rgba(6,16,44,.74) 100%),
+    var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
+}
+@media (max-width: 860px) { .hero.hero-img.hero-contact { --hero-pos: 72% center; } }
+
+/* حقل مصيدة السبام: مخفي دون إزاحته 9999px (كانت تسبب تمريراً أفقياً ضخماً في الصفحات العربية) */
+.hp { left: auto; right: auto; inset-inline: auto; top: auto; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
