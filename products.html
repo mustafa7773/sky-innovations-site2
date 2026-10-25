@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="preload" as="image" href="assets/img/products-portfolio.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/navbar-fix.css">
 
 <style>
   :root {
@@ -194,44 +195,74 @@
       </button>
       <button class="nav-toggle" aria-label="القائمة / Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     </div>
-    <ul class="nav-menu"><li class="has-sub"><a href="index.html" data-en="Home">الرئيسية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="about.html" data-en="About">نبذة عن الشركة</a></li>
-          <li><a href="about.html" data-en="About">سياسة الأمن والسلامة</a></li>
-        </ul></li><li class="has-sub"><a href="services.html" data-en="Services">الخدمات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="services.html#mosque-management" data-en="Mosque facility management">إدارة مرافق المساجد</a></li>
-          <li><a href="qibla.html" data-en="Qibla direction">تحديد اتجاه القبلة</a></li>
-          <li><a href="network-surveys.html" data-en="Network surveys">المسوحات الشبكية</a></li>
-          <li><a href="network-site-optimization.html" data-en="Network site optimization">تحسين مواقع الشبكية</a></li>
-          <li><a href="observatory-control.html" data-en="Astronomical observatory control">التحكم بالمراصد الفلكية</a></li>
-          <li><a href="space-mission-management.html" data-en="Space mission management">إدارة المهام الفضائية</a></li>
-          <li><a href="data-analysis-forecasting.html" data-en="Data analysis &amp; extrapolation">تحليل واستقراء البيانات</a></li>
-          <li><a href="rd-prototyping.html" data-en="R&amp;D and prototyping">البحث والتطوير والنمذجة الأولية</a></li>
-          <li><a href="big-data-processing.html" data-en="Big data processing">معالجة البيانات الضخمة</a></li>
-        </ul></li><li class="has-sub"><a href="innovations.html" data-en="Innovations &amp; Technology">الابتكارات والتقنية</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="innovative-solutions.html" data-en="Innovative solutions">الحلول الابتكارية</a></li>
-          <li><a href="sustainable-environment.html" data-en="Sustainable environmental monitoring">مراقبة البيئة المستدامة</a></li>
-          <li><a href="cognitive-cities.html" data-en="Cognitive city systems">أنظمة المدن الإدراكية</a></li>
-          <li><a href="change-detection.html" data-en="Change detection &amp; forecasting">الكشف عن التغييرات والتوقعات</a></li>
-        </ul></li><li class="has-sub"><a href="capacity.html" data-en="Capacity building">بناء القدرات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="sky-innovations.html" data-en="Astronomy &amp; space">الفلك والفضاء</a>
-            <ul class="sub-menu"></ul>
-          </li>
-          <li><a href="majan.html" data-en="Artificial intelligence">الذكاء الاصطناعي</a>
-            <ul class="sub-menu"></ul>
-          </li>
-        </ul></li><li class="has-sub"><a href="products.html" class="active" data-en="Products">المنتجات</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="imam-app.html" data-en="Imam app">تطبيقات الهواتف النقالة</a></li>
-          <li><a href="scientific-equipment.html" data-en="Scientific equipment supply"> الأجهزة العلمية</a></li>
-          <li><a href="products.html#energy" data-en="Renewable energy">الطاقة المتجددة</a></li>
-        </ul></li><li class="has-sub"><a href="projects.html" data-en="Projects">المشاريع</a><button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down"></i></button>
-        <ul class="sub-menu">
-          <li><a href="contributed-projects.html" data-en="Contributed projects">الشركاء والمشاريع</a></li>
-        </ul></li><li><a href="contact.html" data-en="Contact">تواصل معنا</a></li></ul>
+    <ul class="nav-menu" data-nav="static">
+<li class="has-sub"><a href="index.html" data-en="Home">الرئيسية</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="about.html" data-en="About the company">نبذة عن الشركة</a></li>
+<li><a href="about.html#vision" data-en="Vision">الرؤية</a></li>
+<li><a href="about.html#mission" data-en="Mission">الرسالة</a></li>
+<li><a href="news.html" data-en="Company news">أخبار الشركة</a></li>
+</ul>
+</li>
+<li class="has-sub"><a href="services.html" data-en="Services">الخدمات</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="qibla.html" data-en="Qibla determination request for mosques">طلب تحديد القبلة للجوامع والمساجد</a></li>
+<li><a href="network-surveys.html" data-en="Network surveys">المسوحات الشبكية</a></li>
+<li><a href="network-site-optimization.html" data-en="Network site optimization">تحسين مواقع الشبكية</a></li>
+<li><a href="observatory-control.html" data-en="Astronomical observatory installation and management">تركيب وإدارة المراصد الفلكية</a></li>
+<li><a href="ground-stations.html" data-en="Optical ground station installation and maintenance">تركيب وصيانة المحطات الأرضية البصرية</a></li>
+<li><a href="space-mission-management.html" data-en="Space project management">إدارة المشاريع الفضائية</a></li>
+<li><a href="big-data-processing.html" data-en="Big data processing and analysis">معالجة وتحليل البيانات الضخمة</a></li>
+<li><a href="cybersecurity.html" data-en="Cybersecurity software installation">تنصيب برامج الأمن السيبراني</a></li>
+</ul>
+</li>
+<li class="has-sub"><a href="products.html" class="active" data-en="Product marketing">تسويق المنتجات</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="satellite-systems.html" data-en="Satellite systems">أنظمة الأقمار الاصطناعية</a></li>
+<li><a href="solar-systems.html" data-en="Solar energy systems">أنظمة الطاقة الشمسية</a></li>
+<li><a href="ev-chargers.html" data-en="EV chargers">شواحن السيارات الكهربائية</a></li>
+<li><a href="monitoring-platforms.html" data-en="Digital platforms for daily monitoring and change detection">منصات رقمية للمراقبة اليومية وللكشف عن التغييرات</a></li>
+<li><a href="mobile-apps.html" data-en="Mobile applications">تطبيقات الهواتف النقالة</a></li>
+<li><a href="scientific-equipment.html" data-en="Scientific equipment for laboratories">أجهزة علمية للمختبرات</a></li>
+<li><a href="3d-models.html" data-en="3D models">نماذج ثلاثية الأبعاد</a></li>
+<li><a href="imam-app.html" data-en="Smart Imam assistant">مساعد الإمام الذكي</a></li>
+</ul>
+</li>
+<li class="has-sub"><a href="innovations.html" data-en="Innovations and technology">الابتكارات والتقنية</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="innovative-solutions.html" data-en="Innovative solutions">الحلول الابتكارية</a></li>
+<li><a href="sustainable-environment.html" data-en="Sustainable environmental monitoring">مراقبة البيئة المستدامة</a></li>
+<li><a href="cognitive-cities.html" data-en="Cognitive city systems">أنظمة المدن الإدراكية</a></li>
+<li><a href="rd-prototyping.html" data-en="R and D and prototyping">البحث والتطوير والنمذجة الأولية</a></li>
+<li><a href="aflaj-monitoring.html" data-en="Aflaj monitoring and maintenance system">نظام مراقبة وصيانة الأفلاج</a></li>
+<li><a href="quantum-computing.html" data-en="Quantum computing applications">تطبيقات الحوسبة الكمية</a></li>
+<li><a href="new-studies.html" data-en="New studies and technologies">دراسات وتقنيات جديدة</a></li>
+</ul>
+</li>
+<li class="has-sub"><a href="capacity.html" data-en="Capacity building">بناء القدرات</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="astronomy-courses.html" data-en="Astronomy and space courses">دورات الفلك والفضاء</a></li>
+<li><a href="cubesat-training.html" data-en="Training talent to develop CubeSats">تأهيل الكوادر لتطوير الأقمار المكعبية</a></li>
+<li><a href="ai-workshops.html" data-en="AI training workshops">ورش تدريبية لتوظيف الذكاء الاصطناعي</a></li>
+<li><a href="computer-lab.html" data-en="Computer lab for capacity building">مختبر الحاسب الآلي لبناء القدرات</a></li>
+</ul>
+</li>
+<li class="has-sub"><a href="projects.html" data-en="Partners and projects">الشركاء والمشاريع</a>
+<button class="sub-toggle" type="button" aria-expanded="false" aria-label="القائمة الفرعية / Submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+<ul class="sub-menu">
+<li><a href="international-partners.html" data-en="International partners">الشركاء الدوليين</a></li>
+<li><a href="local-clients.html" data-en="Local clients">الزبائن المحليين</a></li>
+<li><a href="past-projects.html" data-en="Past projects">المشاريع السابقة</a></li>
+</ul>
+</li>
+<li><a href="contact.html" data-en="Contact">تواصل معنا</a>
+</li>
+</ul>
   </div>
 </nav>
 <header class="hero hero-img hero-products"><div class="hero-orbit" aria-hidden="true">
@@ -276,7 +307,7 @@
     <div class="section-head"><div class="eyebrow" data-en="Energy storage">تخزين الطاقة</div><h3 data-en="BICODI products">منتجات BICODI</h3><p data-en="Lithium iron phosphate (LiFePO4) battery systems for home and commercial use, with smart management.">أنظمة بطاريات ليثيوم فوسفات الحديد (LiFePO4) للاستخدام المنزلي والتجاري، بأنظمة إدارة ذكية.</p></div>
     <img class="feature-img" src="assets/img/solar-energy.webp" alt="حقل ألواح شمسية مع نظام تخزين طاقة" width="1100" height="619" loading="lazy" decoding="async">
     <div class="grid g3">
-      <div class="card"><img src="IMAGE/BD048200P10.png" alt="BD048200P10" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048200P10</h4><p data-en="A compact home storage system with a smart control interface.">نظام تخزين منزلي مدمج مع واجهة تحكم ذكية.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>10.24 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048100P 05.png" alt="BD048100P05" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048100P05</h4><p data-en="An integrated system with a BMS battery management system and smart app.">نظام متكامل مع نظام إدارة بطارية BMS وتطبيق ذكي.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>5.12 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048314W 16.png" alt="BD048314W16" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Modular systems">أنظمة معيارية</span><h4>BD048314W16</h4><p data-en="An expandable modular system suited to small commercial and industrial projects.">نظام معياري قابل للتوسعة، مناسب للمشاريع التجارية والصناعية الصغيرة.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>16.1 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 12V 100ah.png" alt="BD12-100" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Batteries">بطاريات</span><h4>BD12-100</h4><p data-en="A 12.8V battery suited to solar power systems and industrial applications.">بطارية 12.8V مناسبة لأنظمة الطاقة الشمسية والتطبيقات الصناعية.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V</span></li><li><span data-en="Capacity">السعة</span><span>100 Ah</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>&gt;4000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="3 years">3 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 OEM 12V24V 200ah.png" alt="BD12-200 / BD24-200" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Custom packs">حزم مخصصة</span><h4>BD12-200 / BD24-200</h4><p data-en="200 Ah batteries in 12.8V and 25.6V versions, engineered to project requirements with technical support.">بطاريات 200 أمبير ساعة بنسختي 12.8V و25.6V، تُصمّم وفق متطلبات المشروع مع دعم هندسي.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V / 25.6V</span></li><li><span data-en="Capacity">السعة</span><span>200 Ah</span></li></ul></div>
+      <div class="card"><img src="IMAGE/BD048200P10.png" loading="lazy" decoding="async" alt="BD048200P10" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048200P10</h4><p data-en="A compact home storage system with a smart control interface.">نظام تخزين منزلي مدمج مع واجهة تحكم ذكية.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>10.24 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048100P 05.png" loading="lazy" decoding="async" alt="BD048100P05" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Home storage">تخزين منزلي</span><h4>BD048100P05</h4><p data-en="An integrated system with a BMS battery management system and smart app.">نظام متكامل مع نظام إدارة بطارية BMS وتطبيق ذكي.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>5.12 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/BD048314W 16.png" loading="lazy" decoding="async" alt="BD048314W16" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Modular systems">أنظمة معيارية</span><h4>BD048314W16</h4><p data-en="An expandable modular system suited to small commercial and industrial projects.">نظام معياري قابل للتوسعة، مناسب للمشاريع التجارية والصناعية الصغيرة.</p><ul class="spec"><li><span data-en="Capacity">السعة</span><span>16.1 kWh</span></li><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>51.2V</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>≥6000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="10 years">10 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 12V 100ah.png" loading="lazy" decoding="async" alt="BD12-100" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Batteries">بطاريات</span><h4>BD12-100</h4><p data-en="A 12.8V battery suited to solar power systems and industrial applications.">بطارية 12.8V مناسبة لأنظمة الطاقة الشمسية والتطبيقات الصناعية.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V</span></li><li><span data-en="Capacity">السعة</span><span>100 Ah</span></li><li><span data-en="Cycle life">دورات الحياة</span><span>&gt;4000</span></li><li><span data-en="Warranty">الضمان</span><span><span data-en="3 years">3 سنوات</span></span></li></ul></div><div class="card"><img src="IMAGE/LiFePO4 OEM 12V24V 200ah.png" loading="lazy" decoding="async" alt="BD12-200 / BD24-200" style="border-radius:12px;margin-bottom:.9rem"><span class="tag" data-en="Custom packs">حزم مخصصة</span><h4>BD12-200 / BD24-200</h4><p data-en="200 Ah batteries in 12.8V and 25.6V versions, engineered to project requirements with technical support.">بطاريات 200 أمبير ساعة بنسختي 12.8V و25.6V، تُصمّم وفق متطلبات المشروع مع دعم هندسي.</p><ul class="spec"><li><span data-en="Nominal voltage">الجهد الاسمي</span><span>12.8V / 25.6V</span></li><li><span data-en="Capacity">السعة</span><span>200 Ah</span></li></ul></div>
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
         <h4 data-en="Need full specifications?">تحتاج مواصفات تفصيلية؟</h4>
         <p data-en="We send the complete technical datasheet and a quotation on request.">نرسل ورقة البيانات الفنية الكاملة وعرض السعر عند الطلب.</p>
