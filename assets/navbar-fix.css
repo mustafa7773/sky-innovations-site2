@@ -29,3 +29,10 @@
   }
   .navbar .nav-menu .has-sub.open > .sub-menu { display: block; }
 }
+
+/* ===== الصفحة الرئيسية فقط: تصغير الحلقات المدارية الدوّارة ===== */
+.hero:has(.hero-logo) .hero-orbit {
+  width: min(340px, 55vw);
+  inset-inline-end: 4%;
+  opacity: .45;
+}
