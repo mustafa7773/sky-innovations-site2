@@ -241,3 +241,38 @@ footer h5 { color: #fff; }
     var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
 }
 @media (max-width: 860px) { .hero.hero-img.hero-home { --hero-pos: 97% 60%; min-height: 580px; } }
+
+/* ---------- شهب متحركة في واجهة الرئيسية ---------- */
+.meteors { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; border-radius: inherit; }
+.meteor {
+  position: absolute; width: 170px; height: 2px; border-radius: 2px; opacity: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(160,215,255,.45) 35%, rgba(160,215,255,0));
+  transform-origin: left center;
+  animation: meteorFly var(--dur, 10s) linear var(--delay, 0s) infinite;
+}
+.meteor::before {
+  content: ''; position: absolute; left: -2px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%;
+  background: #fff; box-shadow: 0 0 8px 2px rgba(190,230,255,.9), 0 0 18px 4px rgba(120,190,255,.45);
+}
+@keyframes meteorFly {
+  0%   { opacity: 0; transform: rotate(-32deg) translateX(0); }
+  2%   { opacity: 1; }
+  14%  { opacity: 0; transform: rotate(-32deg) translateX(-520px); }
+  100% { opacity: 0; transform: rotate(-32deg) translateX(-520px); }
+}
+.meteor:nth-child(1) { top: 8%;  left: 78%; --dur: 9s;  --delay: .6s; }
+.meteor:nth-child(2) { top: 4%;  left: 52%; --dur: 13s; --delay: 3.8s; width: 120px; }
+.meteor:nth-child(3) { top: 22%; left: 92%; --dur: 11s; --delay: 6.5s; }
+.meteor:nth-child(4) { top: 14%; left: 66%; --dur: 15s; --delay: 9.2s; width: 210px; }
+.meteor:nth-child(5) { top: 2%;  left: 36%; --dur: 12s; --delay: 11.5s; width: 110px; }
+.meteor:nth-child(6) { top: 30%; left: 84%; --dur: 17s; --delay: 14s; width: 140px; }
+.hero.is-offscreen .meteor { animation-play-state: paused; }
+@media (max-width: 760px) {
+  .meteor { width: 110px; }
+  .meteor:nth-child(n+5) { display: none; }
+  @keyframes meteorFly {
+    0% { opacity: 0; transform: rotate(-32deg) translateX(0); } 2% { opacity: 1; }
+    14% { opacity: 0; transform: rotate(-32deg) translateX(-300px); } 100% { opacity: 0; transform: rotate(-32deg) translateX(-300px); }
+  }
+}
+@media (prefers-reduced-motion: reduce) { .meteors { display: none; } }
