@@ -231,3 +231,13 @@ footer h5 { color: #fff; }
 .card:has(> .card-img) .tag { background: rgba(255,255,255,.2); color: #fff; border: 1px solid rgba(255,255,255,.3); }
 
 .cta-img .section-head h3, .cta-img .section-head p { text-shadow: 0 2px 18px rgba(4,12,36,.55); }
+
+/* ---------- هيرو الرئيسية: صورة الليل (assets/img/hero-night.webp) ---------- */
+.hero-home { --hero-bg: url(img/hero-night.webp); --hero-pos: 62% 64%; display: flex; align-items: center; min-height: min(660px, 80vh); }
+.hero-home .hero-inner { width: 100%; }
+.hero.hero-img.hero-home {
+  background:
+    linear-gradient(180deg, rgba(4,12,36,.30) 0%, rgba(4,12,36,.42) 55%, rgba(4,12,36,.62) 100%),
+    var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
+}
+@media (max-width: 860px) { .hero.hero-img.hero-home { --hero-pos: 97% 60%; min-height: 580px; } }
