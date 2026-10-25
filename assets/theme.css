@@ -276,3 +276,12 @@ footer h5 { color: #fff; }
   }
 }
 @media (prefers-reduced-motion: reduce) { .meteors { display: none; } }
+
+/* ---------- هيرو صفحة «من نحن» ---------- */
+.hero.hero-img.hero-about {
+  --hero-bg: url(img/about-hero.webp); --hero-pos: center 58%;
+  background:
+    linear-gradient(180deg, rgba(4,12,36,.34) 0%, rgba(4,12,36,.46) 55%, rgba(4,12,36,.66) 100%),
+    var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
+}
+@media (max-width: 860px) { .hero.hero-img.hero-about { --hero-pos: 62% center; } }
