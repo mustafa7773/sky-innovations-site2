@@ -39,3 +39,15 @@
   transform: none;
   opacity: .45;
 }
+
+/* ===== الأداء: إيقاف ما يسبب قفزات التمرير ===== */
+/* content-visibility:auto مع ارتفاع تقديري 700px يجعل الصفحة تقفز وتتقطع أثناء التمرير */
+section, footer { content-visibility: visible; }
+/* حركة المدار تتوقف عندما يخرج الهيرو من الشاشة (يضبطها nav-dropdown.js) */
+.hero.is-offscreen .hero-orbit svg,
+.hero.is-offscreen .hero-orbit::after { animation-play-state: paused; }
+/* تقليل كلفة الرسم على الشاشات الصغيرة والأجهزة الضعيفة */
+@media (max-width: 760px) {
+  .hero-orbit svg, .hero-orbit::after { animation: none; }
+  .hero-orbit::after { display: none; }
+}

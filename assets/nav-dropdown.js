@@ -26,4 +26,12 @@
       if (b) b.focus();
     });
   });
+
+  /* إيقاف حركة المدار خارج الشاشة لتخفيف الحمل أثناء التمرير */
+  var hero = document.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      hero.classList.toggle('is-offscreen', !entries[0].isIntersecting);
+    }).observe(hero);
+  }
 })();
