@@ -68,34 +68,50 @@
     return e;
   }
 
+  function currentPage() {
+    return (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  }
+
+  function markActive(ul) {
+    var page = currentPage();
+    Array.prototype.forEach.call(ul.children, function (li) {
+      var a = li.querySelector(':scope > a');
+      if (!a) return;
+      var hit = [a].concat(Array.prototype.slice.call(li.querySelectorAll('.sub-menu a'))).some(function (x) {
+        return (x.getAttribute('href') || '').split('#')[0].toLowerCase() === page;
+      });
+      a.classList.toggle('active', hit);
+    });
+  }
+
+  /* القائمة تُولَّد ثابتة داخل كل صفحة بواسطة scripts/fix_site.py؛
+     هذا البناء احتياطي فقط للصفحات التي لم تُعالج بعد */
   function buildMenu() {
     var ul = document.querySelector('.nav-menu');
     if (!ul) return;
-    var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    ul.innerHTML = '';
-    MENU.forEach(function (m) {
-      var li = el('li');
-      var a = el('a', { href: m[2], 'data-en': m[1] }, m[0]);
-      var isActive = m[2].toLowerCase() === page ||
-        m[3].some(function (s) { return s[2].split('#')[0].toLowerCase() === page && s[2].toLowerCase() !== 'about.html' || (m[2] === 'index.html' && page === 'about.html'); });
-      if (isActive) a.className = 'active';
-      li.appendChild(a);
-      if (m[3].length) {
-        li.className = 'has-sub';
-        li.appendChild(el('button', {
-          'class': 'sub-toggle', type: 'button', 'aria-expanded': 'false',
-          'aria-label': 'القائمة الفرعية / Submenu'
-        }, '<i class="fa-solid fa-chevron-down"></i>'));
-        var sub = el('ul', { 'class': 'sub-menu' });
-        m[3].forEach(function (s) {
-          var sl = el('li');
-          sl.appendChild(el('a', { href: s[2], 'data-en': s[1] }, s[0]));
-          sub.appendChild(sl);
-        });
-        li.appendChild(sub);
-      }
-      ul.appendChild(li);
-    });
+    if (ul.getAttribute('data-nav') !== 'static') {
+      ul.innerHTML = '';
+      MENU.forEach(function (m) {
+        var li = el('li');
+        li.appendChild(el('a', { href: m[2], 'data-en': m[1] }, m[0]));
+        if (m[3].length) {
+          li.className = 'has-sub';
+          li.appendChild(el('button', {
+            'class': 'sub-toggle', type: 'button', 'aria-expanded': 'false',
+            'aria-label': 'القائمة الفرعية / Submenu'
+          }, '<i class="fa-solid fa-chevron-down" aria-hidden="true"></i>'));
+          var sub = el('ul', { 'class': 'sub-menu' });
+          m[3].forEach(function (s) {
+            var sl = el('li');
+            sl.appendChild(el('a', { href: s[2], 'data-en': s[1] }, s[0]));
+            sub.appendChild(sl);
+          });
+          li.appendChild(sub);
+        }
+        ul.appendChild(li);
+      });
+    }
+    markActive(ul);
   }
   buildMenu();
 
@@ -103,35 +119,66 @@
   var root = document.documentElement;
   var body = document.body;
 
-  /* حفظ النص العربي الأصلي مرة واحدة قبل أي تبديل */
-  var nodes = document.querySelectorAll('[data-en]');
-  nodes.forEach(function (el) {
-    el.dataset.ar = el.innerHTML;
+  /* ===== ترجمة آمنة =====
+     - لا نستبدل أبداً محتوى عنصر يحتوي رابطاً أو زراً: نترجم نص الرابط نفسه فقط.
+     - النص الإنجليزي يُنقَّى: يُسمح فقط بـ span/br/strong/em/b/i بلا سمات. */
+  var ALLOWED = { SPAN: 1, BR: 1, STRONG: 1, EM: 1, B: 1, I: 1 };
+  function clean(str) {
+    var t = document.createElement('template');
+    t.innerHTML = str;
+    (function walk(n) {
+      Array.prototype.slice.call(n.childNodes).forEach(function (c) {
+        if (c.nodeType === 1) {
+          if (!ALLOWED[c.tagName]) {
+            c.parentNode.replaceChild(document.createTextNode(c.textContent), c);
+          } else {
+            while (c.attributes.length) c.removeAttribute(c.attributes[0].name);
+            walk(c);
+          }
+        } else if (c.nodeType !== 3) {
+          c.parentNode.removeChild(c);
+        }
+      });
+    })(t.content);
+    return t.innerHTML;
+  }
+
+  var items = [];
+  document.querySelectorAll('[data-en]').forEach(function (host) {
+    var target = host;
+    if (host.tagName !== 'A' && host.tagName !== 'BUTTON') {
+      var inner = host.querySelector(':scope > a, :scope > button');
+      if (inner) target = inner;
+    }
+    if (target.dataset.ar === undefined) target.dataset.ar = target.innerHTML;
+    items.push({ target: target, en: clean(host.dataset.en) });
   });
 
   function setLang(lang) {
     var isEn = lang === 'en';
-
     root.setAttribute('lang', isEn ? 'en' : 'ar');
     root.setAttribute('dir', isEn ? 'ltr' : 'rtl');
 
-    nodes.forEach(function (el) {
-      el.innerHTML = isEn ? el.dataset.en : el.dataset.ar;
+    items.forEach(function (it) {
+      it.target.innerHTML = isEn ? it.en : it.target.dataset.ar;
     });
 
-    document.title = isEn ? body.dataset.titleEn : body.dataset.titleAr;
+    var t = isEn ? body.dataset.titleEn : body.dataset.titleAr;
+    if (t) document.title = t;
     var meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', isEn ? body.dataset.descEn : body.dataset.descAr);
+    var d = isEn ? body.dataset.descEn : body.dataset.descAr;
+    if (meta && d) meta.setAttribute('content', d);
 
     var label = document.getElementById('langLabel');
     if (label) label.textContent = isEn ? 'ع' : 'EN';
 
     try { localStorage.setItem(STORE_KEY, lang); } catch (e) { /* التخزين غير متاح */ }
+    document.dispatchEvent(new CustomEvent('si-lang-change', { detail: { lang: lang } }));
   }
 
   var saved = null;
   try { saved = localStorage.getItem(STORE_KEY); } catch (e) { /* تجاهل */ }
-  if (!saved) {
+  if (saved !== 'ar' && saved !== 'en') {
     saved = (navigator.language || 'ar').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
   }
   setLang(saved);
