@@ -300,3 +300,7 @@ footer h5 { color: #fff; }
 
 /* شبكة البطاقات الرباعية: أربعة أعمدة على الحاسوب بدل خمسة ضيقة */
 .g4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* محاذاة الأيقونات والعناوين في بطاقات الصور على ارتفاع واحد، مهما طال العنوان */
+.card:has(> .card-img) { justify-content: flex-start; padding-top: 13rem; }
+.card:has(> .card-img) > p:last-child:has(.btn) { margin-top: auto !important; padding-top: .9rem; }
