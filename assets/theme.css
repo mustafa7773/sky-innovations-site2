@@ -297,3 +297,6 @@ footer h5 { color: #fff; }
 
 /* حقل مصيدة السبام: مخفي دون إزاحته 9999px (كانت تسبب تمريراً أفقياً ضخماً في الصفحات العربية) */
 .hp { left: auto; right: auto; inset-inline: auto; top: auto; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+/* شبكة البطاقات الرباعية: أربعة أعمدة على الحاسوب بدل خمسة ضيقة */
+.g4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
