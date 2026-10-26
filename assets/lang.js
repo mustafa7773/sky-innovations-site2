@@ -39,7 +39,7 @@
       ['تطبيقات الحوسبة الكمية', 'Quantum computing applications', 'quantum-computing.html'],
       ['دراسات وتقنيات جديدة', 'New studies and technologies', 'new-studies.html']
     ]],
-    ['بناء القدرات', 'Capacity building', 'capacity.html', [
+    ['التطوير وبناء القدرات', 'Development and capacity building', 'capacity.html', [
       ['دورات الفلك والفضاء', 'Astronomy and space courses', 'astronomy-courses.html'],
       ['تأهيل الكوادر لتطوير الأقمار المكعبية', 'Training talent to develop CubeSats', 'cubesat-training.html'],
       ['ورش تدريبية لتوظيف الذكاء الاصطناعي', 'AI training workshops', 'ai-workshops.html'],
