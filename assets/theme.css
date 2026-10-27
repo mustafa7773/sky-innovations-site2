@@ -316,3 +316,12 @@ footer h5 { color: #fff; }
 
 /* صورة عرضية تظهر كاملة دون قص */
 .feature-img.feature-full { aspect-ratio: auto; height: auto; object-fit: contain; }
+
+/* ---------- هيرو صفحة «المنتجات» ---------- */
+.hero.hero-img.hero-products {
+  --hero-bg: url(img/products-hero.webp); --hero-pos: center 40%;
+  background:
+    linear-gradient(180deg, rgba(6,16,44,.48) 0%, rgba(6,16,44,.56) 55%, rgba(6,16,44,.72) 100%),
+    var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
+}
+@media (max-width: 860px) { .hero.hero-img.hero-products { --hero-pos: 70% center; } }
