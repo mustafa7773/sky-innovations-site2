@@ -304,3 +304,12 @@ footer h5 { color: #fff; }
 /* محاذاة الأيقونات والعناوين في بطاقات الصور على ارتفاع واحد، مهما طال العنوان */
 .card:has(> .card-img) { justify-content: flex-start; padding-top: 13rem; }
 .card:has(> .card-img) > p:last-child:has(.btn) { margin-top: auto !important; padding-top: .9rem; }
+
+/* ---------- هيرو صفحة «الخدمات» ---------- */
+.hero.hero-img.hero-services {
+  --hero-bg: url(img/services-hero.webp); --hero-pos: center 45%;
+  background:
+    linear-gradient(180deg, rgba(4,12,36,.30) 0%, rgba(4,12,36,.40) 55%, rgba(4,12,36,.62) 100%),
+    var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
+}
+@media (max-width: 860px) { .hero.hero-img.hero-services { --hero-pos: 30% center; } }
