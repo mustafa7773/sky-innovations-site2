@@ -313,3 +313,6 @@ footer h5 { color: #fff; }
     var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
 }
 @media (max-width: 860px) { .hero.hero-img.hero-services { --hero-pos: 30% center; } }
+
+/* صورة عرضية تظهر كاملة دون قص */
+.feature-img.feature-full { aspect-ratio: auto; height: auto; object-fit: contain; }
