@@ -341,3 +341,16 @@ footer h5 { color: #fff; }
 .hero .hero-brand .brand-rule { background: rgba(255,255,255,.5); }
 /* الوصف: أبيض بشفافية 85% ليبقى واضحاً فوق الأجزاء المضيئة */
 .hero p { color: rgba(255,255,255,.85) !important; }
+
+/* ---------- قائمة الشركاء في صفحة الشركاء والمشاريع ---------- */
+.partner-list { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .6rem; }
+.partner-list li { display: flex; flex-direction: column; gap: .15rem; padding: .75rem .95rem; border-radius: 14px; background: #F5F8FF; border: 1px solid var(--line); }
+.partner-list strong { font-family: 'Inter', 'Tajawal', sans-serif; font-size: .95rem; font-weight: 700; color: var(--ink); text-align: start; unicode-bidi: plaintext; }
+.partner-list span { font-size: .88rem; color: var(--gray); }
+/* بطاقة الشركاء بعرض الصف كاملاً، والشركاء في شبكة؛ والبطاقتان الأخريان تحتها */
+#international-partners { grid-column: 1 / -1; }
+.card .partner-list { padding: 0; margin-inline: 0; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card .partner-list li { margin: 0; }
+.grid:has(> #international-partners) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html[dir="rtl"] .partner-list strong { text-align: right; }
+@media (max-width: 760px) { .grid:has(> #international-partners) { grid-template-columns: 1fr; } }
