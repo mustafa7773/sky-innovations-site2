@@ -355,4 +355,7 @@ footer h5 { color: #fff; }
 html[dir="rtl"] .partner-list strong { text-align: right; }
 @media (max-width: 760px) { .grid:has(> #international-partners) { grid-template-columns: 1fr; } }
 /* صورة صفحة الشركاء: أصغر وفي الوسط */
-img[src*="partners-meeting"] { max-width: 760px; margin-inline: auto; }
+.partners-intro { margin-bottom: 2.4rem; gap: 3rem; }
+.partners-intro .section-head { display: block; margin: 0; }
+.partners-intro .section-head p { font-size: 1.15rem; line-height: 2; }
+.partners-intro img[src*="partners-meeting"] { margin: 0; width: 100%; }
