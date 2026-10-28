@@ -328,3 +328,16 @@ footer h5 { color: #fff; }
 
 /* بطاقات الصور بلا زر: النص ينزل لأسفل البطاقة بدل ترك فراغ تحته */
 .card:has(> .card-img):not(:has(.btn)) > i.ico { margin-top: auto; }
+
+/* ---------- ألوان نصوص الهيرو ---------- */
+/* الكلمة المميزة: سماوي صريح بدل التدرج الباهت */
+.hero h2 span {
+  background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important;
+  color: #7DD3FC !important; -webkit-text-fill-color: #7DD3FC;
+}
+/* اسم الشركة فوق العنوان: أبيض وأصغر حتى لا ينافس العنوان */
+.hero .hero-brand .brand-ar,
+.hero .hero-brand .brand-en { color: #fff !important; font-size: 1.25rem !important; opacity: .92; }
+.hero .hero-brand .brand-rule { background: rgba(255,255,255,.5); }
+/* الوصف: أبيض بشفافية 85% ليبقى واضحاً فوق الأجزاء المضيئة */
+.hero p { color: rgba(255,255,255,.85) !important; }
