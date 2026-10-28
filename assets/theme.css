@@ -325,3 +325,6 @@ footer h5 { color: #fff; }
     var(--hero-bg) var(--hero-pos)/cover no-repeat, #06142e;
 }
 @media (max-width: 860px) { .hero.hero-img.hero-products { --hero-pos: 70% center; } }
+
+/* بطاقات الصور بلا زر: النص ينزل لأسفل البطاقة بدل ترك فراغ تحته */
+.card:has(> .card-img):not(:has(.btn)) > i.ico { margin-top: auto; }
