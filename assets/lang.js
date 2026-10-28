@@ -46,9 +46,9 @@
       ['مختبر الحاسب الآلي لبناء القدرات', 'Computer lab for capacity building', 'computer-lab.html']
     ]],
     ['الشركاء والمشاريع', 'Partners and projects', 'projects.html', [
-      ['الشركاء الدوليين', 'International partners', 'international-partners.html'],
-      ['الزبائن المحليين', 'Local clients', 'local-clients.html'],
-      ['المشاريع السابقة', 'Past projects', 'past-projects.html']
+      ['الشركاء الدوليين', 'International partners', 'projects.html#international-partners'],
+      ['الزبائن المحليين', 'Local clients', 'projects.html#local-clients'],
+      ['المشاريع السابقة', 'Past projects', 'projects.html#past-projects']
     ]],
     ['تواصل معنا', 'Contact', 'contact.html', []]
   ];
