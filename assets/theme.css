@@ -359,3 +359,7 @@ html[dir="rtl"] .partner-list strong { text-align: right; }
 .partners-intro .section-head { display: block; margin: 0; }
 .partners-intro .section-head p { font-size: 1.15rem; line-height: 2; }
 .partners-intro img[src*="partners-meeting"] { margin: 0; width: 100%; }
+
+/* شعارات الشركاء: إطار أبيض بارتفاع موحد */
+.partner-list .partner-logo { display: flex; align-items: center; justify-content: center; height: 76px; padding: 12px 16px; margin-bottom: .55rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.partner-list .partner-logo img { max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; }
