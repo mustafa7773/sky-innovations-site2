@@ -20,7 +20,7 @@
       ['معالجة وتحليل البيانات الضخمة', 'Big data processing and analysis', 'big-data-processing.html'],
       ['تنصيب برامج الأمن السيبراني', 'Cybersecurity software installation', 'cybersecurity.html']
     ]],
-    ['تسويق المنتجات', 'Product marketing', 'products.html', [
+    ['تسويق المنتجات', 'Products', 'products.html', [
       ['أنظمة الأقمار الاصطناعية', 'Satellite systems', 'satellite-systems.html'],
       ['أنظمة الطاقة الشمسية', 'Solar energy systems', 'solar-systems.html'],
       ['شواحن السيارات الكهربائية', 'EV chargers', 'ev-chargers.html'],
@@ -30,7 +30,7 @@
       ['نماذج ثلاثية الأبعاد', '3D models', '3d-models.html'],
       ['مساعد الإمام الذكي', 'Smart Imam assistant', 'imam-app.html']
     ]],
-    ['الابتكارات والتقنية', 'Innovations and technology', 'innovations.html', [
+    ['الابتكارات والتقنية', 'Innovation', 'innovations.html', [
       ['الحلول الابتكارية', 'Innovative solutions', 'innovative-solutions.html'],
       ['مراقبة البيئة المستدامة', 'Sustainable environmental monitoring', 'sustainable-environment.html'],
       ['أنظمة المدن الإدراكية', 'Cognitive city systems', 'cognitive-cities.html'],
@@ -39,13 +39,13 @@
       ['تطبيقات الحوسبة الكمية', 'Quantum computing applications', 'quantum-computing.html'],
       ['دراسات وتقنيات جديدة', 'New studies and technologies', 'new-studies.html']
     ]],
-    ['التطوير وبناء القدرات', 'Development and capacity building', 'capacity.html', [
+    ['التطوير وبناء القدرات', 'Capacity building', 'capacity.html', [
       ['دورات الفلك والفضاء', 'Astronomy and space courses', 'astronomy-courses.html'],
       ['تأهيل الكوادر لتطوير الأقمار المكعبية', 'Training talent to develop CubeSats', 'cubesat-training.html'],
       ['ورش تدريبية لتوظيف الذكاء الاصطناعي', 'AI training workshops', 'ai-workshops.html'],
       ['مختبر الحاسب الآلي لبناء القدرات', 'Computer lab for capacity building', 'computer-lab.html']
     ]],
-    ['الشركاء والمشاريع', 'Partners and projects', 'projects.html', [
+    ['الشركاء والمشاريع', 'Partners', 'projects.html', [
       ['الشركاء الدوليين', 'International partners', 'projects.html#international-partners'],
       ['الزبائن المحليين', 'Local clients', 'projects.html#local-clients'],
       ['المشاريع السابقة', 'Past projects', 'projects.html#past-projects']
