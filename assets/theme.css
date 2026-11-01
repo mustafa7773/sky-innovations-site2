@@ -55,7 +55,7 @@ body {
 }
 .navbar .nav-menu .sub-menu a { color: #2B3A57; border-radius: 12px; font-weight: 500; }
 .navbar .nav-menu .sub-menu a:hover { background: var(--tint); color: var(--brand); }
-@media (max-width: 1360px) {
+@media (max-width: 1400px) {
   .navbar .nav-menu { background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 24px 40px rgba(35,60,130,.12); }
   .navbar .nav-menu .sub-menu { background: transparent; box-shadow: none; border: 0; }
 }
@@ -369,7 +369,7 @@ html[dir="rtl"] .partner-list strong { text-align: right; }
    L = عناوين الصفحات والأقسام  ·  M = عناوين البطاقات والعناوين الفرعية  ·  S = كل النصوص الأخرى
    (الشعار واسم الشركة في الهيرو والأيقونات مستثناة لأنها عناصر هوية لا نصوص)
    ===================================================================== */
-:root { --fs-l: clamp(1.85rem, 3.4vw, 2.75rem); --fs-m: 1.25rem; --fs-s: 1rem; }
+:root { --fs-l: clamp(1.9rem, 3.4vw, 2.75rem); --fs-m: 1.375rem; --fs-s: 1.125rem; }
 
 :where(body *:not(i, svg, svg *, .logo *, .footer-brand *, .hero-brand *, .partner-logo *)) { font-size: var(--fs-s) !important; }
 
@@ -379,4 +379,8 @@ html[dir="rtl"] .partner-list strong { text-align: right; }
 
 :where(h1, h2, h3, h4, h5) :where(*:not(i)) { font-size: inherit !important; }
 /* الشريط العلوي: مسافات أضيق بين الروابط حتى تتسع بمقاس الخط الموحد */
-@media (min-width: 1361px) { .navbar .nav-menu a { padding: .5rem .55rem; } .navbar .nav-menu .sub-toggle { padding: 4px 1px; } }
+@media (min-width: 1401px) { .navbar .nav-menu { gap: 0; } .navbar .nav-menu a { padding: .5rem .45rem; } .navbar .nav-menu .sub-toggle { padding: 4px 0; } .navbar .nav-container { gap: .6rem; } .logo { gap: .5rem; } }
+
+/* نص أوضح: رمادي أغمق وارتفاع سطر مريح للعربية */
+:root { --gray: #3E4A61; }
+:where(p, li) { line-height: 1.9; }

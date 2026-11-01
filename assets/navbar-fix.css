@@ -10,7 +10,7 @@
 .navbar .nav-menu .sub-menu { min-width: 240px; max-width: 340px; width: max-content; }
 .navbar .nav-menu .sub-menu a { white-space: normal; line-height: 1.6; padding: .5rem .8rem; font-size: .88rem; }
 
-@media (max-width: 1360px) {
+@media (max-width: 1400px) {
   .navbar .nav-menu {
     display: none; position: absolute; top: 100%; inset-inline: 0; flex: none;
     background: rgba(5,12,24,.99); flex-direction: column; align-items: stretch; justify-content: flex-start;
